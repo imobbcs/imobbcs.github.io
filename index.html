@@ -7,6 +7,7 @@
   <meta name="description" content="Fractional CGO & CMO for Bitcoin and crypto companies scaling across EU markets. 17 years experience, 8+ in Bitcoin. Ex-Bitpanda, Relai. MiCA specialist." />
   <meta name="keywords" content="Bitcoin marketing Europe, fractional CMO Bitcoin, crypto CMO Europe, Bitcoin growth consultant, MiCA marketing strategy, Bitcoin app growth Europe" />
   <link rel="canonical" href="https://imobabics.com/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F5F2EE'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='600' fill='%230D0D0D'>IB</text></svg>" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -172,12 +173,13 @@
     }
     .stat-item { text-align: center; }
     .stat-value {
-      font-family: var(--sans);
-      font-size: 1.6rem;
-      font-weight: 500;
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 300;
+      font-style: italic;
       color: var(--orange);
       line-height: 1; display: block;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
     .stat-label {
       font-family: var(--mono); font-size: 0.6rem;
@@ -232,14 +234,28 @@
     .about-body p:last-child { margin-bottom: 0; }
 
     .quote-block {
-      border-left: 2px solid var(--orange);
-      padding: 1.5rem 2rem; margin-bottom: 3rem;
-      background: rgba(247,147,26,0.04);
+      border-left: 3px solid var(--orange);
+      padding: 1.75rem 2rem;
+      margin-bottom: 3rem;
+      background: rgba(247,147,26,0.06);
+      position: relative;
+    }
+    .quote-block::before {
+      content: '\201C';
+      font-family: var(--serif);
+      font-size: 5rem;
+      color: var(--orange);
+      opacity: 0.2;
+      position: absolute;
+      top: -0.5rem;
+      left: 1rem;
+      line-height: 1;
     }
     .quote-text {
-      font-family: var(--serif); font-size: 1.25rem;
-      font-style: italic; line-height: 1.5;
+      font-family: var(--serif); font-size: 1.35rem;
+      font-style: italic; line-height: 1.55;
       color: var(--black); margin-bottom: 1rem;
+      position: relative;
     }
     .quote-author {
       font-family: var(--mono); font-size: 0.68rem;
@@ -451,6 +467,7 @@
       <li><a href="#work-with-me">Work With Me</a></li>
       <li><a href="#writing">Writing</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="color:var(--orange);">LinkedIn →</a></li>
     </ul>
   </nav>
 
@@ -459,6 +476,7 @@
     <div class="hero-left">
       <p class="hero-eyebrow">Fractional CGO & CMO · Bitcoin & Crypto · Europe</p>
       <h1 class="hero-name">Imo<br><em>Babics</em></h1>
+      <p style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--grey);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s ease 0.25s forwards;">Currently CGO &amp; CMO at Relai</p>
       <p class="hero-tagline">17 years in marketing. 8+ in Bitcoin. I help European Bitcoin companies scale across EU markets — without losing speed.</p>
       <div class="hero-actions">
         <a href="#work-with-me" class="btn-primary">Work With Me</a>
@@ -487,10 +505,6 @@
         <div class="stat-item">
           <span class="stat-value">8+</span>
           <span class="stat-label">Years in Bitcoin</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-value">5+</span>
-          <span class="stat-label">Markets Launched</span>
         </div>
       </div>
     </div>
@@ -535,6 +549,10 @@
           <li><span class="principle-num">02</span>Growth is cross-functional. Product, compliance, and support all shape the outcome.</li>
           <li><span class="principle-num">03</span>Simplicity wins. In messaging and in decisions.</li>
         </ul>
+        <div class="quote-block reveal" style="margin-top:2rem;margin-bottom:0;">
+          <p class="quote-text">"Imo brings a unique and versatile skill set, making him an exceptional marketer, especially in the Bitcoin space."</p>
+          <p class="quote-author">Raphael Schön — Content Strategist, ex-Bitpanda &amp; Relai</p>
+        </div>
       </div>
     </div>
   </section>
