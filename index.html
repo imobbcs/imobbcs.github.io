@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imo Babics — Bitcoin Growth Leadership</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange: #F7931A;
+      --black: #0D0D0D;
+      --white: #F5F2EE;
+      --grey: #8A8580;
+      --light: #E8E4DF;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Outfit', sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 4rem;
+      background: var(--white);
+      border-bottom: 1px solid var(--light);
+    }
+    .nav-logo {
+      font-family: var(--mono); font-size: 0.8rem;
+      letter-spacing: 0.15em; color: var(--black);
+      text-decoration: none; text-transform: uppercase;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--grey); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 5rem;
+    }
+
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 4rem 6rem 4rem;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono); font-size: 0.72rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 2rem;
+      opacity: 0; animation: fadeUp 0.8s ease 0.1s forwards;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      font-weight: 300; line-height: 1; letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
+    }
+    .hero-name em { font-style: italic; color: var(--orange); }
+
+    .hero-tagline {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 300; color: var(--grey);
+      line-height: 1.5; max-width: 38ch; margin-bottom: 3rem;
+      opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
+    }
+
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem;
+      opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
+    }
+
+    .btn-primary {
+      font-family: var(--mono); font-size: 0.72rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      background: var(--orange); color: var(--white);
+      border: none; padding: 0.9rem 2rem;
+      text-decoration: none; cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .btn-secondary {
+      font-family: var(--mono); font-size: 0.72rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      background: transparent; color: var(--black);
+      border: 1px solid var(--black); padding: 0.9rem 2rem;
+      text-decoration: none; cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-1px); }
+
+    .hero-quote {
+      border-left: 2px solid var(--orange);
+      padding-left: 1.25rem;
+      opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
+    }
+    .hero-quote p {
+      font-family: var(--serif); font-size: 1.05rem;
+      font-style: italic; color: var(--grey); line-height: 1.5;
+      margin-bottom: 0.4rem;
+    }
+    .hero-quote cite {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--grey); font-style: normal;
+    }
+
+    .hero-right {
+      position: relative; background: var(--black); overflow: hidden;
+    }
+    .hero-image {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      opacity: 0.85; display: block;
+    }
+    .hero-stat-bar {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(13,13,13,0.85); backdrop-filter: blur(8px);
+      display: flex; justify-content: space-around;
+      padding: 1.5rem 2rem;
+      border-top: 1px solid rgba(247,147,26,0.3);
+    }
+    .stat-item { text-align: center; }
+    .stat-value {
+      font-family: var(--serif); font-size: 1.8rem;
+      font-weight: 300; color: var(--orange);
+      line-height: 1; display: block;
+    }
+    .stat-label {
+      font-family: var(--mono); font-size: 0.6rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(245,242,238,0.5); margin-top: 0.3rem; display: block;
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      overflow: hidden;
+      border-top: 1px solid var(--light);
+      border-bottom: 1px solid var(--light);
+      padding: 1rem 0; background: var(--white);
+    }
+    .marquee-track {
+      display: flex; gap: 3rem;
+      width: max-content;
+      animation: marquee 25s linear infinite;
+    }
+    .marquee-item {
+      font-family: var(--mono); font-size: 0.7rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--grey); white-space: nowrap;
+    }
+    .marquee-item span { color: var(--orange); margin: 0 1rem; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── SECTIONS ── */
+    section { padding: 7rem 4rem; }
+    .section-label {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 300; line-height: 1.1; margin-bottom: 1rem;
+    }
+    .section-title em { font-style: italic; }
+
+    /* ── ABOUT ── */
+    .about {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: start;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .about-body p {
+      font-size: 1.05rem; color: #3a3a3a;
+      line-height: 1.8; margin-bottom: 1.5rem;
+    }
+    .about-body p:last-child { margin-bottom: 0; }
+
+    .quote-block {
+      border-left: 2px solid var(--orange);
+      padding: 1.5rem 2rem; margin-bottom: 3rem;
+      background: rgba(247,147,26,0.04);
+    }
+    .quote-text {
+      font-family: var(--serif); font-size: 1.25rem;
+      font-style: italic; line-height: 1.5;
+      color: var(--black); margin-bottom: 1rem;
+    }
+    .quote-author {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey);
+    }
+
+    .principles-list { list-style: none; }
+    .principles-list li {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 1rem 0; border-bottom: 1px solid var(--light);
+      font-size: 0.9rem; color: #3a3a3a;
+    }
+    .principles-list li:first-child { border-top: 1px solid var(--light); }
+    .principle-num {
+      font-family: var(--mono); font-size: 0.65rem;
+      color: var(--orange); margin-top: 0.2rem; flex-shrink: 0;
+    }
+
+    /* ── TRACK RECORD ── */
+    .track-record { background: var(--black); color: var(--white); }
+    .track-record .section-label { color: var(--orange); }
+    .track-record .section-title { color: var(--white); }
+
+    .roles-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2px; margin-top: 4rem;
+      max-width: 1200px; margin-left: auto; margin-right: auto;
+    }
+    .role-card {
+      background: #161616; padding: 2.5rem;
+      border: 1px solid #222;
+      transition: border-color 0.3s, background 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .role-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 2px; height: 0; background: var(--orange);
+      transition: height 0.3s ease;
+    }
+    .role-card:hover { background: #1a1a1a; border-color: #333; }
+    .role-card:hover::before { height: 100%; }
+
+    .role-company {
+      font-family: var(--serif); font-size: 1.6rem;
+      font-weight: 300; color: var(--white); margin-bottom: 0.25rem;
+    }
+    .role-period {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.15em; color: var(--orange);
+      text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .role-title {
+      font-family: var(--mono); font-size: 0.72rem;
+      letter-spacing: 0.1em; color: rgba(245,242,238,0.5);
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .role-points { list-style: none; }
+    .role-points li {
+      font-size: 0.88rem; color: rgba(245,242,238,0.7);
+      padding: 0.4rem 0; border-bottom: 1px solid #222;
+      display: flex; gap: 0.75rem; align-items: flex-start; line-height: 1.5;
+    }
+    .role-points li:last-child { border-bottom: none; }
+    .role-points li::before { content: '→'; color: var(--orange); flex-shrink: 0; font-size: 0.75rem; margin-top: 0.1rem; }
+
+    /* ── WORK WITH ME ── */
+    .work-with-me { max-width: 1200px; margin: 0 auto; }
+
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 4rem;
+    }
+    .service-card {
+      padding: 2.5rem; border: 1px solid var(--light);
+      position: relative; transition: border-color 0.3s, transform 0.3s;
+    }
+    .service-card:hover { border-color: var(--orange); transform: translateY(-4px); }
+
+    .service-icon {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 1.5rem;
+    }
+    .service-name {
+      font-family: var(--serif); font-size: 1.5rem;
+      font-weight: 300; margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .service-desc {
+      font-size: 0.88rem; color: var(--grey);
+      line-height: 1.7; margin-bottom: 1.5rem;
+    }
+    .service-detail {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; color: var(--black);
+      text-transform: uppercase; border-top: 1px solid var(--light); padding-top: 1rem;
+    }
+
+    .ideal-for {
+      margin-top: 4rem; padding: 3rem;
+      background: var(--black); color: var(--white);
+      max-width: 1200px;
+    }
+    .ideal-for-title {
+      font-family: var(--serif); font-size: 1.3rem;
+      font-weight: 300; font-style: italic;
+      color: rgba(245,242,238,0.6); margin-bottom: 1.5rem;
+    }
+    .ideal-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .ideal-tag {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid rgba(247,147,26,0.4);
+      color: var(--orange); padding: 0.5rem 1rem;
+    }
+
+    /* ── WRITING ── */
+    .writing-section { background: var(--light); }
+    .writing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 4rem;
+      max-width: 1200px; margin-left: auto; margin-right: auto;
+    }
+    .writing-card {
+      background: var(--white); padding: 2rem;
+      text-decoration: none; color: inherit; display: block;
+      transition: transform 0.3s; border-bottom: 2px solid transparent;
+    }
+    .writing-card:hover { transform: translateY(-4px); border-bottom-color: var(--orange); }
+    .writing-type {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 1rem;
+    }
+    .writing-title {
+      font-family: var(--serif); font-size: 1.3rem;
+      font-weight: 400; line-height: 1.3; margin-bottom: 0.75rem;
+    }
+    .writing-excerpt { font-size: 0.85rem; color: var(--grey); line-height: 1.6; }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--black); color: var(--white);
+      text-align: center; padding: 8rem 4rem;
+    }
+    .contact-section .section-label { color: var(--orange); }
+    .contact-title {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem;
+      color: var(--white);
+    }
+    .contact-title em { font-style: italic; color: var(--orange); }
+    .contact-sub {
+      font-size: 1rem; color: rgba(245,242,238,0.5);
+      margin-bottom: 3rem; max-width: 50ch;
+      margin-left: auto; margin-right: auto;
+    }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black); border-top: 1px solid #1a1a1a;
+      padding: 2rem 4rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; color: rgba(245,242,238,0.3); text-transform: uppercase;
+    }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(245,242,238,0.3); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--orange); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 8rem 2rem 3rem; }
+      .hero-right { height: 50vw; }
+      section { padding: 5rem 2rem; }
+      .about { grid-template-columns: 1fr; gap: 3rem; }
+      .roles-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .writing-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Imo Babics</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#track-record">Track Record</a></li>
+      <li><a href="#work-with-me">Work With Me</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Bitcoin Growth Leadership · Europe</p>
+      <h1 class="hero-name">Imo<br><em>Babics</em></h1>
+      <p class="hero-tagline">15+ years in fintech. 8+ in Bitcoin. I help European Bitcoin companies scale in regulated markets — without losing speed.</p>
+      <div class="hero-actions">
+        <a href="#work-with-me" class="btn-primary">Work With Me</a>
+        <a href="#track-record" class="btn-secondary">Track Record</a>
+      </div>
+      <div class="hero-quote">
+        <p>"Imo has been a co-founder-like partner and a key driver of Relai's growth."</p>
+        <cite>Julian Liniger — CEO &amp; Co-founder, Relai</cite>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img
+        src="https://imobabics.com/wp-content/uploads/2026/02/IB_2026_cropped.png"
+        alt="Imo Babics"
+        class="hero-image"
+      />
+      <div class="hero-stat-bar">
+        <div class="stat-item">
+          <span class="stat-value">15+</span>
+          <span class="stat-label">Years in Fintech</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">1M+</span>
+          <span class="stat-label">Users Scaled</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">8+</span>
+          <span class="stat-label">Years in Bitcoin</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">5+</span>
+          <span class="stat-label">Markets Launched</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Bitcoin Adoption<span>·</span></span>
+      <span class="marquee-item">European Regulated Markets<span>·</span></span>
+      <span class="marquee-item">MiCA Compliance<span>·</span></span>
+      <span class="marquee-item">DACH &amp; Southern Europe<span>·</span></span>
+      <span class="marquee-item">Self-Custody Apps<span>·</span></span>
+      <span class="marquee-item">Growth Strategy<span>·</span></span>
+      <span class="marquee-item">App Store Optimisation<span>·</span></span>
+      <span class="marquee-item">Fractional CGO / CMO<span>·</span></span>
+      <span class="marquee-item">Bitcoin Adoption<span>·</span></span>
+      <span class="marquee-item">European Regulated Markets<span>·</span></span>
+      <span class="marquee-item">MiCA Compliance<span>·</span></span>
+      <span class="marquee-item">DACH &amp; Southern Europe<span>·</span></span>
+      <span class="marquee-item">Self-Custody Apps<span>·</span></span>
+      <span class="marquee-item">Growth Strategy<span>·</span></span>
+      <span class="marquee-item">App Store Optimisation<span>·</span></span>
+      <span class="marquee-item">Fractional CGO / CMO<span>·</span></span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about">
+      <div class="about-left">
+        <p class="section-label reveal">About</p>
+        <h2 class="section-title reveal">I've done this<br>before. <em>Twice.</em></h2>
+        <div class="about-body reveal">
+          <p>I scaled Bitpanda from 100,000 to over 1 million users. Built the marketing team from scratch — zero to seventeen people — and owned acquisition, retention, and brand across Europe.</p>
+          <p>At Relai, I joined early and led growth from a few thousand to tens of thousands of monthly active users. Self-custody Bitcoin. Regulated markets. Multiple languages. Real compliance constraints.</p>
+          <p>I know what it takes to grow a Bitcoin company in Europe — the regulatory nuance, the trust problem, the channel constraints, and the MiCA opportunity most operators are still underestimating.</p>
+          <p>Now I'm opening capacity to work with a small number of companies directly.</p>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="quote-block reveal">
+          <p class="quote-text">"Imo has been a co-founder-like partner and a key driver of Relai's growth."</p>
+          <p class="quote-author">Julian Liniger — CEO &amp; Co-founder, Relai</p>
+        </div>
+        <ul class="principles-list reveal">
+          <li><span class="principle-num">01</span>Strategy without execution is theatre. I do both.</li>
+          <li><span class="principle-num">02</span>Growth is cross-functional. Product, compliance, and support all shape the outcome.</li>
+          <li><span class="principle-num">03</span>Simplicity wins. In messaging and in decisions.</li>
+          <li><span class="principle-num">04</span>Bitcoin is savings technology. That distinction changes how you build and how you market.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK RECORD -->
+  <section class="track-record" id="track-record">
+    <div style="max-width:1200px; margin:0 auto;">
+      <p class="section-label reveal">Track Record</p>
+      <h2 class="section-title reveal">Where I've <em>built things</em></h2>
+      <div class="roles-grid reveal">
+        <div class="role-card">
+          <p class="role-period">2021 — Present</p>
+          <h3 class="role-company">Relai</h3>
+          <p class="role-title">Chief Growth Officer</p>
+          <ul class="role-points">
+            <li>Led growth across EU — DACH, Italy, Spain</li>
+            <li>Scaled from 3,000 to 30,000 monthly active users</li>
+            <li>Built multilingual GTM and ASO across 5 languages</li>
+            <li>MiCA compliance without sacrificing velocity</li>
+          </ul>
+        </div>
+        <div class="role-card">
+          <p class="role-period">2018 — 2021</p>
+          <h3 class="role-company">Bitpanda</h3>
+          <p class="role-title">Head of Marketing</p>
+          <ul class="role-points">
+            <li>Built marketing from 0 to 17 people</li>
+            <li>Owned acquisition, retention, and brand across Europe</li>
+            <li>Scaled from 100,000 to 1 million+ users</li>
+            <li>Made Bitpanda the leading European retail crypto brand</li>
+          </ul>
+        </div>
+        <div class="role-card">
+          <p class="role-period">2013 — 2015</p>
+          <h3 class="role-company">Universal Pictures</h3>
+          <p class="role-title">Media Manager</p>
+          <ul class="role-points">
+            <li>Global theatrical campaigns across 50+ markets</li>
+            <li>International go-to-market at scale</li>
+          </ul>
+        </div>
+        <div class="role-card">
+          <p class="role-period">2009 — 2017</p>
+          <h3 class="role-company">Agency</h3>
+          <p class="role-title">Campaign Manager</p>
+          <ul class="role-points">
+            <li>Xbox, PlayStation, Microsoft, Huawei, EA</li>
+            <li>Deep digital marketing expertise across verticals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK WITH ME -->
+  <section id="work-with-me" style="padding: 7rem 4rem;">
+    <div class="work-with-me">
+      <p class="section-label reveal">Work With Me</p>
+      <h2 class="section-title reveal">Three ways to <em>work together</em></h2>
+      <p class="reveal" style="font-size:1rem; color:var(--grey); max-width:52ch; line-height:1.7; margin-bottom:0;">I work with a small number of companies at a time. If the fit is right, I'm fully committed.</p>
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <p class="service-icon">01 — Fractional</p>
+          <h3 class="service-name">Fractional CGO / CMO</h3>
+          <p class="service-desc">Embedded senior growth leadership. I work with your team on strategy and execution — typically 2–3 days per week. You get the operator, not a consultant.</p>
+          <p class="service-detail">Ongoing retainer · Min. 3 months</p>
+        </div>
+        <div class="service-card">
+          <p class="service-icon">02 — Advisory</p>
+          <h3 class="service-name">Strategic Advisory</h3>
+          <p class="service-desc">A direct line to someone who's done it. Growth audits, GTM for DACH or Southern Europe, MiCA navigation, fundraising narrative. No hand-holding required.</p>
+          <p class="service-detail">Equity + cash · Flexible structure</p>
+        </div>
+        <div class="service-card">
+          <p class="service-icon">03 — Project</p>
+          <h3 class="service-name">Growth Sprint</h3>
+          <p class="service-desc">A focused engagement on one challenge — a market launch, funnel audit, ASO overhaul, or multilingual content system. Clear scope, clear output.</p>
+          <p class="service-detail">Fixed scope · 4–8 weeks</p>
+        </div>
+      </div>
+      <div class="ideal-for reveal">
+        <p class="ideal-for-title">Best fit for companies that are —</p>
+        <div class="ideal-tags">
+          <span class="ideal-tag">Series A–B Bitcoin or fintech</span>
+          <span class="ideal-tag">Entering DACH or Southern Europe</span>
+          <span class="ideal-tag">Navigating MiCA compliance</span>
+          <span class="ideal-tag">Founder-led, no senior marketing yet</span>
+          <span class="ideal-tag">Self-custody products</span>
+          <span class="ideal-tag">Scaling in regulated markets</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="writing-section" id="writing">
+    <p class="section-label reveal" style="max-width:1200px;margin:0 auto 1rem;">Writing &amp; Talks</p>
+    <h2 class="section-title reveal" style="max-width:1200px;margin:0 auto 0.5rem;">How I <em>think</em></h2>
+    <p class="reveal" style="max-width:1200px;margin:0 auto 3rem;font-size:1rem;color:var(--grey);line-height:1.7;">Bitcoin adoption, European fintech, and what operators get wrong about regulated-market growth.</p>
+    <div class="writing-grid">
+      <a href="https://www.linkedin.com/pulse/bitcoins-european-moment-here-how-mica-unlocked-450-million-b%C3%A1bics-bzegf/" class="writing-card reveal" target="_blank" rel="noopener">
+        <p class="writing-type">Article</p>
+        <h3 class="writing-title">How MiCA Unlocked 450 Million Users</h3>
+        <p class="writing-excerpt">Why Europe's regulatory framework is Bitcoin's biggest tailwind — and why most operators are too scared to use it.</p>
+      </a>
+      <a href="https://www.linkedin.com/pulse/8-things-i-learned-from-years-startups-imrich-b%C3%A1bics-cyu2e/" class="writing-card reveal" target="_blank" rel="noopener">
+        <p class="writing-type">Article</p>
+        <h3 class="writing-title">8 Things I Learned in Startups</h3>
+        <p class="writing-excerpt">Lessons from scaling two of Europe's most significant fintech companies. The stuff no one tells you before you're already in it.</p>
+      </a>
+      <div class="writing-card reveal" style="cursor:default; opacity:0.5;">
+        <p class="writing-type">Talk · BTC Prague 2026</p>
+        <h3 class="writing-title">Why MiCA Might Be Good for Bitcoin</h3>
+        <p class="writing-excerpt">The contrarian case for European regulation as a force for Bitcoin adoption. Coming June 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <p class="section-label">Contact</p>
+    <h2 class="contact-title reveal">Let's talk <em>Bitcoin.</em></h2>
+    <p class="contact-sub reveal">Open to advisory conversations, fractional engagements, speaking invitations, and media requests around Bitcoin adoption and growth in Europe.</p>
+    <div class="contact-links reveal">
+      <a href="mailto:hello@imobabics.com" class="btn-primary">Email Me</a>
+      <a href="https://www.linkedin.com/in/imobabics/" class="btn-secondary" style="border-color:rgba(245,242,238,0.3);color:var(--white);" target="_blank" rel="noopener">LinkedIn →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-copy">© 2026 Imo Babics · Vienna / Europe</p>
+    <div class="footer-links">
+      <a href="mailto:hello@imobabics.com">Email</a>
+      <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#top">↑ Top</a>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
