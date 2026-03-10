@@ -25,14 +25,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --orange: #F7931A;
+      --orange: #5C6BC0;
       --black: #0D0D0D;
       --white: #F5F2EE;
+      --white-alt: #EDEAE5;
       --grey: #8A8580;
       --light: #E8E4DF;
       --serif: 'Cormorant Garamond', Georgia, serif;
       --sans: 'Outfit', sans-serif;
       --mono: 'DM Mono', monospace;
+    }
+
+    /* ── SCROLL PROGRESS BAR ── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; z-index: 200;
+      height: 2px; width: 0%;
+      background: var(--orange);
+      transition: width 0.1s linear;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -66,6 +75,7 @@
       color: var(--grey); text-decoration: none; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--orange); }
+    .nav-links a.active { color: var(--orange); }
 
     /* ── HERO ── */
     .hero {
@@ -83,7 +93,7 @@
     .hero-eyebrow {
       font-family: var(--mono); font-size: 0.72rem;
       letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--orange); margin-bottom: 2rem;
+      color: #4A58A8; margin-bottom: 2rem;
       opacity: 0; animation: fadeUp 0.8s ease 0.1s forwards;
     }
 
@@ -95,6 +105,23 @@
       opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
     }
     .hero-name em { font-style: italic; color: var(--orange); }
+
+
+    /* ── PIXELATE EASTER EGG ── */
+    .pixelate {
+      display: inline-block;
+      cursor: default;
+    }
+    .pixelate:hover {
+      animation: pixelate-in 0.6s steps(4) forwards;
+    }
+    @keyframes pixelate-in {
+      0%   { filter: blur(0px) contrast(1); }
+      30%  { filter: blur(1.5px) contrast(1.8); }
+      60%  { filter: blur(0.8px) contrast(1.3); }
+      100% { filter: blur(0px) contrast(1); }
+    }
+
 
     .hero-tagline {
       font-family: var(--serif);
@@ -113,9 +140,10 @@
       font-family: var(--mono); font-size: 0.72rem;
       letter-spacing: 0.15em; text-transform: uppercase;
       background: var(--orange); color: var(--white);
-      border: none; padding: 0.9rem 2rem;
+      border: none; padding: 0.9rem 2.5rem;
       text-decoration: none; cursor: pointer;
       transition: opacity 0.2s, transform 0.2s;
+      display: inline-block; text-align: center; min-width: 14rem;
     }
     .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
 
@@ -123,9 +151,10 @@
       font-family: var(--mono); font-size: 0.72rem;
       letter-spacing: 0.15em; text-transform: uppercase;
       background: transparent; color: var(--black);
-      border: 1px solid var(--black); padding: 0.9rem 2rem;
+      border: 1px solid var(--black); padding: 0.9rem 2.5rem;
       text-decoration: none; cursor: pointer;
       transition: border-color 0.2s, color 0.2s, transform 0.2s;
+      display: inline-block; text-align: center; min-width: 14rem;
     }
     .btn-secondary:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-1px); }
 
@@ -221,6 +250,7 @@
     .section-title em { font-style: italic; }
 
     /* ── ABOUT ── */
+    #about { background: var(--white-alt); }
     .about {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 6rem; align-items: start;
@@ -236,7 +266,7 @@
       border-left: 3px solid var(--orange);
       padding: 1.75rem 2rem;
       margin-bottom: 3rem;
-      background: rgba(247,147,26,0.06);
+      background: rgba(92,107,192,0.06);
       position: relative;
     }
     .quote-block::before {
@@ -265,7 +295,7 @@
     .principles-list li {
       display: flex; gap: 1rem; align-items: flex-start;
       padding: 1rem 0; border-bottom: 1px solid var(--light);
-      font-size: 0.9rem; color: #3a3a3a;
+      font-size: 1rem; color: #3a3a3a;
     }
     .principles-list li:first-child { border-top: 1px solid var(--light); }
     .principle-num {
@@ -286,7 +316,7 @@
     .role-card {
       background: #161616; padding: 2.5rem;
       border: 1px solid #222;
-      transition: border-color 0.3s, background 0.3s;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
       position: relative; overflow: hidden;
     }
     .role-card::before {
@@ -294,8 +324,10 @@
       width: 2px; height: 0; background: var(--orange);
       transition: height 0.3s ease;
     }
-    .role-card:hover { background: #1a1a1a; border-color: #333; }
+    .role-card:hover { background: #1a1a1a; border-color: #333; transform: translateY(-3px); }
     .role-card:hover::before { height: 100%; }
+    .role-card.featured .role-company { font-size: 2rem; color: #fff; }
+    .role-card.featured { border-color: #2a2a2a; }
 
     .role-company {
       font-family: var(--serif); font-size: 1.6rem;
@@ -313,7 +345,7 @@
     }
     .role-points { list-style: none; }
     .role-points li {
-      font-size: 0.88rem; color: rgba(245,242,238,0.7);
+      font-size: 0.95rem; color: rgba(245,242,238,0.7);
       padding: 0.4rem 0; border-bottom: 1px solid #222;
       display: flex; gap: 0.75rem; align-items: flex-start; line-height: 1.5;
     }
@@ -343,7 +375,7 @@
       font-weight: 300; margin-bottom: 0.5rem; line-height: 1.2;
     }
     .service-desc {
-      font-size: 0.88rem; color: var(--grey);
+      font-size: 0.95rem; color: var(--grey);
       line-height: 1.7; margin-bottom: 1.5rem;
     }
     .service-detail {
@@ -380,9 +412,9 @@
     .writing-card {
       background: var(--white); padding: 2rem;
       text-decoration: none; color: inherit; display: block;
-      transition: transform 0.3s; border-bottom: 2px solid transparent;
+      transition: transform 0.3s, box-shadow 0.3s; border-bottom: 2px solid transparent;
     }
-    .writing-card:hover { transform: translateY(-4px); border-bottom-color: var(--orange); }
+    .writing-card:hover { transform: translateY(-4px); border-bottom-color: var(--orange); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
     .writing-type {
       font-family: var(--mono); font-size: 0.62rem;
       letter-spacing: 0.2em; text-transform: uppercase;
@@ -396,8 +428,25 @@
 
     /* ── CONTACT ── */
     .contact-section {
-      background: var(--black); color: var(--white);
-      text-align: center; padding: 8rem 4rem;
+      background: #0A0A0A;
+      color: var(--white);
+      text-align: center;
+      padding: 10rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-section::before {
+      content: 'BITCOIN';
+      position: absolute;
+      font-family: var(--serif);
+      font-size: clamp(8rem, 20vw, 18rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.02);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: 0.05em;
     }
     .contact-section .section-label { color: var(--orange); }
     .contact-title {
@@ -452,10 +501,69 @@
       .services-grid { grid-template-columns: 1fr; }
       .writing-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
+
+      /* ── MOBILE TYPOGRAPHY FIXES ── */
+
+      /* Hero */
+      .hero-eyebrow { font-size: 0.72rem; }
+      .hero-tagline { font-size: 1.15rem; line-height: 1.6; }
+      .hero-quote p { font-size: 1rem; }
+      .hero-quote cite { font-size: 0.72rem; }
+
+      /* Currently line */
+      .hero-left > p[style] { font-size: 0.72rem !important; }
+
+      /* Stat bar */
+      .stat-value { font-size: 1.8rem; }
+      .stat-label { font-size: 0.65rem; }
+
+      /* Section labels & titles */
+      .section-label { font-size: 0.72rem; }
+
+      /* About body */
+      .about-body p { font-size: 1rem; line-height: 1.8; }
+
+      /* Quote block */
+      .quote-text { font-size: 1.1rem; }
+      .quote-author { font-size: 0.7rem; }
+
+      /* Principles */
+      .principles-list li { font-size: 0.95rem; }
+
+      /* Track record */
+      .role-period { font-size: 0.72rem; }
+      .role-company { font-size: 1.4rem; }
+      .role-title { font-size: 0.75rem; }
+      .role-points li { font-size: 0.9rem; line-height: 1.7; }
+
+      /* Service cards */
+      .service-icon { font-size: 0.72rem; }
+      .service-name { font-size: 1.2rem; }
+      .service-desc { font-size: 0.95rem; line-height: 1.7; }
+      .service-detail { font-size: 0.7rem; }
+
+      /* Ideal-for tags */
+      .ideal-for-title { font-size: 0.75rem; }
+      .ideal-tag { font-size: 0.72rem; padding: 0.45rem 0.9rem; }
+
+      /* Writing cards */
+      .writing-card h3 { font-size: 1.2rem; }
+
+      /* Contact */
+      .contact-sub { font-size: 0.95rem; line-height: 1.7; }
+
+      /* Footer */
+      .footer-copy { font-size: 0.72rem; }
+      .footer-links a { font-size: 0.72rem; }
+
+      /* Buttons — full width on mobile */
+      .btn-primary, .btn-secondary { width: 100%; }
+      .hero-actions { flex-direction: column; }
     }
   </style>
 </head>
 <body>
+  <div id="progress-bar"></div>
 
   <!-- NAV -->
   <nav>
@@ -474,11 +582,11 @@
   <section class="hero" id="top">
     <div class="hero-left">
       <p class="hero-eyebrow">Chief Growth Officer & CMO · Bitcoin & Crypto · Europe</p>
-      <h1 class="hero-name">Imo<br><em>Babics</em></h1>
+      <h1 class="hero-name">Imo<br><em class="pixelate">Babics</em></h1>
       <p style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--grey);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s ease 0.25s forwards;">Currently CGO &amp; CMO at Relai</p>
       <p class="hero-tagline">17 years in marketing. 8+ in Bitcoin. I help European Bitcoin companies scale across EU markets — without losing speed.</p>
       <div class="hero-actions">
-        <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="btn-primary">Connect on LinkedIn</a>
+        <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="btn-primary">On LinkedIn</a>
         <a href="#track-record" class="btn-secondary">Track Record</a>
       </div>
       <div class="hero-quote">
@@ -561,7 +669,7 @@
       <h2 class="section-title reveal">Where I've <em>built things</em></h2>
       <div class="roles-grid reveal">
 
-        <div class="role-card">
+        <div class="role-card featured">
           <p class="role-period">2021 — Present</p>
           <h3 class="role-company">Relai</h3>
           <p class="role-title">Chief Growth Officer & Managing Director EU</p>
@@ -574,7 +682,7 @@
           </ul>
         </div>
 
-        <div class="role-card">
+        <div class="role-card featured">
           <p class="role-period">2018 — 2019</p>
           <h3 class="role-company">Bitpanda</h3>
           <p class="role-title">Head of Marketing</p>
@@ -701,6 +809,7 @@
   </footer>
 
     <script>
+    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => el.classList.add('hidden'));
     const observer = new IntersectionObserver((entries) => {
@@ -713,9 +822,33 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.05 });
+    }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
-  </script>
 
+    // Scroll progress bar
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = pct + '%';
+
+      // Active nav
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+      let current = '';
+      sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 120) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
