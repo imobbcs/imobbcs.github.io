@@ -793,7 +793,7 @@
     <h2 class="contact-title reveal">Let's talk <em>Bitcoin.</em></h2>
     <p class="contact-sub reveal">Open to advisory conversations, speaking invitations, and media requests around Bitcoin adoption and growth in Europe.</p>
     <div class="contact-links reveal">
-      <a href="/cdn-cgi/l/email-protection#abc3cec7c7c4ebc2c6c4c9cac9c2c8d885c8c4c6" class="btn-primary">Email Me</a>
+      <a href="mailto:hello@imobabics.com" class="btn-primary">Email Me</a>
       <a href="https://www.linkedin.com/in/imobabics/" class="btn-secondary" style="border-color:rgba(245,242,238,0.3);color:var(--white);" target="_blank" rel="noopener">LinkedIn →</a>
     </div>
   </section>
@@ -802,7 +802,7 @@
   <footer>
     <p class="footer-copy">© 2026 Imo Babics · Vienna / Europe</p>
     <div class="footer-links">
-      <a href="/cdn-cgi/l/email-protection#127a777e7e7d527b7f7d7073707b71613c717d7f">Email</a>
+      <a href="mailto:hello@imobabics.com">Email</a>
       <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="#top">↑ Top</a>
     </div>
@@ -843,3 +843,12 @@
         }
       });
       navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
