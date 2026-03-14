@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Imo Babics — Chief Growth Officer & CMO · Bitcoin · Europe</title>
   <meta name="description" content="CGO & CMO at Relai, Europe's leading MiCA-licensed Bitcoin app. 17 years in marketing, 8+ in Bitcoin. Ex-Bitpanda. Speaker. Advisory." />
-  <meta name="keywords" content="Bitcoin marketing Europe, crypto CMO Europe, Bitcoin growth Europe, MiCA marketing strategy, Bitcoin app growth Europe, Relai" />
   <link rel="canonical" href="https://imobabics.com/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F5F2EE'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='600' fill='%230D0D0D'>IB</text></svg>" />
 
@@ -15,11 +14,57 @@
   <meta property="og:title" content="Imo Babics — Chief Growth Officer & CMO · Bitcoin · Europe" />
   <meta property="og:description" content="CGO & CMO at Relai, Europe's leading MiCA-licensed Bitcoin app. 17 years in marketing, 8+ in Bitcoin. Ex-Bitpanda." />
   <meta property="og:image" content="https://imobabics.com/wp-content/uploads/2026/02/IB_2026_cropped.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Imo Babics — Chief Growth Officer & CMO, Bitcoin Europe" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Imo Babics" />
 
-  <!-- Twitter -->
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@imobabics" />
+  <meta name="twitter:creator" content="@imobabics" />
   <meta name="twitter:title" content="Imo Babics — Chief Growth Officer & CMO · Bitcoin · Europe" />
   <meta name="twitter:description" content="CGO & CMO at Relai, Europe's leading MiCA-licensed Bitcoin app. 17 years in marketing, 8+ in Bitcoin. Ex-Bitpanda." />
+  <meta name="twitter:image" content="https://imobabics.com/wp-content/uploads/2026/02/IB_2026_cropped.png" />
+  <meta name="twitter:image:alt" content="Imo Babics — Chief Growth Officer & CMO, Bitcoin Europe" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Imo Babics",
+    "alternateName": "Imrich Babics",
+    "url": "https://imobabics.com/",
+    "image": "https://imobabics.com/wp-content/uploads/2026/02/IB_2026_cropped.png",
+    "jobTitle": "Chief Growth Officer & CMO",
+    "description": "17 years in marketing, 8+ in Bitcoin. CGO & CMO at Relai, Europe's leading MiCA-licensed Bitcoin app. Ex-Bitpanda Head of Marketing.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Relai",
+      "url": "https://relai.app"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vienna",
+      "addressCountry": "AT"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/imobabics/",
+      "https://twitter.com/imobabics"
+    ],
+    "knowsAbout": [
+      "Bitcoin",
+      "Growth Marketing",
+      "MiCA Regulation",
+      "European Fintech",
+      "Cryptocurrency Marketing",
+      "App Growth",
+      "Go-to-Market Strategy"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -247,7 +292,7 @@
     .section-title {
       font-family: var(--serif);
       font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 300; line-height: 1.1; margin-bottom: 1rem;
+      font-weight: 300; line-height: 1.1; margin-bottom: 3rem;
     }
     .section-title em { font-style: italic; }
 
@@ -312,7 +357,7 @@
 
     .roles-grid {
       display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 2px; margin-top: 4rem;
+      gap: 2px;
       max-width: 1200px; margin-left: auto; margin-right: auto;
     }
     .role-card {
@@ -359,7 +404,7 @@
 
     .services-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem; margin-top: 4rem;
+      gap: 1.5rem; margin-top: 2rem;
     }
     .service-card {
       padding: 2.5rem; border: 1px solid var(--light);
@@ -484,10 +529,17 @@
     .footer-links a:hover { color: var(--orange); }
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.hidden { opacity: 0; transform: translateY(24px); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal {
+      opacity: 1; transform: translateY(0);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.hidden { opacity: 0; transform: translateY(16px); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal.hidden, .reveal.visible { transition: none; transform: none; opacity: 1; }
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
 
     /* ── HAMBURGER NAV ── */
     .nav-hamburger {
@@ -560,7 +612,7 @@
       .hero-image { object-position: center 20%; }
       section { padding: 5rem 2rem; }
       .about { grid-template-columns: 1fr; gap: 3rem; }
-      .roles-grid { grid-template-columns: 1fr; }
+      .roles-grid { grid-template-columns: 1fr; gap: 8px; }
       .services-grid { grid-template-columns: 1fr; }
       .writing-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -634,7 +686,6 @@
     <a href="#track-record" class="mobile-nav-link">Track Record</a>
     <a href="#work-with-me" class="mobile-nav-link">Work With Me</a>
     <a href="#writing" class="mobile-nav-link">Writing</a>
-    <a href="#projects" class="mobile-nav-link">Projects</a>
     <a href="#contact" class="mobile-nav-link">Contact</a>
     <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="mobile-linkedin">LinkedIn →</a>
   </div>
@@ -647,7 +698,6 @@
       <li><a href="#track-record">Track Record</a></li>
       <li><a href="#work-with-me">Work With Me</a></li>
       <li><a href="#writing">Writing</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="color:var(--orange);">LinkedIn →</a></li>
     </ul>
@@ -677,7 +727,7 @@
     <div class="hero-right">
       <img
         src="/photo.png"
-        alt="Imo Babics"
+        alt="Imo Babics, Chief Growth Officer and CMO, Bitcoin Europe"
         class="hero-image"
       />
       <div class="hero-stat-bar">
@@ -807,7 +857,7 @@
     <div class="work-with-me">
       <p class="section-label reveal">Work With Me</p>
       <h2 class="section-title reveal">Ways to <em>work together</em></h2>
-      <p class="reveal" style="font-size:1rem; color:var(--grey); max-width:52ch; line-height:1.7; margin-bottom:0;">Currently fully committed to Relai. The below reflects how I engage outside of my main role — selectively and when timing is right.</p>
+      <p class="reveal" style="font-size:1rem; color:var(--grey); max-width:52ch; line-height:1.7; margin-bottom:2rem;">Currently fully committed to Relai. The below reflects how I engage outside of my main role — selectively and when timing is right.</p>
       <div class="services-grid reveal">
         <div class="service-card" style="opacity:0.45; pointer-events:none;">
           <p class="service-icon">01 — Advisory</p>
@@ -846,8 +896,8 @@
   <!-- WRITING -->
   <section class="writing-section" id="writing">
     <p class="section-label reveal" style="max-width:1200px;margin:0 auto 1rem;">Writing &amp; Talks</p>
-    <h2 class="section-title reveal" style="max-width:1200px;margin:0 auto 0.5rem;">How I <em>think</em></h2>
-    <p class="reveal" style="max-width:1200px;margin:0 auto 3rem;font-size:1rem;color:var(--grey);line-height:1.7;">Bitcoin adoption, European fintech, and what operators get wrong about regulated-market growth.</p>
+    <h2 class="section-title reveal" style="max-width:1200px;margin:0 auto 3rem;">How I <em>think</em></h2>
+    <p class="reveal" style="max-width:1200px;margin:-1.5rem auto 3rem;font-size:1rem;color:var(--grey);line-height:1.7;">Bitcoin adoption, European fintech, and what operators get wrong about regulated-market growth.</p>
     <div class="writing-grid">
       <a href="https://www.linkedin.com/pulse/bitcoins-european-moment-here-how-mica-unlocked-450-million-b%C3%A1bics-bzegf/" class="writing-card reveal" target="_blank" rel="noopener">
         <p class="writing-type">Article</p>
