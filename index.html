@@ -565,21 +565,31 @@
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
     .mobile-menu {
-      display: none;
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: var(--white);
       z-index: 105;
+      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 2.5rem;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-12px);
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility 0s linear 0.35s;
     }
     .mobile-menu.open {
-      display: flex;
       opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility 0s linear 0s;
     }
     .mobile-menu a {
       font-family: var(--serif);
@@ -600,7 +610,44 @@
       margin-top: 1rem;
     }
 
-    /* ── RESPONSIVE ── */
+    /* ── ABOUT SECTION TITLE OVERRIDE ── */
+    #about .section-title { margin-bottom: 1.5rem; }
+
+    /* ── PROJECT CARD ── */
+    .project-card {
+      max-width: 560px;
+      display: block;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      padding: 2.5rem;
+      border: 1px solid #2a2a2a;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 0; background: var(--orange);
+      transition: height 0.3s ease;
+    }
+    .project-card:hover { border-color: #3a3a3a; transform: translateY(-3px); }
+    .project-card:hover::before { height: 100%; }
+    .project-card .writing-type { color: var(--orange); margin-bottom: 1rem; }
+    .project-card .writing-title { color: var(--white); font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .project-card .writing-excerpt { color: rgba(245,242,238,0.6); font-size: 0.9rem; line-height: 1.7; }
+    .project-stack {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #2a2a2a;
+      font-family: var(--mono); font-size: 0.6rem;
+      letter-spacing: 0.08em; color: rgba(245,242,238,0.35);
+    }
+    .project-cta {
+      margin-top: 1rem;
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; color: var(--orange);
+    }
     @media (max-width: 900px) {
       nav { padding: 1.2rem 2rem; }
       .nav-links { display: none; }
@@ -923,12 +970,12 @@
       <p class="section-label reveal">Projects</p>
       <h2 class="section-title reveal">Things I've <em>built</em></h2>
       <p class="reveal" style="font-size:1rem;color:var(--grey);line-height:1.7;margin-bottom:4rem;max-width:52ch;">Side projects where I build in public — tools for Bitcoin savers, experiments in product, and things I wish existed.</p>
-      <a href="https://whentobuybtc.xyz" class="writing-card reveal" target="_blank" rel="noopener" style="max-width:480px;display:block;border-left:3px solid var(--orange);padding-left:2rem;">
+      <a href="https://whentobuybtc.xyz" class="project-card reveal" target="_blank" rel="noopener">
         <p class="writing-type">Live · Free tool</p>
         <h3 class="writing-title">whentobuybtc.xyz</h3>
-        <p class="writing-excerpt">A Bitcoin signal tool for European savers. Combines Fear &amp; Greed, the 200-day moving average, and distance from ATH into one clear, jargon-free signal. Built with Next.js, deployed on Railway — designed, coded, and iterated entirely using Claude as a co-builder.</p>
-        <p style="margin-top:1rem;font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;color:var(--grey);">Built with Claude · Next.js · Railway</p>
-        <p style="margin-top:1.25rem;font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--orange);">Visit →</p>
+        <p class="writing-excerpt">A Bitcoin signal tool for European savers. Combines Fear &amp; Greed, the 200-day moving average, and distance from ATH into one clear, jargon-free signal. Designed, coded, and iterated entirely using Claude as a co-builder.</p>
+        <p class="project-stack">Built with Claude · Next.js · Railway</p>
+        <p class="project-cta">Visit →</p>
       </a>
     </div>
   </section>
