@@ -190,6 +190,8 @@
       opacity: 0.85;
       display: block;
       min-height: 500px;
+      -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
     }
     .hero-stat-bar {
       position: relative;
@@ -441,7 +443,7 @@
       font-family: var(--serif);
       font-size: clamp(8rem, 20vw, 18rem);
       font-weight: 300;
-      color: rgba(255,255,255,0.02);
+      color: rgba(255,255,255,0.05);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       white-space: nowrap;
@@ -487,10 +489,70 @@
     .reveal.hidden { opacity: 0; transform: translateY(24px); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    /* ── HAMBURGER NAV ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 110;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--black);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--white);
+      z-index: 105;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-menu.open {
+      display: flex;
+      opacity: 1;
+    }
+    .mobile-menu a {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--orange); }
+    .mobile-menu a.mobile-linkedin {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-top: 1rem;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1.2rem 2rem; }
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
       .hero { grid-template-columns: 1fr; }
       .hero { padding-top: 0; }
       .hero-left { padding: 5rem 2rem 2rem; }
@@ -566,6 +628,17 @@
 <body>
   <div id="progress-bar"></div>
 
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#track-record" class="mobile-nav-link">Track Record</a>
+    <a href="#work-with-me" class="mobile-nav-link">Work With Me</a>
+    <a href="#writing" class="mobile-nav-link">Writing</a>
+    <a href="#projects" class="mobile-nav-link">Projects</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+    <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="mobile-linkedin">LinkedIn →</a>
+  </div>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">Imo Babics</a>
@@ -578,6 +651,11 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="color:var(--orange);">LinkedIn →</a></li>
     </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -827,21 +905,43 @@
   </footer>
 
     <script>
-    // Scroll reveal
+    // Scroll reveal — stagger per element, not per batch
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => el.classList.add('hidden'));
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          const el = entry.target;
+          const siblings = Array.from(el.parentElement.querySelectorAll('.reveal'));
+          const idx = siblings.indexOf(el);
           setTimeout(() => {
-            entry.target.classList.remove('hidden');
-            entry.target.classList.add('visible');
-          }, i * 80);
-          observer.unobserve(entry.target);
+            el.classList.remove('hidden');
+            el.classList.add('visible');
+          }, Math.min(idx, 3) * 100);
+          observer.unobserve(el);
         }
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-linkedin');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
 
     // Scroll progress bar
     const progressBar = document.getElementById('progress-bar');
