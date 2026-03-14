@@ -22,8 +22,6 @@
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@imobabics" />
-  <meta name="twitter:creator" content="@imobabics" />
   <meta name="twitter:title" content="Imo Babics — Chief Growth Officer & CMO · Bitcoin · Europe" />
   <meta name="twitter:description" content="CGO & CMO at Relai, Europe's leading MiCA-licensed Bitcoin app. 17 years in marketing, 8+ in Bitcoin. Ex-Bitpanda." />
   <meta name="twitter:image" content="https://imobabics.com/wp-content/uploads/2026/02/IB_2026_cropped.png" />
@@ -51,8 +49,7 @@
       "addressCountry": "AT"
     },
     "sameAs": [
-      "https://www.linkedin.com/in/imobabics/",
-      "https://twitter.com/imobabics"
+      "https://www.linkedin.com/in/imobabics/"
     ],
     "knowsAbout": [
       "Bitcoin",
@@ -530,14 +527,24 @@
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    .hero-animate {
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: inherit;
+    }
+
     .reveal {
       opacity: 1; transform: translateY(0);
       transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .reveal.hidden { opacity: 0; transform: translateY(16px); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal, .reveal.hidden, .reveal.visible { transition: none; transform: none; opacity: 1; }
+      .hero-animate { animation: none; opacity: 1; }
+      .marquee-track { animation-play-state: paused; }
       * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
     }
 
@@ -760,13 +767,13 @@
     <div class="hero-left">
       <p class="hero-eyebrow">Chief Growth Officer & CMO · Bitcoin · Europe</p>
       <h1 class="hero-name">Imo<br><em class="pixelate">Babics</em></h1>
-      <p style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--grey);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s ease 0.25s forwards;">Currently CGO &amp; CMO at Relai</p>
+      <p class="hero-sub hero-animate" style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--grey);margin-bottom:1.5rem;">Currently CGO &amp; CMO at Relai</p>
       <p class="hero-tagline">17 years in marketing. 8+ in Bitcoin. I help European Bitcoin companies scale across EU markets — without losing speed.</p>
       <div class="hero-actions">
         <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="btn-primary">On LinkedIn</a>
         <a href="#track-record" class="btn-secondary">Track Record</a>
       </div>
-      <div class="quote-block" style="opacity:0;animation:fadeUp 0.8s ease 0.5s forwards;">
+      <div class="quote-block hero-animate" style="animation-delay:0.5s;">
         <p class="quote-text">"Imo has been a co-founder-like partner and a key driver of Relai's growth."</p>
         <p class="quote-author">Julian Liniger — CEO &amp; Co-founder, Relai</p>
       </div>
@@ -779,15 +786,15 @@
       />
       <div class="hero-stat-bar">
         <div class="stat-item">
-          <span class="stat-value">17</span>
+          <span class="stat-value" data-target="17" data-suffix="">17</span>
           <span class="stat-label">Years Experience</span>
         </div>
         <div class="stat-item">
-          <span class="stat-value">1M+</span>
+          <span class="stat-value" data-target="1" data-suffix="M+">1M+</span>
           <span class="stat-label">Users Scaled</span>
         </div>
         <div class="stat-item">
-          <span class="stat-value">8+</span>
+          <span class="stat-value" data-target="8" data-suffix="+">8+</span>
           <span class="stat-label">Years in Bitcoin</span>
         </div>
       </div>
@@ -1002,10 +1009,12 @@
   </footer>
 
     <script>
-    // Scroll reveal — stagger per element, not per batch
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ── SCROLL REVEAL ──
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => el.classList.add('hidden'));
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const el = entry.target;
@@ -1014,14 +1023,40 @@
           setTimeout(() => {
             el.classList.remove('hidden');
             el.classList.add('visible');
-          }, Math.min(idx, 3) * 100);
-          observer.unobserve(el);
+          }, prefersReducedMotion ? 0 : Math.min(idx, 3) * 100);
+          revealObserver.unobserve(el);
         }
       });
     }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
+    reveals.forEach(el => revealObserver.observe(el));
 
-    // Hamburger menu
+    // ── COUNT-UP STATS ──
+    if (!prefersReducedMotion) {
+      const statValues = document.querySelectorAll('.stat-value[data-target]');
+      const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const target = parseInt(el.dataset.target, 10);
+          const suffix = el.dataset.suffix || '';
+          const duration = 1200;
+          const start = performance.now();
+          const tick = (now) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // ease-out-expo
+            const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            el.textContent = Math.round(eased * target) + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          countObserver.unobserve(el);
+        });
+      }, { threshold: 0.8 });
+      statValues.forEach(el => countObserver.observe(el));
+    }
+
+    // ── HAMBURGER MENU ──
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-linkedin');
@@ -1040,21 +1075,31 @@
       });
     });
 
-    // Scroll progress bar
+    // ── SCROLL PROGRESS BAR + ACTIVE NAV ──
     const progressBar = document.getElementById('progress-bar');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
     window.addEventListener('scroll', () => {
+      // Progress bar
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      progressBar.style.width = pct + '%';
+      progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
 
-      // Active nav
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+      // Active nav link
       let current = '';
       sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 120) {
+        if (window.scrollY >= section.offsetTop - 140) {
           current = section.getAttribute('id');
         }
       });
       navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }, { passive: true });
+    </script>
+</body>
+</html>
