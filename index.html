@@ -62,6 +62,9 @@
     ]
   }
   </script>
+  <!-- Umami Analytics -->
+  <script defer src="https://umami-orange.up.railway.app/script.js" data-website-id="6cdefbd5-f79d-4458-ac67-58eef9faed54"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -741,7 +744,7 @@
     <a href="#work-with-me" class="mobile-nav-link">Work With Me</a>
     <a href="#writing" class="mobile-nav-link">Writing</a>
     <a href="#contact" class="mobile-nav-link">Contact</a>
-    <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="mobile-linkedin">LinkedIn →</a>
+    <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="mobile-linkedin" data-umami-event="mobile-nav-linkedin">LinkedIn →</a>
   </div>
 
   <!-- NAV -->
@@ -753,7 +756,7 @@
       <li><a href="#work-with-me">Work With Me</a></li>
       <li><a href="#writing">Writing</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="color:var(--orange);">LinkedIn →</a></li>
+      <li><a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="color:var(--orange);" data-umami-event="nav-linkedin">LinkedIn →</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span>
@@ -770,8 +773,8 @@
       <p class="hero-sub hero-animate" style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--grey);margin-bottom:1.5rem;">Currently CGO &amp; CMO at Relai</p>
       <p class="hero-tagline">17 years in marketing. 8+ in Bitcoin. I help European Bitcoin companies scale across EU markets — without losing speed.</p>
       <div class="hero-actions">
-        <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="btn-primary">On LinkedIn</a>
-        <a href="#track-record" class="btn-secondary">Track Record</a>
+        <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="btn-primary" data-umami-event="hero-cta-linkedin">On LinkedIn</a>
+        <a href="#track-record" class="btn-secondary" data-umami-event="hero-cta-track-record">Track Record</a>
       </div>
       <div class="quote-block hero-animate" style="animation-delay:0.5s;">
         <p class="quote-text">"Imo has been a co-founder-like partner and a key driver of Relai's growth."</p>
@@ -953,12 +956,12 @@
     <h2 class="section-title reveal" style="max-width:1200px;margin:0 auto 3rem;">How I <em>think</em></h2>
     <p class="reveal" style="max-width:1200px;margin:-1.5rem auto 3rem;font-size:1rem;color:var(--grey);line-height:1.7;">Bitcoin adoption, European fintech, and what operators get wrong about regulated-market growth.</p>
     <div class="writing-grid">
-      <a href="https://www.linkedin.com/pulse/bitcoins-european-moment-here-how-mica-unlocked-450-million-b%C3%A1bics-bzegf/" class="writing-card reveal" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/pulse/bitcoins-european-moment-here-how-mica-unlocked-450-million-b%C3%A1bics-bzegf/" class="writing-card reveal" target="_blank" rel="noopener" data-umami-event="article-mica-450m">
         <p class="writing-type">Article</p>
         <h3 class="writing-title">How MiCA Unlocked 450 Million Users</h3>
         <p class="writing-excerpt">Why Europe's regulatory framework is Bitcoin's biggest tailwind — and why most operators are too scared to use it.</p>
       </a>
-      <a href="https://www.linkedin.com/pulse/8-things-i-learned-from-years-startups-imrich-b%C3%A1bics-cyu2e/" class="writing-card reveal" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/pulse/8-things-i-learned-from-years-startups-imrich-b%C3%A1bics-cyu2e/" class="writing-card reveal" target="_blank" rel="noopener" data-umami-event="article-8-lessons">
         <p class="writing-type">Article</p>
         <h3 class="writing-title">8 Things I Learned in Startups</h3>
         <p class="writing-excerpt">Lessons from scaling two of Europe's most significant fintech companies. The stuff no one tells you before you're already in it.</p>
@@ -977,7 +980,7 @@
       <p class="section-label reveal">Projects</p>
       <h2 class="section-title reveal">Things I've <em>built</em></h2>
       <p class="reveal" style="font-size:1rem;color:var(--grey);line-height:1.7;margin-bottom:4rem;max-width:52ch;">Side projects where I build in public — tools for Bitcoin savers, experiments in product, and things I wish existed.</p>
-      <a href="https://whentobuybtc.xyz" class="project-card reveal" target="_blank" rel="noopener">
+      <a href="https://whentobuybtc.xyz" class="project-card reveal" target="_blank" rel="noopener" data-umami-event="project-whentobuybtc">
         <p class="writing-type">Live · Free tool</p>
         <h3 class="writing-title">whentobuybtc.xyz</h3>
         <p class="writing-excerpt">A Bitcoin signal tool for European savers. Combines Fear &amp; Greed, the 200-day moving average, and distance from ATH into one clear, jargon-free signal. Designed, coded, and iterated entirely using Claude as a co-builder.</p>
@@ -994,7 +997,7 @@
     <p class="contact-sub reveal">Open to advisory conversations, speaking invitations, and media requests around Bitcoin adoption and growth in Europe.</p>
     <div class="contact-links reveal">
       <span style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--white);border:1px solid rgba(245,242,238,0.3);padding:0.9rem 2.5rem;display:inline-flex;align-items:center;min-width:14rem;justify-content:center;">hello [at] imobabics.com</span>
-      <a href="https://www.linkedin.com/in/imobabics/" class="btn-secondary" style="border-color:rgba(245,242,238,0.3);color:var(--white);" target="_blank" rel="noopener">LinkedIn →</a>
+      <a href="https://www.linkedin.com/in/imobabics/" class="btn-secondary" style="border-color:rgba(245,242,238,0.3);color:var(--white);" target="_blank" rel="noopener" data-umami-event="contact-linkedin">LinkedIn →</a>
     </div>
   </section>
 
@@ -1003,7 +1006,7 @@
     <p class="footer-copy">© 2026 Imo Babics · Vienna / Europe</p>
     <div class="footer-links">
       <span style="color:rgba(245,242,238,0.3);font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;">hello [at] imobabics.com</span>
-      <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" data-umami-event="footer-linkedin">LinkedIn</a>
       <a href="#top">↑ Top</a>
     </div>
   </footer>
