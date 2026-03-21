@@ -730,12 +730,15 @@
       .nav-hamburger { display: flex; }
 
       /* ── HERO ── */
-      .hero { grid-template-columns: 1fr; padding-top: 0; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 4rem;
+      }
       .hero-right {
         order: -1;
         height: auto;
-        margin-top: 4rem;
         background: var(--black);
+        overflow: hidden;
       }
       .hero-image-wrap {
         width: 100%;
