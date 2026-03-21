@@ -734,13 +734,21 @@
       .hero-right {
         order: -1;
         height: auto;
-        min-height: 110vw;
+        padding-top: 4rem;
+        background: var(--black);
       }
-      .hero-image-wrap { min-height: 110vw; }
+      .hero-image-wrap {
+        width: 100%;
+        display: block;
+      }
       .hero-image {
-        height: 100%;
-        min-height: 110vw;
-        object-position: center top;
+        width: 100%;
+        height: auto;
+        min-height: unset;
+        object-fit: contain;
+        object-position: top center;
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
         transform: none !important;
       }
       .hero-left { padding: 2.5rem 1.5rem 3rem; }
