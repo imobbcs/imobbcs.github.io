@@ -645,6 +645,7 @@
       border-top: 1px solid rgba(0,212,184,0.1);
       padding: 2rem 4rem;
       display: flex; justify-content: space-between; align-items: center;
+      position: relative; z-index: 101;
     }
     .footer-copy {
       font-family: var(--mono); font-size: 0.65rem;
@@ -1204,6 +1205,14 @@
       });
     });
 
+    const blurBar = document.getElementById('bottom-blur');
+    const contactSection = document.getElementById('contact');
+
+    const updateBlur = () => {
+      const contactBottom = contactSection ? contactSection.getBoundingClientRect().bottom : Infinity;
+      blurBar.style.opacity = contactBottom <= window.innerHeight ? '0' : '1';
+    };
+
     const progressBar = document.getElementById('progress-bar');
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
@@ -1219,7 +1228,29 @@
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) link.classList.add('active');
       });
+      updateBlur();
     }, { passive: true });
+
+    updateBlur();
   </script>
+
+  <!-- BOTTOM BLUR BAR -->
+  <div id="bottom-blur" aria-hidden="true"></div>
+  <style>
+    #bottom-blur {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 50px;
+      pointer-events: none;
+      z-index: 100;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+      background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.06) 100%);
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+  </style>
 </body>
 </html>
