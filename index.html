@@ -810,7 +810,7 @@
         <h2 class="section-title reveal" style="margin-bottom:1rem;">Common <em>questions</em></h2>
         <p class="reveal" style="font-size:0.9rem;color:var(--grey);line-height:1.75;max-width:28ch;">The things people ask before they get in touch.</p>
       </div>
-      <ul class="faq-list reveal">
+      <ul class="faq-list">
         <li class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span class="faq-question-text">Who is Imo Babics?</span>
@@ -916,14 +916,14 @@
       document.querySelectorAll('.scramble-target').forEach(el => scrambleObs.observe(el));
     }
 
-    // REVEAL — exclude .faq-answer elements which are controlled by the accordion
-    const reveals = document.querySelectorAll('.reveal:not(.faq-answer)');
+    // REVEAL — exclude .faq-answer and .writing-card[data-title] from reveal system
+    const reveals = document.querySelectorAll('.reveal:not(.faq-answer):not([data-title])');
     reveals.forEach(el => el.classList.add('hidden'));
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const el = entry.target;
-          const siblings = Array.from(el.parentElement.querySelectorAll('.reveal:not(.faq-answer)'));
+          const siblings = Array.from(el.parentElement.querySelectorAll('.reveal:not(.faq-answer):not([data-title])'));
           const idx = siblings.indexOf(el);
           setTimeout(() => { el.classList.remove('hidden'); el.classList.add('visible'); }, prefersReducedMotion ? 0 : Math.min(idx, 3) * 100);
           revealObserver.unobserve(el);
