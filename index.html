@@ -873,6 +873,19 @@
     </div>
   </footer>
 
+  <div id="bottom-blur" aria-hidden="true"></div>
+  <style>
+    #bottom-blur {
+      position: fixed; bottom: 0; left: 0; right: 0; height: 50px;
+      pointer-events: none; z-index: 100;
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+      background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.06) 100%);
+      opacity: 1; transition: opacity 0.4s ease;
+    }
+  </style>
+
   <script>
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -1035,17 +1048,6 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   </script>
 
-  <div id="bottom-blur" aria-hidden="true"></div>
-  <style>
-    #bottom-blur {
-      position: fixed; bottom: 0; left: 0; right: 0; height: 50px;
-      pointer-events: none; z-index: 100;
-      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
-      mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
-      background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.06) 100%);
-      opacity: 1; transition: opacity 0.4s ease;
-    }
-  </style>
+
 </body>
 </html>
