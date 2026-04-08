@@ -750,13 +750,12 @@
         data-source="YouTube"
         data-title="Bitcoin Growth in Europe — A Conversation"
         data-url="https://www.youtube.com/watch?v=NBGU5HD5mzE"
-        data-summary="&lt;p&gt;A wide-ranging conversation on what it actually takes to grow a Bitcoin product in European regulated markets — from the inside.&lt;/p&gt;&lt;p&gt;Topics covered include what MiCA really means for operators day-to-day (not just in theory), why most companies get European growth wrong by treating it as a translation problem rather than a cultural and regulatory one, and how Relai built meaningful traction in Germany, Italy, and Spain with a lean team and limited budget.&lt;/p&gt;&lt;p&gt;The conversation also touches on the difference between building a Bitcoin company versus a crypto company — why the constraint of Bitcoin-only is actually a growth advantage — and what founders should prioritise when entering a new EU market for the first time.&lt;/p&gt;"
         data-umami-event="podcast-youtube">
         <p class="writing-type">Podcast</p>
         <p class="writing-source">YouTube</p>
         <h3 class="writing-title">Bitcoin Growth in Europe — A Conversation</h3>
         <p class="writing-excerpt">On scaling Bitcoin adoption across regulated EU markets, what MiCA actually means for operators, and why most companies get European growth wrong.</p>
-        <p class="writing-card-cta">Watch summary →</p>
+        <p class="writing-card-cta">Watch →</p>
       </div>
 
       <div class="writing-card reveal" style="cursor:default; opacity:0.5;">
@@ -917,14 +916,14 @@
       document.querySelectorAll('.scramble-target').forEach(el => scrambleObs.observe(el));
     }
 
-    // REVEAL
-    const reveals = document.querySelectorAll('.reveal');
+    // REVEAL — exclude .faq-answer elements which are controlled by the accordion
+    const reveals = document.querySelectorAll('.reveal:not(.faq-answer)');
     reveals.forEach(el => el.classList.add('hidden'));
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const el = entry.target;
-          const siblings = Array.from(el.parentElement.querySelectorAll('.reveal'));
+          const siblings = Array.from(el.parentElement.querySelectorAll('.reveal:not(.faq-answer)'));
           const idx = siblings.indexOf(el);
           setTimeout(() => { el.classList.remove('hidden'); el.classList.add('visible'); }, prefersReducedMotion ? 0 : Math.min(idx, 3) * 100);
           revealObserver.unobserve(el);
@@ -1002,7 +1001,7 @@
       });
     });
 
-    // MODAL
+    // MODAL — articles open a summary popup, podcast links directly
     const modal = document.getElementById('article-modal');
     const openModal = (card) => {
       document.getElementById('modal-type-text').textContent = card.dataset.type || '';
@@ -1016,8 +1015,20 @@
     };
     const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
     document.querySelectorAll('.writing-card[data-title]').forEach(card => {
-      card.addEventListener('click', () => openModal(card));
-      card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); } });
+      card.addEventListener('click', () => {
+        if (card.dataset.summary) {
+          openModal(card);
+        } else if (card.dataset.url) {
+          window.open(card.dataset.url, '_blank', 'noopener');
+        }
+      });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          if (card.dataset.summary) { openModal(card); }
+          else if (card.dataset.url) { window.open(card.dataset.url, '_blank', 'noopener'); }
+        }
+      });
     });
     document.getElementById('modal-close').addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
