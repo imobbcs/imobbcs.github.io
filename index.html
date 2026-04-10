@@ -321,7 +321,20 @@
     .service-detail { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--black); text-transform: uppercase; border-top: 1px solid var(--rule-light); padding-top: 1rem; }
 
     /* WRITING */
-    .writing-section { background: var(--light); }
+    .writing-section { background: var(--black-deep); }
+    .writing-section .section-label { color: var(--cyan); }
+    .writing-section .section-title { color: var(--white); }
+    .writing-section .section-title em { color: var(--orange); }
+    .writing-section > p { color: rgba(242,242,240,0.45) !important; }
+    .writing-section .pub-bar-label { color: rgba(242,242,240,0.3); }
+    .writing-section .pub-bar-links li a { color: rgba(242,242,240,0.4); }
+    .writing-section .pub-bar-links li a:hover { color: var(--orange); border-bottom-color: var(--orange); }
+    .writing-section .writing-card { background: var(--black-mid); border-right-color: rgba(0,212,184,0.08); color: var(--white); }
+    .writing-section .writing-grid { border-color: rgba(0,212,184,0.1); }
+    .writing-section .writing-card:hover { background: #121420; }
+    .writing-section .writing-title { color: var(--white); }
+    .writing-section .writing-excerpt { color: rgba(242,242,240,0.5); }
+    .writing-section .writing-card[style*="opacity:0.5"] { background: var(--black-mid); }
     .pub-bar { max-width: 1200px; margin: 0 auto 2.5rem; display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
     .pub-bar-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); flex-shrink: 0; }
     .pub-bar-links { display: flex; gap: 2rem; flex-wrap: wrap; list-style: none; align-items: center; }
@@ -664,7 +677,7 @@
   </section>
 
   <!-- WRITING -->
-  <section class="writing-section" id="writing">
+  <section class="writing-section dark-section" id="writing">
     <p class="section-label reveal" style="max-width:1200px;margin:0 auto 1rem;">Writing &amp; Talks</p>
     <h2 class="section-title reveal" style="max-width:1200px;margin:0 auto 1.5rem;">How I <em><span class="scramble-target">think</span></em></h2>
     <p class="reveal" style="max-width:1200px;margin:0 auto 2rem;font-size:1rem;color:var(--grey);line-height:1.7;">Bitcoin adoption, European fintech, and what operators get wrong about regulated-market growth.</p>
