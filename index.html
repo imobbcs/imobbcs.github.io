@@ -171,26 +171,26 @@
   <script defer src="https://umami-orange.up.railway.app/script.js" data-website-id="6cdefbd5-f79d-4458-ac67-58eef9faed54"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;800&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --orange: #F28A0F;
-      --orange-glow: rgba(242,138,15,0.6);
+      --orange: #E55B13;
+      --orange-glow: rgba(229,91,19,0.55);
       --cyan: #00D4B8;
       --cyan-dim: rgba(0,212,184,0.15);
       --cyan-glow: rgba(0,212,184,0.5);
       --black: #0A0A0A;
-      --black-deep: #060810;
-      --black-mid: #0E1018;
+      --black-deep: #0B0F19;
+      --black-mid: #111622;
       --white: #F2F2F0;
       --white-alt: #EAEAE8;
-      --grey: #888885;
+      --grey: #8E9196;
       --rule: rgba(255,255,255,0.06);
       --rule-light: #D5D5D2;
       --light: #E2E2DF;
       --serif: 'Sora', sans-serif;
-      --sans: 'Sora', sans-serif;
+      --sans: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
       --mono: 'Share Tech Mono', monospace;
     }
 
@@ -227,7 +227,7 @@
     body {
       background: var(--white); color: var(--black);
       font-family: var(--sans); font-weight: 300;
-      line-height: 1.7; overflow-x: hidden;
+      line-height: 1.75; overflow-x: hidden;
     }
 
     /* NAV */
@@ -235,9 +235,9 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 110;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.5rem 4rem;
-      background: rgba(6,8,16,0.72);
+      background: rgba(11,15,25,0.88);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     .nav-logo {
       font-family: var(--mono); font-size: 0.8rem;
@@ -324,7 +324,6 @@
       background-size: 180px 180px; mix-blend-mode: overlay;
     }
     .hero-image-wrap { flex: 1; overflow: hidden; position: relative; min-height: 500px; }
-    .hero-image-wrap picture { display: contents; }
     .hero-image {
       position: absolute; top: 0; left: 0;
       width: 100%; height: 115%; object-fit: cover; object-position: center top;
@@ -344,11 +343,11 @@
       opacity: 0.6; box-shadow: 0 0 8px var(--cyan-glow);
     }
     .stat-item { text-align: center; }
-    .stat-value { font-family: var(--serif); font-size: 2.4rem; font-weight: 700; color: var(--orange); line-height: 1; display: block; letter-spacing: -0.03em; }
+    .stat-value { font-family: var(--serif); font-size: 2.4rem; font-weight: 800; color: var(--orange); line-height: 1; display: block; letter-spacing: -0.03em; }
     .stat-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(0,212,184,0.5); margin-top: 0.3rem; display: block; }
 
     /* SECTIONS */
-    section { padding: 7rem 4rem; }
+    section { padding: 8.5rem 4rem; }
     .section-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--orange); margin-bottom: 1rem; }
     .dark-section .section-label { color: var(--cyan); }
     .section-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 3rem; }
@@ -381,7 +380,7 @@
     .role-card:hover::before { height: 100%; }
     .role-card.featured { background: var(--black-mid); }
     .role-card.featured .role-company { font-size: 2rem; color: #fff; }
-    .role-company { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; color: var(--white); margin-bottom: 0.25rem; }
+    .role-company { font-family: var(--serif); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; color: var(--white); margin-bottom: 0.25rem; }
     .role-period { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--cyan); text-transform: uppercase; margin-bottom: 0.5rem; }
     .role-title { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; color: rgba(242,242,240,0.38); text-transform: uppercase; margin-bottom: 1.5rem; }
     .role-points { list-style: none; }
@@ -397,7 +396,7 @@
     .service-card:hover { background: rgba(255,255,255,0.04); transform: translateY(-3px); }
     .service-card:hover::before { transform: scaleY(1); }
     .service-icon { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1.5rem; }
-    .service-name { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.75rem; line-height: 1.15; color: var(--white); }
+    .service-name { font-family: var(--serif); font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; line-height: 1.15; color: var(--white); }
     .service-desc { font-size: 0.9rem; color: rgba(242,242,240,0.45); font-weight: 300; line-height: 1.75; margin-bottom: 1.5rem; }
     .service-detail { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(242,242,240,0.22); text-transform: uppercase; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1rem; }
 
@@ -428,7 +427,7 @@
     .writing-card:hover::after { transform: scaleX(1); }
     .writing-type { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.4rem; }
     .writing-source { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.9rem; opacity: 0.75; }
-    .writing-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.75rem; }
+    .writing-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.75rem; }
     .writing-excerpt { font-size: 0.82rem; font-weight: 300; color: var(--grey); line-height: 1.75; }
     .writing-card-cta { margin-top: 1.25rem; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); opacity: 0.7; }
 
@@ -446,7 +445,7 @@
     .modal-header { padding: 2.5rem 2.5rem 1.5rem; border-bottom: 1px solid var(--rule-light); position: sticky; top: 0; background: var(--white); z-index: 2; }
     .modal-type { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.4rem; }
     .modal-source { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.75rem; opacity: 0.75; }
-    .modal-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--black); }
+    .modal-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; color: var(--black); }
     .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; cursor: pointer; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--grey); transition: color 0.2s; }
     .modal-close:hover { color: var(--orange); }
     .modal-body { padding: 2rem 2.5rem; }
@@ -459,7 +458,7 @@
     .modal-read-link:hover { opacity: 0.9; box-shadow: 0 0 14px var(--orange-glow); }
 
     /* FAQ */
-    .faq-section { background: var(--white-alt); padding: 7rem 4rem; }
+    .faq-section { background: var(--white-alt); padding: 8.5rem 4rem; }
     .faq-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; }
     .faq-list { list-style: none; }
     .faq-item { border-bottom: 1px solid var(--rule-light); }
@@ -472,7 +471,7 @@
     .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 1.25rem; }
 
     /* CONTACT */
-    .contact-section { background: var(--black-deep); color: var(--white); text-align: center; padding: 10rem 4rem; position: relative; overflow: hidden; }
+    .contact-section { background: var(--black-deep); color: var(--white); text-align: center; padding: 12rem 4rem; position: relative; overflow: hidden; }
     .contact-atmos { position: absolute; inset: 0; pointer-events: none; z-index: 0; background: radial-gradient(ellipse at 50% -10%, rgba(0,212,184,0.05) 0%, transparent 50%); }
     .contact-section .section-label { color: var(--cyan); position: relative; z-index: 1; }
     .contact-title { font-family: var(--serif); font-size: clamp(2.8rem, 5.5vw, 5.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 0.98; margin-bottom: 1.5rem; color: var(--white); position: relative; z-index: 1; }
@@ -553,7 +552,7 @@
       .stat-item { flex: 1; }
       .stat-value { font-size: 1.6rem; }
       .stat-label { font-size: 0.55rem; letter-spacing: 0.1em; }
-      section { padding: 4rem 1.5rem; }
+      section { padding: 4.5rem 1.5rem; }
       .about { grid-template-columns: 1fr; gap: 2.5rem; }
       .section-label { font-size: 0.68rem; }
       .section-title { font-size: clamp(1.8rem, 7vw, 2.5rem); margin-bottom: 2rem; }
@@ -566,13 +565,13 @@
       #projects { padding: 4rem 1.5rem !important; }
       .project-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem; max-width: 100%; }
       .project-card-side { align-items: flex-start; text-align: left; }
-      .contact-section { padding: 6rem 1.5rem; }
+      .contact-section { padding: 7rem 1.5rem; }
       .contact-links { flex-direction: column; align-items: stretch; gap: 0.75rem; }
       .contact-links span,.contact-links a { min-width: unset !important; width: 100%; min-height: 48px; display: flex !important; align-items: center; justify-content: center; }
       .mobile-menu a { padding: 0.5rem 1rem; min-height: 48px; display: flex; align-items: center; }
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
       .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
-      .faq-section { padding: 4rem 1.5rem; }
+      .faq-section { padding: 4.5rem 1.5rem; }
       .faq-inner { grid-template-columns: 1fr; gap: 2rem; }
       .modal { max-height: 92vh; }
       .modal-header,.modal-body,.modal-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -648,14 +647,8 @@
       <div class="hero-atmos"></div>
       <div class="hero-grain"></div>
       <div class="hero-image-wrap">
-        <picture>
-          <source srcset="/photo2.webp" type="image/webp" />
-          <img src="/photo2.jpg" alt="Imo Babics, Chief Growth Officer and CMO, Bitcoin Europe" class="hero-image" id="hero-img" width="900" height="1200" style="opacity:0.95;" />
-        </picture>
-        <picture>
-          <source srcset="/photo.webp" type="image/webp" />
-          <img src="/photo.png" alt="Imo Babics speaking, Chief Growth Officer and CMO, Bitcoin Europe" class="hero-image" id="hero-img-2" width="900" height="1200" loading="lazy" />
-        </picture>
+        <img src="/photo2.jpg" alt="Imo Babics, Chief Growth Officer and CMO, Bitcoin Europe" class="hero-image" id="hero-img" width="900" height="1200" style="opacity:0.95;" />
+        <img src="/photo.png" alt="Imo Babics speaking, Chief Growth Officer and CMO, Bitcoin Europe" class="hero-image" id="hero-img-2" width="900" height="1200" loading="lazy" />
       </div>
       <div class="hero-stat-bar">
         <div class="stat-item">
@@ -761,7 +754,7 @@
   </section>
 
   <!-- WORK WITH ME -->
-  <section id="work-with-me" class="dark-section" style="padding: 7rem 4rem; background: var(--black-deep);">
+  <section id="work-with-me" class="dark-section" style="padding: 5rem 4rem 8.5rem; background: var(--black-deep); border-top: 1px solid rgba(255,255,255,0.05);">
     <div class="work-with-me">
       <p class="section-label reveal">Work With Me</p>
       <h2 class="section-title reveal">Ways to <em><span class="scramble-target">work together</span></em></h2>
@@ -1058,7 +1051,7 @@
           revealObserver.unobserve(el);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => revealObserver.observe(el));
 
     if (!prefersReducedMotion) {
