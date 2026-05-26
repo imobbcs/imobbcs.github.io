@@ -522,16 +522,17 @@
     .hero-left .quote-block { background: rgba(242,138,15,0.04); }
 
     /* PROJECT CARD */
-    .project-card { max-width: 100%; display: grid; grid-template-columns: 1fr 240px; gap: 3rem; align-items: end; background: var(--black-mid); color: var(--white); text-decoration: none; padding: 3rem 3.5rem; border: 1px solid rgba(0,212,184,0.12); position: relative; overflow: hidden; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; }
+    .project-card { max-width: 100%; display: flex; flex-direction: column; background: var(--black-mid); color: var(--white); text-decoration: none; padding: 3rem 3.5rem; border: 1px solid rgba(0,212,184,0.12); position: relative; overflow: hidden; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; }
     .project-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: linear-gradient(to bottom, var(--cyan), var(--orange)); transition: height 0.35s ease; }
     .project-card:hover { border-color: rgba(0,212,184,0.3); transform: translateY(-3px); box-shadow: 0 0 20px rgba(0,212,184,0.08); }
     .project-card:hover::before { height: 100%; }
     .project-card .writing-type { color: var(--cyan); margin-bottom: 1rem; }
     .project-card .writing-title { color: var(--white); font-size: 1.9rem; margin-bottom: 0.75rem; letter-spacing: -0.03em; }
     .project-card .writing-excerpt { color: rgba(242,242,240,0.58); font-size: 0.88rem; font-weight: 300; line-height: 1.75; }
-    .project-card-side { display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; text-align: right; }
-    .project-stack { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,212,184,0.1); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; color: rgba(242,242,240,0.28); }
-    .project-cta { margin-top: 1rem; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--cyan); text-shadow: 0 0 6px var(--cyan-glow); }
+    .project-card-main { flex: 1; }
+    .project-card-side { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,212,184,0.1); }
+    .project-stack { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; color: rgba(242,242,240,0.28); }
+    .project-cta { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--cyan); text-shadow: 0 0 6px var(--cyan-glow); white-space: nowrap; }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
@@ -563,8 +564,8 @@
       .writing-grid { grid-template-columns: 1fr; }
       .writing-card { padding: 1.5rem; }
       #projects { padding: 4rem 1.5rem !important; }
-      .project-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem; max-width: 100%; }
-      .project-card-side { align-items: flex-start; text-align: left; }
+      .project-card { padding: 1.75rem; }
+      .project-card-side { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
       .contact-section { padding: 7rem 1.5rem; }
       .contact-links { flex-direction: column; align-items: stretch; gap: 0.75rem; }
       .contact-links span,.contact-links a { min-width: unset !important; width: 100%; min-height: 48px; display: flex !important; align-items: center; justify-content: center; }
@@ -701,7 +702,7 @@
     <div class="tr-top-line"></div>
     <div style="max-width:1200px; margin:0 auto; position:relative; z-index:2;">
       <p class="section-label reveal">Track Record</p>
-      <h2 class="section-title reveal">Where I've <em>built things</em></h2>
+      <h2 class="section-title reveal">Companies I've <em><span class="scramble-target">grown.</span></em></h2>
       <div class="roles-grid reveal">
         <div class="role-card featured">
           <p class="role-period">2021 — Present</p>
@@ -758,7 +759,7 @@
     <div class="work-with-me">
       <p class="section-label reveal">Work With Me</p>
       <h2 class="section-title reveal">Ways to <em><span class="scramble-target">work together</span></em></h2>
-      <p class="reveal" style="font-size:1rem; color:rgba(242,242,240,0.4); max-width:52ch; line-height:1.7; margin-bottom:2rem;">Currently fully committed to Relai. The below reflects how I engage outside of my main role — selectively and when timing is right. <a href="#contact" style="color:var(--cyan);text-decoration:none;font-family:var(--mono);font-size:0.8em;letter-spacing:0.05em;">Get in touch →</a></p>
+      <p class="reveal" style="font-size:1rem; color:rgba(242,242,240,0.4); max-width:52ch; line-height:1.7; margin-bottom:2rem;">Currently fully committed to Relai. The below reflects how I engage outside of my main role — selectively and when timing is right. <a href="#contact" style="color:var(--cyan);text-decoration:none;font-family:var(--mono);font-size:0.8em;letter-spacing:0.05em;white-space:nowrap;">Get in touch →</a></p>
       <div class="services-grid reveal">
         <div class="service-card">
           <p class="service-icon">01 — Speaking</p>
