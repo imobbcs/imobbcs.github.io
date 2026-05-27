@@ -1,30 +1,35 @@
 # Imo Babics
-> Chief Growth Officer & CMO at Relai — Europe's leading MiCA-licensed Bitcoin-only self-custody app. 17 years in marketing, 8+ in Bitcoin. Specialist in Bitcoin adoption, European fintech growth, and regulated-market go-to-market strategy.
+
+> CGO & CMO at Relai, Europe's MiCA-licensed Bitcoin app. 17 years scaling growth, 8+ in Bitcoin. Based in Vienna. Helping European fintechs scale by balancing growth velocity with regulatory compliance.
 
 ## About
-Imo Babics (also Imrich Babics) is the Chief Growth Officer, CMO, and Managing Director of Relai's EU entity. Previously Head of Marketing at Bitpanda, where he scaled the platform from 100,000 to over 1 million users. Based in Vienna, Austria.
 
-## Key topics
-- Bitcoin adoption in Europe
-- MiCA regulation and compliant crypto marketing
-- Fintech growth and go-to-market strategy
-- App growth and user acquisition
-- Bitcoin as a savings product for European consumers
+Imo Babics (also known as Imrich Babics) is the Chief Growth Officer, Chief Marketing Officer, and Managing Director of the EU entity at Relai — a MiCA-licensed, Bitcoin-only self-custody app operating across DACH and Europe. Previously Head of Marketing at Bitpanda, where he scaled the platform from 100,000 to over 1 million users and built the marketing team from zero to seventeen people. Before fintech: a decade in media and entertainment working with Universal Pictures, Xbox, PlayStation, Microsoft, and Huawei.
 
-## Current role
-- Chief Growth Officer & CMO, Relai — https://relai.app
-- Managing Director, Relai EU entity
+## Pages
 
-## Writing & talks
-- [How MiCA Unlocked 450 Million Users](https://www.linkedin.com/pulse/bitcoins-european-moment-here-how-mica-unlocked-450-million-b%C3%A1bics-bzegf/) - LinkedIn
-- [Europeans Suck At Managing Their Finances. Bitcoin Fixes This.](https://bitcoinmagazine.com/culture/bitcoin-helps-european-fix-their-finances) - Bitcoin Magazine
-- [8 Things I Learned in Startups](https://www.linkedin.com/pulse/8-things-i-learned-from-years-startups-imrich-b%C3%A1bics-cyu2e/) - LinkedIn
-- [Bitcoin Growth in Europe — A Conversation](https://www.youtube.com/watch?v=NBGU5HD5mzE) - YouTube / Podcast
+- [Homepage](https://imobabics.com/): Full profile, track record, work history, principles, and contact.
+- [Writing](https://imobabics.com/#writing): Articles on Bitcoin adoption, European fintech, and startup growth.
+
+## Writing
+
+- [How MiCA Unlocked 450 Million Users](https://imobabics.com/writing/mica-450-million-users): Why Europe's regulatory framework is Bitcoin's biggest distribution unlock. MiCA's passporting framework gives licensed Bitcoin companies access to a single market of 450 million people for the first time. The real impact is not political — it is distributional. Published January 2026.
+
+- [Mercenaries vs. Missionaries](https://imobabics.com/writing/mercenaries-vs-missionaries): On mission-driven culture, drawing on contrasting experience at Bitpanda (hypergrowth, resource-rich) and Relai (Bitcoin-only, mission-driven). Culture determines whether growth compounds or corrodes. Published September 2023.
+
+- [8 Things I Learned from 8 Years in Startups](https://imobabics.com/writing/8-things-i-learned-in-startups): Eight lessons from scaling two of Europe's most significant fintech companies. Covers growth mindset, shipping fast, honest communication, hiring missionaries over mercenaries, user focus, focus as strategy, and accountability. Published January 2026.
+
+- [Europeans Suck At Managing Their Finances. Bitcoin Fixes This.](https://bitcoinmagazine.com/culture/bitcoin-helps-european-fix-their-finances): Published in Bitcoin Magazine. Why €1.2 trillion in European wealth sits idle in bank accounts — and how Bitcoin's fixed supply and long-term orientation can shift how Europeans think about money and savings.
 
 ## Projects
-- [whentobuybtc.xyz](https://whentobuybtc.xyz) - Bitcoin signal tool for European savers
+
+- [whentobuybtc.xyz](https://whentobuybtc.xyz): A Bitcoin signal tool for European savers. Combines Fear & Greed index, the 200-day moving average, and distance from all-time high into one clear, jargon-free signal.
+
+## Expertise
+
+Bitcoin adoption in Europe, MiCA regulation, Go-to-Market strategy for regulated fintech, growth marketing, startup scaling, Bitcoin marketing, European crypto regulation, app growth, cross-functional growth leadership.
 
 ## Contact
-- Website: https://imobabics.com/
-- LinkedIn: https://www.linkedin.com/in/imobabics/
+
 - Email: hello@imobabics.com
+- LinkedIn: https://www.linkedin.com/in/imobabics/
