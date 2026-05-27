@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8 Things I Learned from 8 Years in Startups — Imo Babics</title>
+  <meta name="description" content="Eight lessons from scaling two of Europe's most significant fintech companies — updated with two more years and harder-won perspective." />
+  <link rel="canonical" href="https://imobabics.com/writing/8-things-i-learned-in-startups" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://imobabics.com/writing/8-things-i-learned-in-startups" />
+  <meta property="og:title" content="8 Things I Learned from 8 Years in Startups — Imo Babics" />
+  <meta property="og:description" content="Eight lessons from scaling two of Europe's most significant fintech companies — updated with two more years and harder-won perspective." />
+  <meta property="og:image" content="https://imobabics.com/photo.png" />
+  <meta property="og:site_name" content="Imo Babics" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="8 Things I Learned from 8 Years in Startups — Imo Babics" />
+  <meta name="twitter:description" content="Eight lessons from scaling two of Europe's most significant fintech companies — updated with two more years and harder-won perspective." />
+  <meta name="twitter:image" content="https://imobabics.com/photo.png" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "8 Things I Learned from 8 Years in Startups",
+    "description": "Eight lessons from scaling two of Europe's most significant fintech companies — updated with two more years and harder-won perspective.",
+    "author": {
+      "@type": "Person",
+      "name": "Imo Babics",
+      "url": "https://imobabics.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Imo Babics",
+      "url": "https://imobabics.com"
+    },
+    "datePublished": "2026-01-16",
+    "url": "https://imobabics.com/writing/8-things-i-learned-in-startups",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://imobabics.com/writing/8-things-i-learned-in-startups"
+    }
+  }
+  </script>
+
+  <script defer src="https://umami-orange.up.railway.app/script.js" data-website-id="6cdefbd5-f79d-4458-ac67-58eef9faed54"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;800&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --orange: #E55B13;
+      --orange-glow: rgba(229,91,19,0.55);
+      --cyan: #00D4B8;
+      --cyan-glow: rgba(0,212,184,0.5);
+      --black-deep: #0B0F19;
+      --black-mid: #111622;
+      --white: #F2F2F0;
+      --grey: #8E9196;
+      --rule: rgba(255,255,255,0.06);
+      --serif: 'Sora', sans-serif;
+      --mono: 'Share Tech Mono', monospace;
+    }
+    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black-deep);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 110;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 4rem;
+      background: rgba(11,15,25,0.88);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav-logo {
+      font-family: var(--mono); font-size: 0.8rem;
+      letter-spacing: 0.15em; color: var(--white);
+      text-decoration: none; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-logo:hover { color: var(--cyan); }
+    .nav-back {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(242,242,240,0.3); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--orange); }
+
+    /* ARTICLE LAYOUT */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    .article-label {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: var(--serif); font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
+      color: var(--white); margin-bottom: 2rem;
+    }
+    .article-meta {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.08em; color: rgba(242,242,240,0.28);
+      display: flex; align-items: center; gap: 0.6rem;
+      flex-wrap: wrap; padding-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+      text-transform: uppercase;
+    }
+    .article-meta a { color: rgba(242,242,240,0.35); text-decoration: none; transition: color 0.2s; }
+    .article-meta a:hover { color: var(--orange); }
+    .article-sep { opacity: 0.25; }
+
+    /* BODY */
+    .article-body { padding-top: 3rem; }
+    .article-body p {
+      font-size: 1.05rem; font-weight: 300;
+      color: rgba(242,242,240,0.75); line-height: 1.9;
+      margin-bottom: 1.75rem;
+    }
+    .article-body h2 {
+      font-family: var(--serif); font-size: 1.35rem; font-weight: 800;
+      letter-spacing: -0.02em; color: var(--white);
+      margin-top: 3.5rem; margin-bottom: 1rem;
+      display: flex; align-items: baseline; gap: 0.85rem;
+    }
+    .lesson-num {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; color: var(--cyan);
+      font-weight: 400; flex-shrink: 0;
+    }
+    .article-body blockquote {
+      border-left: 2px solid var(--orange);
+      padding: 1rem 1.75rem;
+      margin: 2rem 0;
+      background: rgba(229,91,19,0.04);
+    }
+    .article-body blockquote p {
+      color: rgba(242,242,240,0.6) !important;
+      font-style: italic;
+      font-size: 1rem !important;
+      margin-bottom: 0 !important;
+    }
+    .article-body a {
+      color: var(--cyan); text-decoration: none;
+      border-bottom: 1px solid rgba(0,212,184,0.3);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .article-body a:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+    /* ARTICLE FOOTER */
+    .article-footer {
+      margin-top: 5rem; padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .back-link {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(242,242,240,0.3); text-decoration: none;
+      border-bottom: none !important; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--orange); border-bottom: none !important; }
+    .linkedin-link {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--cyan); text-decoration: none;
+      border-bottom: none !important; transition: color 0.2s;
+    }
+    .linkedin-link:hover { color: var(--orange); border-bottom: none !important; }
+
+    /* BYLINE CARD */
+    .byline-card {
+      margin-top: 4rem; padding: 2rem 2.25rem;
+      border: 1px solid rgba(0,212,184,0.1);
+      background: rgba(0,212,184,0.03);
+    }
+    .byline-name {
+      font-family: var(--serif); font-size: 1rem; font-weight: 800;
+      color: var(--white); margin-bottom: 0.35rem; letter-spacing: -0.01em;
+    }
+    .byline-desc {
+      font-size: 0.82rem; font-weight: 300;
+      color: rgba(242,242,240,0.4); line-height: 1.65; margin-bottom: 0.75rem;
+    }
+    .byline-link {
+      font-family: var(--mono); font-size: 0.6rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--cyan); text-decoration: none;
+      border-bottom: none !important; transition: color 0.2s;
+    }
+    .byline-link:hover { color: var(--orange); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      main { padding: 7.5rem 1.5rem 4rem; }
+      h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+      .article-body p { font-size: 1rem; }
+      .article-footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://imobabics.com" class="nav-logo">Imo Babics</a>
+    <a href="https://imobabics.com/#writing" class="nav-back">← Writing</a>
+  </nav>
+
+  <main>
+    <article>
+
+      <p class="article-label">Article</p>
+      <h1>8 Things I Learned from 8 Years in Startups</h1>
+      <div class="article-meta">
+        <span>By <a href="https://imobabics.com">Imo Babics</a></span>
+        <span class="article-sep">·</span>
+        <span>16 January 2026</span>
+        <span class="article-sep">·</span>
+        <span>Originally on <a href="https://www.linkedin.com/pulse/8-things-i-learned-from-years-startups-imrich-b%C3%A1bics-cyu2e/" target="_blank" rel="noopener">LinkedIn</a></span>
+      </div>
+
+      <div class="article-body">
+
+        <p>Two years ago, I wrote a post called "6 Things I Learned from 6 Years in Startups." At the time, it reflected where I was in my journey and the lessons that felt most important back then.</p>
+
+        <p>Since then, I have two more years under my belt. Those two years turned out to be some of the most formative ones. Not because they were easier, but because they forced me to rethink a few assumptions I thought were already settled.</p>
+
+        <p>Rather than rewriting the original post, I decided to build on it. Many of the lessons still hold. A few needed refinement. And two new ones only became clear with more time and perspective.</p>
+
+        <p>So here is the updated version.</p>
+
+        <h2><span class="lesson-num">01</span> Develop a growth mindset</h2>
+
+        <p>Startups are all about learning and adapting. In this environment, having a growth mindset is crucial. But what exactly is a growth mindset? It is often described as the belief that abilities and intelligence can be developed through dedication and hard work. Or you could say it is like being stubborn but open-minded at the same time. Stubborn in your determination to improve and grow, yet open-minded enough to learn from mistakes and feedback.</p>
+
+        <p>Over time, I also learned that a real growth mindset is not just about learning new things faster. It is about being willing to unlearn approaches that once worked but no longer do. Mistakes are not failures but stepping stones, and a growth mindset helps you turn obstacles into opportunities.</p>
+
+        <h2><span class="lesson-num">02</span> Don't let perfect be the enemy of good enough</h2>
+
+        <p>One of the biggest takeaways from my startup experiences is the importance of rapid iteration and moving fast. In the startup world, speed is your friend, especially early on. The ability to quickly learn from mistakes and make necessary adjustments is key to finding product-market fit and staying ahead of the competition.</p>
+
+        <p>Perfection is the enemy of progress. It is better to launch an MVP with flaws and iterate based on feedback than to wait endlessly for perfection. You cannot steer a parked car. At the same time, I have learned that speed without direction can become dangerous later on, especially when you start scaling the wrong things.</p>
+
+        <h2><span class="lesson-num">03</span> Embrace the suck</h2>
+
+        <p>Startups are unpredictable at best and chaotic at worst. Leading in such an environment means being comfortable with uncertainty and constantly balancing between success and failure while making tough decisions with limited information.</p>
+
+        <p>It is about guiding your company with resilience and determination. The ability to inspire and motivate your team, even when things feel messy or unclear, is what sets strong leaders apart. Over time, I also learned that not all pain is productive. Part of leadership is knowing which struggles are part of growth and which are warning signs that something needs to change.</p>
+
+        <h2><span class="lesson-num">04</span> Honest conversations matter</h2>
+
+        <p>Clear and honest communication is vital. Good communication means being transparent and sometimes very direct to ensure everyone is aligned and working towards the same goal. A quote that still resonates with me:</p>
+
+        <blockquote>
+          <p>"The single biggest problem in communication is the illusion that it has taken place."</p>
+        </blockquote>
+
+        <p>Clear, concise, and honest communication builds trust and alignment. Sometimes this means having uncomfortable conversations, but a bruised ego is better than a broken team. As a leader, I also learned that honesty without psychological safety does not work. It is your responsibility to make it safe for people to speak up and tell the truth.</p>
+
+        <h2><span class="lesson-num">05</span> Hire missionaries over mercenaries</h2>
+
+        <p>Culture really does matter. A strong culture is vital for attracting and retaining the right people. It is about creating an environment where employees feel ownership and responsibility, not about perks or surface-level benefits. I expand on this in <a href="/writing/mercenaries-vs-missionaries">Mercenaries vs. Missionaries</a>.</p>
+
+        <p>Having people who are missionaries for the mission, not just mercenaries chasing the next pay cheque, makes a massive difference. Missionaries are not naive or idealistic. They are simply aligned for the long term. A cohesive culture built on shared values and motivation is one of the strongest foundations a startup can have.</p>
+
+        <h2><span class="lesson-num">06</span> Don't ignore your users</h2>
+
+        <p>Keeping the user at the centre of all business decisions is crucial. Startups exist to solve real problems, and that only works if you listen closely to the people you are building for.</p>
+
+        <p>Talking to users, providing great support, and continuously gathering feedback helps you improve the product in meaningful ways. Being user-focused does not mean building every feature users ask for. It means understanding the underlying problem behind their requests and solving that well. As Jeff Bezos said: "We're not competitor obsessed, we're customer obsessed. We start with what the customer needs and we work backwards."</p>
+
+        <h2><span class="lesson-num">07</span> Focus is a strategy, not a lack of ambition</h2>
+
+        <p>Earlier in my career, I believed strong leaders did more. More initiatives, more channels, more experiments. Over time, I learned the opposite. Focus is not about limiting ambition — it is about directing it.</p>
+
+        <blockquote>
+          <p>"It's only by saying no that you can concentrate on the things that are really important." — Steve Jobs</p>
+        </blockquote>
+
+        <p>Saying no is a superpower — it is often harder than saying yes, especially when there are many good ideas on the table. Focus means choosing what truly matters and accepting that some people will be disappointed. But clarity and consistency compound, while distraction quietly erodes progress.</p>
+
+        <h2><span class="lesson-num">08</span> Accountability is visible — especially when it's missing</h2>
+
+        <p>One of the hardest lessons I learned in startups is that accountability isn't what leaders say — it's what everyone else sees. You don't lose credibility because of bad intentions; you lose it when underperformance isn't addressed, or worse, when it's quietly rewarded.</p>
+
+        <p>People pay close attention to what happens when results fall short. If missed goals have no consequences, or poor execution is tolerated, the message is clear: standards are optional. That signal spreads faster than any values statement ever could.</p>
+
+        <p>Accountability shapes culture in moments of discomfort. When leaders hold the line — fairly and consistently — teams trust the system. When they don't, performance erodes, resentment builds, and high performers eventually disengage. What you tolerate, and what you reward, tells everyone exactly what really matters.</p>
+
+        <p>To make it in startups as a leader, you need to be adaptable, resilient, and focused on creating real value. But most importantly, don't forget to have fun. There will always be frustrations along the way, but if you are mostly not enjoying the journey, something is probably off. Life is too short to spend it in the wrong environment.</p>
+
+      </div>
+
+      <div class="byline-card">
+        <div>
+          <p class="byline-name">Imo Babics</p>
+          <p class="byline-desc">CGO &amp; CMO at Relai, Europe's MiCA-licensed Bitcoin app. 17 years scaling growth, 8+ in Bitcoin.</p>
+          <a href="https://imobabics.com" class="byline-link">imobabics.com →</a>
+        </div>
+      </div>
+
+      <div class="article-footer">
+        <a href="https://imobabics.com/#writing" class="back-link">← All writing</a>
+        <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="linkedin-link">Connect on LinkedIn →</a>
+      </div>
+
+    </article>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercenaries vs. Missionaries — Imo Babics</title>
+  <meta name="description" content="What two years at Bitpanda and two years at Relai taught me about mission, culture, and the kind of company worth building." />
+  <link rel="canonical" href="https://imobabics.com/writing/mercenaries-vs-missionaries" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://imobabics.com/writing/mercenaries-vs-missionaries" />
+  <meta property="og:title" content="Mercenaries vs. Missionaries — Imo Babics" />
+  <meta property="og:description" content="What two years at Bitpanda and two years at Relai taught me about mission, culture, and the kind of company worth building." />
+  <meta property="og:image" content="https://imobabics.com/photo.png" />
+  <meta property="og:site_name" content="Imo Babics" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mercenaries vs. Missionaries — Imo Babics" />
+  <meta name="twitter:description" content="What two years at Bitpanda and two years at Relai taught me about mission, culture, and the kind of company worth building." />
+  <meta name="twitter:image" content="https://imobabics.com/photo.png" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Mercenaries vs. Missionaries",
+    "description": "What two years at Bitpanda and two years at Relai taught me about mission, culture, and the kind of company worth building.",
+    "author": {
+      "@type": "Person",
+      "name": "Imo Babics",
+      "url": "https://imobabics.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Imo Babics",
+      "url": "https://imobabics.com"
+    },
+    "datePublished": "2023-09-29",
+    "url": "https://imobabics.com/writing/mercenaries-vs-missionaries",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://imobabics.com/writing/mercenaries-vs-missionaries"
+    }
+  }
+  </script>
+
+  <script defer src="https://umami-orange.up.railway.app/script.js" data-website-id="6cdefbd5-f79d-4458-ac67-58eef9faed54"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;800&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --orange: #E55B13;
+      --orange-glow: rgba(229,91,19,0.55);
+      --cyan: #00D4B8;
+      --cyan-glow: rgba(0,212,184,0.5);
+      --black-deep: #0B0F19;
+      --black-mid: #111622;
+      --white: #F2F2F0;
+      --grey: #8E9196;
+      --rule: rgba(255,255,255,0.06);
+      --serif: 'Sora', sans-serif;
+      --mono: 'Share Tech Mono', monospace;
+    }
+    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black-deep);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 110;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 4rem;
+      background: rgba(11,15,25,0.88);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav-logo {
+      font-family: var(--mono); font-size: 0.8rem;
+      letter-spacing: 0.15em; color: var(--white);
+      text-decoration: none; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-logo:hover { color: var(--cyan); }
+    .nav-back {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(242,242,240,0.3); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--orange); }
+
+    /* ARTICLE LAYOUT */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    .article-label {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: var(--serif); font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
+      color: var(--white); margin-bottom: 2rem;
+    }
+    .article-meta {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.08em; color: rgba(242,242,240,0.28);
+      display: flex; align-items: center; gap: 0.6rem;
+      flex-wrap: wrap; padding-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+      text-transform: uppercase;
+    }
+    .article-meta a { color: rgba(242,242,240,0.35); text-decoration: none; transition: color 0.2s; }
+    .article-meta a:hover { color: var(--orange); }
+    .article-sep { opacity: 0.25; }
+
+    /* BODY */
+    .article-body { padding-top: 3rem; }
+    .article-body p {
+      font-size: 1.05rem; font-weight: 300;
+      color: rgba(242,242,240,0.75); line-height: 1.9;
+      margin-bottom: 1.75rem;
+    }
+    .article-body h2 {
+      font-family: var(--serif); font-size: 1.45rem; font-weight: 800;
+      letter-spacing: -0.02em; color: var(--white);
+      margin-top: 3.5rem; margin-bottom: 1.25rem;
+    }
+    .article-body a {
+      color: var(--cyan); text-decoration: none;
+      border-bottom: 1px solid rgba(0,212,184,0.3);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .article-body a:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+    /* ARTICLE FOOTER */
+    .article-footer {
+      margin-top: 5rem; padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .back-link {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(242,242,240,0.3); text-decoration: none;
+      border-bottom: none !important; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--orange); }
+    .linkedin-link {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--cyan); text-decoration: none;
+      border-bottom: none !important; transition: color 0.2s;
+    }
+    .linkedin-link:hover { color: var(--orange); }
+
+    /* BYLINE CARD */
+    .byline-card {
+      margin-top: 4rem; padding: 2rem 2.25rem;
+      border: 1px solid rgba(0,212,184,0.1);
+      background: rgba(0,212,184,0.03);
+    }
+    .byline-name {
+      font-family: var(--serif); font-size: 1rem; font-weight: 800;
+      color: var(--white); margin-bottom: 0.35rem; letter-spacing: -0.01em;
+    }
+    .byline-desc {
+      font-size: 0.82rem; font-weight: 300;
+      color: rgba(242,242,240,0.4); line-height: 1.65; margin-bottom: 0.75rem;
+    }
+    .byline-link {
+      font-family: var(--mono); font-size: 0.6rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--cyan); text-decoration: none;
+      border-bottom: none !important; transition: color 0.2s;
+    }
+    .byline-link:hover { color: var(--orange); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      main { padding: 7.5rem 1.5rem 4rem; }
+      h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+      .article-body p { font-size: 1rem; }
+      .article-footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://imobabics.com" class="nav-logo">Imo Babics</a>
+    <a href="https://imobabics.com/#writing" class="nav-back">← Writing</a>
+  </nav>
+
+  <main>
+    <article>
+
+      <p class="article-label">Article</p>
+      <h1>Mercenaries vs. Missionaries</h1>
+      <div class="article-meta">
+        <span>By <a href="https://imobabics.com">Imo Babics</a></span>
+        <span class="article-sep">·</span>
+        <span>29 September 2023</span>
+        <span class="article-sep">·</span>
+        <span>Originally on <a href="https://www.linkedin.com/pulse/mercenaries-vs-missionaries-imo-b%C3%A1bics" target="_blank" rel="noopener">LinkedIn</a></span>
+      </div>
+
+      <div class="article-body">
+
+        <p>It occurred to me recently that I'm in a fairly rare group of people who've had the privilege of working at both ends of the "Crypto vs. Bitcoin" spectrum.</p>
+
+        <p>I spent two years at Bitpanda, Europe's largest crypto/web3 platform at the time, and later two years at Relai, Europe's largest Bitcoin-only startup.</p>
+
+        <p>The contrast between those two worlds shaped how I think about growth, culture, and leadership. I thought it might be worth sharing what I learned.</p>
+
+        <h2>My crypto beginnings</h2>
+
+        <p>I joined Bitpanda as employee #30 and their first Head of Marketing. From day one, everything ran on fast-forward. The energy was intoxicating. We felt like we were building the future of finance — and in many ways, we were.</p>
+
+        <p>Resources weren't a problem. The company scaled incredibly fast, moving from startup to hypergrowth scale-up in a very short time. But that speed came at a cost.</p>
+
+        <p>Growth outpaced structure. Roles blurred, communication suffered, stress piled up, and culture became harder to hold together. At the time, I didn't fully understand it — but this is often the price of massive growth.</p>
+
+        <p>After two years, I burned out and decided to leave. Still, I learned more in that role than in almost any other job: how to adapt quickly, how to operate under pressure, how to pivot strategy fast — and, importantly, what kind of leader I wanted to become.</p>
+
+        <p>It also clarified something else for me: I wanted to stay in this industry, but work for a company whose values and incentives aligned more closely with my own.</p>
+
+        <p>Many large crypto platforms succeed by offering as much choice as possible. From a business perspective, that makes sense: transaction volume scales revenue. But structurally, this often shifts the focus from long-term outcomes for users toward short-term activity and speculation.</p>
+
+        <p>Over time, that incentive mismatch started to matter to me more than the excitement of rapid growth.</p>
+
+        <h2>From a mercenary to a missionary</h2>
+
+        <p>Joining Relai felt like moving from a cosmopolitan department store to a specialised boutique.</p>
+
+        <p>Bitcoin-only isn't just a product decision — it's a conviction. A belief that Bitcoin is best understood as long-term savings (digital gold, if you will), and as a tool for greater financial autonomy. That clarity changes everything: product decisions, marketing, hiring, and culture. (<a href="https://www.linkedin.com/pulse/relai-isnt-europes-easiest-bitcoin-app-anymore-imo-b%C3%A1bics/" target="_blank" rel="noopener">I expand on this here</a>.)</p>
+
+        <p>A strong mission attracts a specific kind of person. At Relai, hiring isn't about scaling headcount quickly — it's about finding people who genuinely align with the purpose. The difference between missionaries and mercenaries isn't about talent; it's about motivation.</p>
+
+        <p>Constraints played an unexpected role too. Smaller teams and tighter budgets forced us to prioritise relentlessly. Focus stopped being a buzzword and became a survival skill. We let go of distractions and doubled down on what actually drives sustainable growth.</p>
+
+        <p>As a leader, this environment reinforced something I strongly believe in: trust beats control. I always disliked micromanagement — it signals a lack of trust and kills ownership. Instead, I aim to create clarity, empower people to own their domains, and focus my energy on direction rather than supervision.</p>
+
+        <h2>The bigger lesson</h2>
+
+        <p>What I truly learned at Relai is how fragile culture is and how essential it becomes as a company grows.</p>
+
+        <p>Speed teaches you execution. Constraints teach you judgment. But culture determines whether growth compounds or corrodes.</p>
+
+        <p>Different stages require different people, different skills, and different leadership styles. Experiencing both ends of that spectrum helped me understand where I do my best work and what kind of game I actually want to play.</p>
+
+        <p>At the end of the day, leadership isn't about chasing growth at all costs. It's about choosing which costs you're willing to pay.</p>
+
+      </div>
+
+      <div class="byline-card">
+        <div>
+          <p class="byline-name">Imo Babics</p>
+          <p class="byline-desc">CGO &amp; CMO at Relai, Europe's MiCA-licensed Bitcoin app. 17 years scaling growth, 8+ in Bitcoin.</p>
+          <a href="https://imobabics.com" class="byline-link">imobabics.com →</a>
+        </div>
+      </div>
+
+      <div class="article-footer">
+        <a href="https://imobabics.com/#writing" class="back-link">← All writing</a>
+        <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" class="linkedin-link">Connect on LinkedIn →</a>
+      </div>
+
+    </article>
+  </main>
+
+</body>
+</html>
