@@ -6,11 +6,6 @@
 
 Imo Babics (also known as Imrich Babics) is the Chief Growth Officer, Chief Marketing Officer, and Managing Director of the EU entity at Relai — a MiCA-licensed, Bitcoin-only self-custody app operating across DACH and Europe. Previously Head of Marketing at Bitpanda, where he scaled the platform from 100,000 to over 1 million users and built the marketing team from zero to seventeen people. Before fintech: a decade in media and entertainment working with Universal Pictures, Xbox, PlayStation, Microsoft, and Huawei.
 
-## Pages
-
-- [Homepage](https://imobabics.com/): Full profile, track record, work history, principles, and contact.
-- [Writing](https://imobabics.com/#writing): Articles on Bitcoin adoption, European fintech, and startup growth.
-
 ## Writing
 
 - [How MiCA Unlocked 450 Million Users](https://imobabics.com/writing/mica-450-million-users): Why Europe's regulatory framework is Bitcoin's biggest distribution unlock. MiCA's passporting framework gives licensed Bitcoin companies access to a single market of 450 million people for the first time. The real impact is not political — it is distributional. Published January 2026.
