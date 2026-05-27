@@ -431,32 +431,6 @@
     .writing-excerpt { font-size: 0.82rem; font-weight: 300; color: var(--grey); line-height: 1.75; }
     .writing-card-cta { margin-top: 1.25rem; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); opacity: 0.7; }
 
-    /* MODAL */
-    .modal-overlay {
-      position: fixed; inset: 0; z-index: 500;
-      background: rgba(6,8,16,0.88); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-      display: flex; align-items: center; justify-content: center; padding: 2rem;
-      opacity: 0; visibility: hidden; pointer-events: none;
-      transition: opacity 0.3s ease, visibility 0s linear 0.3s;
-    }
-    .modal-overlay.open { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 0.3s ease, visibility 0s linear 0s; }
-    .modal { background: var(--white); max-width: 680px; width: 100%; max-height: 85vh; overflow-y: auto; position: relative; transform: translateY(16px); transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
-    .modal-overlay.open .modal { transform: translateY(0); }
-    .modal-header { padding: 2.5rem 2.5rem 1.5rem; border-bottom: 1px solid var(--rule-light); position: sticky; top: 0; background: var(--white); z-index: 2; }
-    .modal-type { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.4rem; }
-    .modal-source { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.75rem; opacity: 0.75; }
-    .modal-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; color: var(--black); }
-    .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; cursor: pointer; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--grey); transition: color 0.2s; }
-    .modal-close:hover { color: var(--orange); }
-    .modal-body { padding: 2rem 2.5rem; }
-    .modal-summary-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; }
-    .modal-summary { font-size: 0.95rem; font-weight: 300; color: #383838; line-height: 1.85; }
-    .modal-summary p { margin-bottom: 1rem; }
-    .modal-summary p:last-child { margin-bottom: 0; }
-    .modal-footer { padding: 1.5rem 2.5rem 2.5rem; border-top: 1px solid var(--rule-light); }
-    .modal-read-link { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); background: var(--orange); text-decoration: none; padding: 0.8rem 1.75rem; display: inline-block; transition: opacity 0.2s, box-shadow 0.2s; }
-    .modal-read-link:hover { opacity: 0.9; box-shadow: 0 0 14px var(--orange-glow); }
-
     /* FAQ */
     .faq-section { background: var(--white-alt); padding: 8.5rem 4rem; }
     .faq-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; }
@@ -574,8 +548,6 @@
       .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
       .faq-section { padding: 4.5rem 1.5rem; }
       .faq-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .modal { max-height: 92vh; }
-      .modal-header,.modal-body,.modal-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
       .pub-bar { gap: 1rem; flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 390px) {
@@ -793,80 +765,56 @@
       <span class="pub-bar-label">Published in</span>
       <ul class="pub-bar-links">
         <li><a href="https://bitcoinmagazine.com/culture/bitcoin-helps-european-fix-their-finances" target="_blank" rel="noopener" data-umami-event="pubbar-bitcoin-magazine">Imo Babics in Bitcoin Magazine</a></li>
-        <li><a href="https://www.linkedin.com/pulse/bitcoins-european-moment-here-how-mica-unlocked-450-million-b%C3%A1bics-bzegf/" target="_blank" rel="noopener" data-umami-event="pubbar-mica-linkedin">MiCA & 450M Users — LinkedIn</a></li>
+        <li><a href="/writing/mica-450-million-users" data-umami-event="pubbar-mica">MiCA & 450M Users</a></li>
         <li><a href="https://www.youtube.com/watch?v=NBGU5HD5mzE" target="_blank" rel="noopener" data-umami-event="pubbar-podcast">Bitcoin Growth in Europe — Podcast</a></li>
       </ul>
     </div>
 
     <div class="writing-grid">
-      <div class="writing-card reveal" role="button" tabindex="0"
-        data-type="Article"
-        data-source="LinkedIn"
-        data-title="How MiCA Unlocked 450 Million Users"
-        data-url="https://www.linkedin.com/pulse/bitcoins-european-moment-here-how-mica-unlocked-450-million-b%C3%A1bics-bzegf/"
-        data-summary="&lt;p&gt;For years, Bitcoin in Europe wasn't constrained by demand — it was constrained by distribution. European consumers were interested, but they lacked compliant, trustworthy access. The real barrier was regulatory fragmentation: before MiCA, even fully licensed Bitcoin companies were trapped in a patchwork of 27 separate legal environments, unable to market across borders.&lt;/p&gt;&lt;p&gt;MiCA changed this by introducing passporting for crypto assets — one licence, one compliance framework, one market of 450 million people. The article argues that most discussions about MiCA miss its true significance: it isn't about the rules themselves, it's about the distribution channel those rules unlock.&lt;/p&gt;&lt;p&gt;There's a genuine tension here. The Travel Rule ends anonymous interactions with regulated entities — a real concession from the cypherpunk ideal. But the mass market doesn't ask 'will the government see my transaction?' It asks 'is this safe enough for my family's savings?' MiCA sacrifices some early-adopter freedom to deliver exactly that. The next phase of Bitcoin in Europe will be driven not by hype, but by boring, compliant, long-term saving behaviour. That's how financial technologies become essential.&lt;/p&gt;"
+      <a href="/writing/mica-450-million-users" class="writing-card reveal"
         data-umami-event="article-mica-450m">
         <p class="writing-type">Article</p>
-        <p class="writing-source">LinkedIn</p>
+        <p class="writing-source">imobabics.com</p>
         <h3 class="writing-title">How MiCA Unlocked 450 Million Users</h3>
         <p class="writing-excerpt">Why Europe's regulatory framework is Bitcoin's biggest tailwind — and why most operators are too scared to use it.</p>
-        <p class="writing-card-cta">Read summary →</p>
-      </div>
+        <p class="writing-card-cta">Read article →</p>
+      </a>
 
-      <div class="writing-card reveal" role="button" tabindex="0"
-        data-type="Article"
-        data-source="LinkedIn"
-        data-title="8 Things I Learned in Startups"
-        data-url="https://www.linkedin.com/pulse/8-things-i-learned-from-years-startups-imrich-b%C3%A1bics-cyu2e/"
-        data-summary="&lt;p&gt;Eight lessons from scaling two of Europe's most significant fintech companies — the kind that only become clear in hindsight.&lt;/p&gt;&lt;p&gt;The piece covers developing a growth mindset that includes &lt;em&gt;unlearning&lt;/em&gt; what no longer works; shipping imperfect things fast rather than waiting for perfection; and leading through genuine chaos without mistaking all discomfort for growth. It makes a strong case for honest communication — the illusion that communication has taken place is one of the most destructive forces in any organisation.&lt;/p&gt;&lt;p&gt;The article also argues for hiring missionaries over mercenaries: people aligned to the mission long-term, not just the next pay cheque. And it closes with two harder lessons: focus is a strategy, not a limitation — saying no compounds over time — and accountability is only real when it's visible, especially when it's missing. What you tolerate tells your team exactly what actually matters.&lt;/p&gt;"
+      <a href="/writing/8-things-i-learned-in-startups" class="writing-card reveal"
         data-umami-event="article-8-lessons">
         <p class="writing-type">Article</p>
-        <p class="writing-source">LinkedIn</p>
+        <p class="writing-source">imobabics.com</p>
         <h3 class="writing-title">8 Things I Learned in Startups</h3>
         <p class="writing-excerpt">Lessons from scaling two of Europe's most significant fintech companies. The stuff no one tells you before you're already in it.</p>
-        <p class="writing-card-cta">Read summary →</p>
-      </div>
+        <p class="writing-card-cta">Read article →</p>
+      </a>
 
-      <div class="writing-card reveal" role="button" tabindex="0"
-        data-type="Article"
-        data-source="Bitcoin Magazine"
-        data-title="Europeans Suck At Managing Their Finances. Bitcoin Fixes This."
-        data-url="https://bitcoinmagazine.com/culture/bitcoin-helps-european-fix-their-finances"
-        data-summary="&lt;p&gt;European savers are leaving an estimated €1.2 trillion on the table by keeping money in bank accounts rather than investing — despite persistent inflation. Only 17% of Europeans owned Bitcoin in 2021, and stock ownership rates are similarly low compared to the US.&lt;/p&gt;&lt;p&gt;The article traces why: a generation shaped by the 2008 crash, 30-year mortgages, precarious employment, poor financial literacy, and a tendency toward short-term thinking. Europeans don't distrust Bitcoin specifically — they distrust the entire financial system, often with good reason.&lt;/p&gt;&lt;p&gt;Bitcoin's role here isn't just as an asset — it's as a mindset shift. Its fixed supply and long-term orientation naturally cultivates lower time preference: saving over spending, thinking before doing, building rather than consuming. Price volatility, often cited as Bitcoin's flaw for conservative savers, is actually part of the mechanism that retrains how people think about money and time.&lt;/p&gt;"
+      <a href="https://bitcoinmagazine.com/culture/bitcoin-helps-european-fix-their-finances" target="_blank" rel="noopener" class="writing-card reveal"
         data-umami-event="article-bitcoin-magazine">
         <p class="writing-type">Article</p>
         <p class="writing-source">Bitcoin Magazine</p>
         <h3 class="writing-title">Europeans Suck At Managing Their Finances. Bitcoin Fixes This.</h3>
         <p class="writing-excerpt">Why €1.2 trillion in European wealth is sitting idle in bank accounts — and why Bitcoin is the most powerful fix hiding in plain sight.</p>
-        <p class="writing-card-cta">Read summary →</p>
-      </div>
+        <p class="writing-card-cta">Read on Bitcoin Magazine →</p>
+      </a>
 
-      <div class="writing-card reveal" role="button" tabindex="0"
-        data-type="Article"
-        data-source="LinkedIn"
-        data-title="Mercenaries vs. Missionaries"
-        data-url="https://www.linkedin.com/pulse/mercenaries-vs-missionaries-imo-b%C3%A1bics"
-        data-summary="&lt;p&gt;One of the most important distinctions in building a company: the difference between people who show up for the pay cheque and people who show up for the mission. Missionaries aren't naive idealists — they're simply aligned for the long term.&lt;/p&gt;&lt;p&gt;Drawing on contrasting experiences at Bitpanda (hypergrowth, resource-rich, fast-moving) and Relai (Bitcoin-only, constrained, mission-driven), the article argues that the type of people a company attracts is a direct function of the clarity of its mission. A strong conviction attracts a specific kind of person. A vague or purely commercial mission attracts a different kind.&lt;/p&gt;&lt;p&gt;The practical implication: culture isn't built through perks or values posters. It's built through the gap between what you say matters and what you actually reward. Missionaries notice that gap immediately — and either close it or leave.&lt;/p&gt;"
+      <a href="/writing/mercenaries-vs-missionaries" class="writing-card reveal"
         data-umami-event="article-mercenaries">
         <p class="writing-type">Article</p>
-        <p class="writing-source">LinkedIn</p>
+        <p class="writing-source">imobabics.com</p>
         <h3 class="writing-title">Mercenaries vs. Missionaries</h3>
         <p class="writing-excerpt">The difference between people who work for a company and people who work for a mission. It changes everything about how you build.</p>
-        <p class="writing-card-cta">Read summary →</p>
-      </div>
+        <p class="writing-card-cta">Read article →</p>
+      </a>
 
-      <div class="writing-card reveal" role="button" tabindex="0"
-        data-type="Podcast"
-        data-source="YouTube"
-        data-title="Bitcoin Growth in Europe — A Conversation"
-        data-url="https://www.youtube.com/watch?v=NBGU5HD5mzE"
+      <a href="https://www.youtube.com/watch?v=NBGU5HD5mzE" target="_blank" rel="noopener" class="writing-card reveal"
         data-umami-event="podcast-youtube">
         <p class="writing-type">Podcast</p>
         <p class="writing-source">YouTube</p>
         <h3 class="writing-title">Bitcoin Growth in Europe — A Conversation</h3>
         <p class="writing-excerpt">On scaling Bitcoin adoption across regulated EU markets, what MiCA actually means for operators, and why most companies get European growth wrong.</p>
         <p class="writing-card-cta">Watch →</p>
-      </div>
+      </a>
 
       <div class="writing-card reveal" style="cursor:default; opacity:0.5;">
         <p class="writing-type">Talk</p>
@@ -876,25 +824,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ARTICLE MODAL -->
-  <div class="modal-overlay" id="article-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-text">
-    <div class="modal">
-      <div class="modal-header">
-        <p class="modal-type" id="modal-type-text"></p>
-        <p class="modal-source" id="modal-source-text"></p>
-        <h2 class="modal-title" id="modal-title-text"></h2>
-        <button class="modal-close" id="modal-close" aria-label="Close">✕ Close</button>
-      </div>
-      <div class="modal-body">
-        <p class="modal-summary-label">Summary</p>
-        <div class="modal-summary" id="modal-summary-text"></div>
-      </div>
-      <div class="modal-footer">
-        <a href="#" id="modal-read-link" class="modal-read-link" target="_blank" rel="noopener" data-umami-event="modal-read-full">Read full article →</a>
-      </div>
-    </div>
-  </div>
 
   <!-- PROJECTS -->
   <section style="padding: 7rem 4rem; background: var(--white-alt);" id="projects">
@@ -1040,13 +969,13 @@
       document.querySelectorAll('.scramble-target').forEach(el => scrambleObs.observe(el));
     }
 
-    const reveals = document.querySelectorAll('.reveal:not(.faq-answer):not([data-title])');
+    const reveals = document.querySelectorAll('.reveal:not(.faq-answer)');
     reveals.forEach(el => el.classList.add('hidden'));
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const el = entry.target;
-          const siblings = Array.from(el.parentElement.querySelectorAll('.reveal:not(.faq-answer):not([data-title])'));
+          const siblings = Array.from(el.parentElement.querySelectorAll('.reveal:not(.faq-answer)'));
           const idx = siblings.indexOf(el);
           setTimeout(() => { el.classList.remove('hidden'); el.classList.add('visible'); }, prefersReducedMotion ? 0 : Math.min(idx, 3) * 100);
           revealObserver.unobserve(el);
@@ -1120,34 +1049,7 @@
       });
     });
 
-    const modal = document.getElementById('article-modal');
-    const openModal = (card) => {
-      document.getElementById('modal-type-text').textContent = card.dataset.type || '';
-      document.getElementById('modal-source-text').textContent = card.dataset.source || '';
-      document.getElementById('modal-title-text').textContent = card.dataset.title || '';
-      document.getElementById('modal-summary-text').innerHTML = card.dataset.summary || '';
-      document.getElementById('modal-read-link').href = card.dataset.url || '#';
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      document.getElementById('modal-close').focus();
-    };
-    const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
-    document.querySelectorAll('.writing-card[data-title]').forEach(card => {
-      card.addEventListener('click', () => {
-        if (card.dataset.summary) { openModal(card); }
-        else if (card.dataset.url) { window.open(card.dataset.url, '_blank', 'noopener'); }
-      });
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          if (card.dataset.summary) { openModal(card); }
-          else if (card.dataset.url) { window.open(card.dataset.url, '_blank', 'noopener'); }
-        }
-      });
-    });
-    document.getElementById('modal-close').addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
   </script>
 
 </body>
