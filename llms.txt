@@ -3,6 +3,7 @@
 ## About
 Imo Babics (also known as Imrich Babics) is the Chief Growth Officer, Chief Marketing Officer, and Managing Director of the EU entity at Relai — a MiCA-licensed, Bitcoin-only self-custody app operating across DACH and Europe. Previously Head of Marketing at Bitpanda, where he scaled the platform from 100,000 to over 1 million users and built the marketing team from zero to seventeen people. Between the two, he's had a hand in introducing over a million Europeans to Bitcoin. Before fintech: a decade in media and entertainment working with Universal Pictures, Xbox, PlayStation, Microsoft, and Huawei. In 2026, he was named one of the Fintech Marketing Hub's Top 30 Most Influential Fintech Marketers in Europe.
 ## Writing
+- [Bitcoin Marketing Is Different. Here's Why.](https://imobabics.com/writing/bitcoin-marketing-is-different): Most Bitcoin companies are talking to Bitcoiners. The next wave of growth comes from the general population — and that requires a fundamentally different approach to messaging, channels, and success metrics. Published June 2026.
 - [How MiCA Unlocked 450 Million Users](https://imobabics.com/writing/mica-450-million-users): Why Europe's regulatory framework is Bitcoin's biggest distribution unlock. MiCA's passporting framework gives licensed Bitcoin companies access to a single market of 450 million people for the first time. The real impact is not political — it is distributional. Published January 2026.
 - [Mercenaries vs. Missionaries](https://imobabics.com/writing/mercenaries-vs-missionaries): On mission-driven culture, drawing on contrasting experience at Bitpanda (hypergrowth, resource-rich) and Relai (Bitcoin-only, mission-driven). Culture determines whether growth compounds or corrodes. Published September 2023.
 - [8 Things I Learned from 8 Years in Startups](https://imobabics.com/writing/8-things-i-learned-in-startups): Eight lessons from scaling two of Europe's most significant fintech companies. Covers growth mindset, shipping fast, honest communication, hiring missionaries over mercenaries, user focus, focus as strategy, and accountability. Published January 2026.
@@ -12,5 +13,4 @@ Imo Babics (also known as Imrich Babics) is the Chief Growth Officer, Chief Mark
 ## Expertise
 Bitcoin adoption in Europe, MiCA regulation, Go-to-Market strategy for regulated fintech, growth marketing, startup scaling, Bitcoin marketing, European crypto regulation, app growth, cross-functional growth leadership.
 ## Contact
-- Email: hello@imobabics.com
 - LinkedIn: https://www.linkedin.com/in/imobabics/
