@@ -338,7 +338,7 @@
 <div id="main" style="font-family:'Instrument Sans',sans-serif; background:#FAF7F2; color:#1A150E; line-height:1.7; overflow-x:hidden;">
 
   <!-- NAV -->
-  <nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:clamp(14px,3vw,20px) clamp(20px,5.5vw,56px); background:rgba(250,247,242,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid #E7E0D4;">
+  <nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:clamp(14px,3vw,20px) clamp(20px,5.5vw,56px); background:rgba(250,247,242,0.97); border-bottom:1px solid #E7E0D4;">
     <a href="#top" style="font-family:'Newsreader',serif; font-size:19px; font-weight:600; letter-spacing:-0.01em; color:#1A150E; text-decoration:none; white-space:nowrap;">Imo Babics</a>
     <div class="ed-nav-links" style="display:flex; gap:36px; align-items:center;">
       <a class="eh1" href="#about" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#6B6357; text-decoration:none; transition:color .2s ease,background .2s ease,border-color .2s ease,transform .25s ease,box-shadow .25s ease,opacity .2s ease;">About</a>
@@ -737,7 +737,14 @@
       // Subtle scroll reveal — applied via JS so content is always visible without JS
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!reduce && 'IntersectionObserver' in window) {
-        var targets = document.querySelectorAll('section, footer');
+        // Target individual cards/columns, not whole sections, to keep
+        // animated layers small and scrolling smooth.
+        var revealSelectors = [
+          '.ed-hero-grid > div', '.ed-2col > div', '.ed-cards2 > a', '.ed-cards2 > div',
+          '.ed-wwm-grid > div', '.ed-faq-grid > div', '.ed-statband > div',
+          '#projects .eh22'
+        ];
+        var targets = document.querySelectorAll(revealSelectors.join(','));
         targets.forEach(function (el) { el.classList.add('ed-reveal'); });
         var obs = new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
