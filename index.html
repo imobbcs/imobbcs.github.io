@@ -10,6 +10,9 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <!-- manifest.json not yet deployed; re-add <link rel="manifest"> once file is live -->
 
+  <!-- LCP: preload hero image -->
+  <link rel="preload" as="image" href="/photo.png" fetchpriority="high" />
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://imobabics.com/" />
   <meta property="og:title" content="Imo Babics · Chief Growth Officer & CMO · Bitcoin · Europe" />
@@ -48,47 +51,6 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://imobabics.com/#organization",
-    "name": "Imo Babics",
-    "url": "https://imobabics.com/",
-    "inLanguage": "en-GB",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Vienna",
-      "addressCountry": "AT"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/imobabics/"
-    ],
-    "knowsAbout": [
-      "Bitcoin",
-      "Bitcoin marketing",
-      "Growth Marketing",
-      "MiCA Regulation",
-      "EU crypto regulation",
-      "European Fintech",
-      "Cryptocurrency Marketing",
-      "App Growth",
-      "Go-to-Market Strategy",
-      "Bitcoin adoption in Europe",
-      "Regulated market growth"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Advisory & Speaking Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speaking & Media" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strategic Advisory" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Board & NED Roles" } }
-      ]
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
     "@type": "Person",
     "@id": "https://imobabics.com/#person",
     "name": "Imo Babics",
@@ -110,6 +72,15 @@
       "@type": "Occupation",
       "name": "Chief Growth Officer",
       "occupationLocation": { "@type": "Country", "name": "Europe" }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Advisory & Speaking Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speaking & Media" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strategic Advisory" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Board & NED Roles" } }
+      ]
     },
     "award": "Fintech Marketing Hub Top 30 Most Influential Fintech Marketers in Europe (2026)"
   }
@@ -309,7 +280,7 @@
     .ed-reveal.ed-in { opacity: 1; transform: none; transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1), transform 0.85s cubic-bezier(0.16,1,0.3,1); }
 
     /* Generated hover styles (from design export) */
-    .eh1,.eh2,.eh3,.eh4,.eh5,.eh6,.eh7,.eh8,.eh9,.eh10,.eh11,.eh12,.eh16,.eh17,.eh18,.eh19,.eh20,.eh21,.eh22,.eh23,.eh24,.eh25{transition:color .2s ease,background .2s ease,border-color .2s ease,transform .25s ease,box-shadow .25s ease,opacity .2s ease;}
+    .eh1,.eh2,.eh3,.eh4,.eh5,.eh6,.eh7,.eh8,.eh9,.eh10,.eh11,.eh12,.eh16,.eh17,.eh18,.eh19,.eh20,.eh21,.eh22,.eh23,.eh24,.eh25,.eh26{transition:color .2s ease,background .2s ease,border-color .2s ease,transform .25s ease,box-shadow .25s ease,opacity .2s ease;}
     .eh1:hover{color:#1A150E;}
 .eh2:hover{color:#1A150E;}
 .eh3:hover{color:#1A150E;}
@@ -336,6 +307,20 @@
 .eh23:hover{background:#D87A3A; color:#FAF7F2;}
 .eh24:hover{color:#D87A3A;}
 .eh25:hover{color:#D87A3A;}
+.eh26:hover{background:#252018;}
+.eh27:hover{border-color:#FAF7F2;}
+
+    /* Video modal (in-page YouTube playback) */
+    .ed-videocard{cursor:pointer;}
+    .ed-play-badge{display:inline-flex; align-items:center; gap:6px;}
+    .ed-play-badge svg{flex-shrink:0;}
+    .ed-video-modal{position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:clamp(16px,4vw,40px); background:rgba(15,12,8,0.88); backdrop-filter:blur(6px);}
+    .ed-video-modal.ed-open{display:flex;}
+    .ed-video-modal__frame{position:relative; width:100%; max-width:960px;}
+    .ed-video-modal__ratio{position:relative; width:100%; padding-top:56.25%; background:#000;}
+    .ed-video-modal__ratio iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+    .ed-video-modal__close{position:absolute; top:-44px; right:0; background:none; border:none; color:#FAF7F2; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; cursor:pointer; padding:8px; opacity:0.7; transition:opacity .2s ease;}
+    .ed-video-modal__close:hover{opacity:1;}
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -368,7 +353,7 @@
 <div id="main" style="font-family:'Instrument Sans',sans-serif; background:#FAF7F2; color:#1A150E; line-height:1.7; overflow-x:hidden;">
 
   <!-- NAV -->
-  <nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:clamp(14px,3vw,20px) clamp(20px,5.5vw,56px); background:rgba(250,247,242,0.97); border-bottom:1px solid #E7E0D4;">
+  <nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:clamp(14px,3vw,20px) clamp(20px,5.5vw,56px); background:rgba(250,247,242,0.9); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid #E7E0D4;">
     <a href="#top" style="font-family:'Newsreader',serif; font-size:19px; font-weight:600; letter-spacing:-0.01em; color:#1A150E; text-decoration:none; white-space:nowrap;">Imo Babics</a>
     <div class="ed-nav-links" style="display:flex; gap:36px; align-items:center;">
       <a class="eh1" href="#about" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#6B6357; text-decoration:none;">About</a>
@@ -378,7 +363,7 @@
       <a class="eh5" href="#contact" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#6B6357; text-decoration:none;">Contact</a>
       <a class="eh6" href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#C2540A; text-decoration:none;">LinkedIn →</a>
     </div>
-    <button onclick="edToggleMenu()" aria-label="Toggle menu" class="ed-hamburger" id="ed-ham" style="flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:10px; margin:-10px; width:44px; height:44px; align-items:center; justify-content:center;">
+    <button onclick="edToggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="ed-mobile-menu" class="ed-hamburger" id="ed-ham" style="flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:10px; margin:-10px; width:44px; height:44px; align-items:center; justify-content:center;">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -411,7 +396,7 @@
         </div>
       </div>
       <div class="ed-hero-photo-wrap">
-        <img src="/photo.png" width="900" height="1200" alt="Imo Babics, Chief Growth Officer and CMO, Bitcoin Europe" style="width:100%; aspect-ratio:3/4; max-height:68vh; object-fit:cover; object-position:center top; display:block;">
+        <img src="/photo.png" width="900" height="1200" fetchpriority="high" alt="Imo Babics, Chief Growth Officer and CMO, Bitcoin Europe" style="width:100%; aspect-ratio:3/4; max-height:68vh; object-fit:cover; object-position:center top; display:block;">
       </div>
     </div>
 
@@ -468,7 +453,7 @@
         </div>
         <div style="border-left:2px solid #C2540A; padding-left:22px; margin-top:clamp(32px,5vw,48px);">
           <p style="font-family:'Newsreader',serif; font-style:italic; font-size:18px; color:#3B362E; line-height:1.55; margin:0 0 8px;">"Imo brings a unique and versatile skill set, making him an exceptional marketer, especially in the Bitcoin space."</p>
-          <p style="font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#9A917F; margin:0;">Raphael Schön — Content Strategist, ex-Bitpanda &amp; Relai</p>
+          <p style="font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#9A917F; margin:0;">Raphaël Schön — Content Strategist, ex-Bitpanda &amp; Relai</p>
         </div>
       </div>
     </div>
@@ -611,6 +596,13 @@
       </div>
 
       <div class="ed-cards2" style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(250,247,242,0.1); border:1px solid rgba(250,247,242,0.1);">
+        <a class="eh26 ed-videocard" href="#" role="button" data-umami-event="talk-btc-prague-play" onclick="event.preventDefault(); edOpenVideo('awBr-wtng_E', &quot;Europe's Biggest Untapped Market. Just Unlocked.&quot;)" style="background:#1E1812; padding:clamp(26px,3.5vw,36px); text-decoration:none; color:inherit; display:block;">
+          <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:#D87A3A; margin:0 0 4px;">Talk</p>
+          <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; color:rgba(250,247,242,0.35); margin:0 0 16px;">BTC Prague 2026</p>
+          <h3 style="font-family:'Newsreader',serif; font-size:24px; font-weight:500; line-height:1.2; margin:0 0 12px; color:#FAF7F2;">Europe: Bitcoin's Biggest Untapped Market. Just Unlocked.</h3>
+          <p style="font-size:14px; color:rgba(250,247,242,0.55); line-height:1.7; margin:0 0 20px;">450 million Europeans hold $40 trillion in household wealth, yet fewer than 6% of Germans own any Bitcoin. Why a single MiCA license just made Europe Bitcoin's biggest adoption opportunity.</p>
+          <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#D87A3A; margin:0;">▶ Play video</p>
+        </a>
         <a class="eh16" href="https://imobabics.com/writing/bitcoin-marketing-is-different" data-umami-event="article-bitcoin-marketing" style="background:#1E1812; padding:clamp(26px,3.5vw,36px); text-decoration:none; color:inherit; display:block;">
           <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:#D87A3A; margin:0 0 4px;">Article</p>
           <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; color:rgba(250,247,242,0.35); margin:0 0 16px;">imobabics.com</p>
@@ -646,19 +638,13 @@
           <p style="font-size:14px; color:rgba(250,247,242,0.55); line-height:1.7; margin:0 0 20px;">The difference between people who work for a company and people who work for a mission. It changes everything about how you build.</p>
           <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#D87A3A; margin:0;">Read article →</p>
         </a>
-        <a class="eh21" href="https://www.youtube.com/watch?v=NBGU5HD5mzE" target="_blank" rel="noopener" style="background:#1E1812; padding:clamp(26px,3.5vw,36px); text-decoration:none; color:inherit; display:block;">
+        <a class="eh21 ed-videocard" href="#" role="button" data-umami-event="podcast-play-inline" onclick="event.preventDefault(); edOpenVideo('NBGU5HD5mzE','Bitcoin Growth in Europe: A Conversation')" style="background:#1E1812; padding:clamp(26px,3.5vw,36px); text-decoration:none; color:inherit; display:block;">
           <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:#D87A3A; margin:0 0 4px;">Podcast</p>
           <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; color:rgba(250,247,242,0.35); margin:0 0 16px;">YouTube</p>
           <h3 style="font-family:'Newsreader',serif; font-size:24px; font-weight:500; line-height:1.2; margin:0 0 12px; color:#FAF7F2;">Bitcoin Growth in Europe: A Conversation</h3>
           <p style="font-size:14px; color:rgba(250,247,242,0.55); line-height:1.7; margin:0 0 20px;">On scaling Bitcoin adoption across regulated EU markets, what MiCA actually means for operators, and why most companies get European growth wrong.</p>
-          <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#D87A3A; margin:0;">Watch →</p>
+          <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#D87A3A; margin:0;">▶ Play video</p>
         </a>
-        <div style="background:#1E1812; padding:clamp(26px,3.5vw,36px); opacity:0.45;">
-          <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:#D87A3A; margin:0 0 4px;">Talk</p>
-          <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; color:rgba(250,247,242,0.35); margin:0 0 16px;">BTC Prague 2026</p>
-          <h3 style="font-family:'Newsreader',serif; font-size:24px; font-weight:500; line-height:1.2; margin:0 0 12px; color:#FAF7F2;">Europe: Bitcoin's Biggest Untapped Market. Just Unlocked.</h3>
-          <p style="font-size:14px; color:rgba(250,247,242,0.55); line-height:1.7; margin:0;">The contrarian case for European regulation as a force for Bitcoin adoption. Coming June 2026.</p>
-        </div>
         <div style="background:#1E1812;"></div>
       </div>
     </div>
@@ -692,7 +678,7 @@
       </div>
       <div style="border-top:1px solid #E3DCD1;">
         <div style="border-bottom:1px solid #E3DCD1;">
-          <button onclick="edToggleFaq(1)" style="width:100%; background:none; border:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 0; cursor:pointer; text-align:left;">
+          <button onclick="edToggleFaq(1)" aria-expanded="false" aria-controls="faq-body-1" style="width:100%; background:none; border:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 0; cursor:pointer; text-align:left;">
             <span style="font-family:'Newsreader',serif; font-size:20px; font-weight:500; color:#1A150E;">Who is Imo Babics?</span>
             <span style="font-family:'Newsreader',serif; font-size:22px; color:#C2540A; flex-shrink:0;"><span id="faq-icon-1" style="display:inline-block; transition:transform .3s ease;">+</span></span>
           </button>
@@ -704,7 +690,7 @@
           </div>
         </div>
         <div style="border-bottom:1px solid #E3DCD1;">
-          <button onclick="edToggleFaq(2)" style="width:100%; background:none; border:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 0; cursor:pointer; text-align:left;">
+          <button onclick="edToggleFaq(2)" aria-expanded="false" aria-controls="faq-body-2" style="width:100%; background:none; border:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 0; cursor:pointer; text-align:left;">
             <span style="font-family:'Newsreader',serif; font-size:20px; font-weight:500; color:#1A150E;">What does Imo do at Relai?</span>
             <span style="font-family:'Newsreader',serif; font-size:22px; color:#C2540A; flex-shrink:0;"><span id="faq-icon-2" style="display:inline-block; transition:transform .3s ease;">+</span></span>
           </button>
@@ -716,13 +702,25 @@
           </div>
         </div>
         <div style="border-bottom:1px solid #E3DCD1;">
-          <button onclick="edToggleFaq(3)" style="width:100%; background:none; border:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 0; cursor:pointer; text-align:left;">
+          <button onclick="edToggleFaq(3)" aria-expanded="false" aria-controls="faq-body-3" style="width:100%; background:none; border:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 0; cursor:pointer; text-align:left;">
             <span style="font-family:'Newsreader',serif; font-size:20px; font-weight:500; color:#1A150E;">Is Imo available for speaking or advisory work?</span>
             <span style="font-family:'Newsreader',serif; font-size:22px; color:#C2540A; flex-shrink:0;"><span id="faq-icon-3" style="display:inline-block; transition:transform .3s ease;">+</span></span>
           </button>
           <div id="faq-body-3" style="max-height:0; overflow:hidden; transition:max-height .5s cubic-bezier(.16,1,.3,1);">
             <div style="font-size:15px; color:#57514A; line-height:1.8; padding-bottom:26px;">
-              <p style="margin:0;">Imo is available for conference talks, podcast appearances, and media requests on Bitcoin adoption and startup growth in Europe. He is also open to board and non-executive director conversations with Bitcoin or fintech companies operating in Europe. Get in touch at hello [at] imobabics.com or via <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="color:#C2540A; text-decoration:none; border-bottom:1px solid #C2540A;">LinkedIn</a>.</p>
+              <p style="margin:0;">Imo is available for conference talks, podcast appearances, and media requests on Bitcoin adoption and startup growth in Europe. He is also open to board and non-executive director conversations with Bitcoin or fintech companies operating in Europe. Get in touch at <a href="mailto:hello@imobabics.com" style="color:#C2540A; text-decoration:none; border-bottom:1px solid #C2540A;">hello@imobabics.com</a> or via <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="color:#C2540A; text-decoration:none; border-bottom:1px solid #C2540A;">LinkedIn</a>.</p>
+            </div>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid #E3DCD1;">
+          <button onclick="edToggleFaq(4)" aria-expanded="false" aria-controls="faq-body-4" style="width:100%; background:none; border:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 0; cursor:pointer; text-align:left;">
+            <span style="font-family:'Newsreader',serif; font-size:20px; font-weight:500; color:#1A150E;">What has Imo written?</span>
+            <span style="font-family:'Newsreader',serif; font-size:22px; color:#C2540A; flex-shrink:0;"><span id="faq-icon-4" style="display:inline-block; transition:transform .3s ease;">+</span></span>
+          </button>
+          <div id="faq-body-4" style="max-height:0; overflow:hidden; transition:max-height .5s cubic-bezier(.16,1,.3,1);">
+            <div style="font-size:15px; color:#57514A; line-height:1.8; padding-bottom:26px;">
+              <p style="margin:0 0 14px;">Imo writes about Bitcoin adoption, European fintech, and startup growth. Key pieces include <a href="https://imobabics.com/writing/bitcoin-marketing-is-different" style="color:#C2540A; text-decoration:none; border-bottom:1px solid #C2540A;">Bitcoin Marketing Is Different. Here's Why.</a>, <a href="https://imobabics.com/writing/mica-450-million-users" style="color:#C2540A; text-decoration:none; border-bottom:1px solid #C2540A;">How MiCA Unlocked 450 Million Users</a>, <a href="https://imobabics.com/writing/mercenaries-vs-missionaries" style="color:#C2540A; text-decoration:none; border-bottom:1px solid #C2540A;">Mercenaries vs. Missionaries</a>, and <a href="https://imobabics.com/writing/8-things-i-learned-in-startups" style="color:#C2540A; text-decoration:none; border-bottom:1px solid #C2540A;">8 Things I Learned from 8 Years in Startups</a>.</p>
+              <p style="margin:0;">He has also been published in Bitcoin Magazine. See the full list in the <a href="#writing" style="color:#C2540A; text-decoration:none; border-bottom:1px solid #C2540A;">Writing &amp; Talks</a> section above.</p>
             </div>
           </div>
         </div>
@@ -736,7 +734,7 @@
     <h2 style="font-family:'Newsreader',serif; font-size:clamp(44px,11vw,76px); font-weight:500; line-height:1.0; letter-spacing:-0.02em; margin:0 0 26px; color:#FAF7F2;">Let's talk <em style="font-style:italic; color:#D87A3A; font-weight:500;">Bitcoin.</em></h2>
     <p style="font-size:16px; color:rgba(250,247,242,0.55); line-height:1.75; max-width:50ch; margin:0 auto 52px;">If you're building something serious in European Bitcoin, or you want someone on stage or on the record who has actually done it, get in touch.</p>
     <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
-      <span class="ed-contact-btn" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#FAF7F2; border:1px solid rgba(250,247,242,0.25); padding:0 36px; min-height:50px; display:inline-flex; align-items:center; justify-content:center;">hello [at] imobabics.com</span>
+      <a class="eh27 ed-contact-btn" href="mailto:hello@imobabics.com" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#FAF7F2; border:1px solid rgba(250,247,242,0.25); padding:0 36px; min-height:50px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">hello@imobabics.com</a>
       <a class="eh23 ed-contact-btn" href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; background:#FAF7F2; color:#191510; padding:0 36px; min-height:50px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">LinkedIn →</a>
     </div>
   </section>
@@ -745,13 +743,23 @@
   <footer style="background:#191510; border-top:1px solid rgba(250,247,242,0.12); padding:24px clamp(20px,5.5vw,56px); display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
     <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; color:rgba(250,247,242,0.35); margin:0;">© 2026 Imo Babics · Vienna / Europe</p>
     <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
-      <span style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; color:rgba(250,247,242,0.35);">hello [at] imobabics.com</span>
+      <a class="eh24" href="mailto:hello@imobabics.com" style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; color:rgba(250,247,242,0.35); text-decoration:none;">hello@imobabics.com</a>
       <a class="eh24" href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; color:rgba(250,247,242,0.35); text-decoration:none;">LinkedIn</a>
       <a class="eh25" href="#top" style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; color:rgba(250,247,242,0.35); text-decoration:none;">↑ Top</a>
     </div>
   </footer>
 
 </div>
+
+  <!-- In-page video modal (YouTube plays without leaving the site) -->
+  <div id="ed-video-modal" class="ed-video-modal" role="dialog" aria-modal="true" aria-label="Video player" onclick="if(event.target===this)edCloseVideo()">
+    <div class="ed-video-modal__frame">
+      <button type="button" class="ed-video-modal__close" onclick="edCloseVideo()" aria-label="Close video">Close ✕</button>
+      <div class="ed-video-modal__ratio">
+        <iframe id="ed-video-modal__iframe" src="" title="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
 
   <script>
     (function () {
@@ -760,29 +768,74 @@
       window.edToggleMenu = function () {
         var open = menu.classList.toggle('open');
         ham.classList.toggle('open', open);
+        ham.setAttribute('aria-expanded', open ? 'true' : 'false');
         document.body.style.overflow = open ? 'hidden' : '';
       };
       window.edCloseMenu = function () {
         menu.classList.remove('open');
         ham.classList.remove('open');
+        ham.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       };
 
+      // In-page YouTube playback (privacy-enhanced embed, no leaving the site)
+      var videoModal = document.getElementById('ed-video-modal');
+      var videoIframe = document.getElementById('ed-video-modal__iframe');
+      var lastFocused = null;
+      window.edOpenVideo = function (id, title) {
+        lastFocused = document.activeElement;
+        videoIframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        videoIframe.title = title || 'Video';
+        videoModal.classList.add('ed-open');
+        document.body.style.overflow = 'hidden';
+        videoModal.querySelector('.ed-video-modal__close').focus();
+      };
+      window.edCloseVideo = function () {
+        videoModal.classList.remove('ed-open');
+        videoIframe.src = '';
+        document.body.style.overflow = '';
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
+      };
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        if (videoModal.classList.contains('ed-open')) { edCloseVideo(); return; }
+        if (menu.classList.contains('open')) edCloseMenu();
+      });
+
+      var FAQ_COUNT = 4;
       window.edToggleFaq = function (n) {
         var body = document.getElementById('faq-body-' + n);
         var icon = document.getElementById('faq-icon-' + n);
+        var btn = body.previousElementSibling;
         var open = body.style.maxHeight && body.style.maxHeight !== '0px';
         // close all
-        for (var i = 1; i <= 3; i++) {
+        for (var i = 1; i <= FAQ_COUNT; i++) {
           var b = document.getElementById('faq-body-' + i);
           var ic = document.getElementById('faq-icon-' + i);
-          if (b) b.style.maxHeight = '0px';
+          if (b) {
+            // If a panel was left at 'none' (post-transition), re-pin it so the
+            // closing transition animates instead of snapping.
+            if (b.style.maxHeight === 'none') {
+              b.style.maxHeight = b.scrollHeight + 'px';
+              void b.offsetHeight; // force reflow
+            }
+            b.style.maxHeight = '0px';
+            if (b.previousElementSibling) b.previousElementSibling.setAttribute('aria-expanded', 'false');
+          }
           if (ic) { ic.textContent = '+'; ic.style.transform = 'none'; }
         }
         if (!open) {
           body.style.maxHeight = body.scrollHeight + 40 + 'px';
+          // After the transition, release the height cap so the panel can
+          // reflow freely on viewport resize without clipping.
+          body.addEventListener('transitionend', function handler(e) {
+            if (e.propertyName !== 'max-height') return;
+            if (body.style.maxHeight !== '0px') body.style.maxHeight = 'none';
+            body.removeEventListener('transitionend', handler);
+          });
           icon.textContent = '+';
           icon.style.transform = 'rotate(45deg)';
+          if (btn) btn.setAttribute('aria-expanded', 'true');
         }
       };
 
