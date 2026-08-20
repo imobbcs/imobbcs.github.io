@@ -6,7 +6,7 @@
   <title>Mercenaries vs. Missionaries — Imo Babics</title>
   <meta name="description" content="What two years at Bitpanda and two years at Relai taught me about mission, culture, and the kind of company worth building." />
   <link rel="canonical" href="https://imobabics.com/writing/mercenaries-vs-missionaries" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FAF7F2'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='600' fill='%231A150E'>I<tspan fill='%23C2540A'>B</tspan></text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F7F7F5'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial,sans-serif' font-size='12' font-weight='900' fill='%230E0E0E'>I<tspan fill='%23D96D00'>B</tspan></text></svg>" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <meta property="og:type" content="article" />
@@ -78,11 +78,11 @@
   <script defer src="https://umami-orange.up.railway.app/script.js" data-website-id="6cdefbd5-f79d-4458-ac67-58eef9faed54"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,18,400;1,18,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Jost:wght@500;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     html { scroll-behavior: smooth; }
-    body { margin: 0; background: #FAF7F2; color:#1A150E; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; font-family:'Instrument Sans',sans-serif; line-height:1.7; }
+    body { margin: 0; background: #F7F7F5; color:#0E0E0E; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; font-family:'Instrument Sans',sans-serif; line-height:1.7; }
     * { box-sizing: border-box; }
     h1, h2, h3 { text-wrap: balance; }
     p { text-wrap: pretty; }
@@ -90,7 +90,7 @@
     [id] { scroll-margin-top: 84px; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 
-    .ed-skip { position: fixed; top: -100px; left: 16px; z-index: 9999; background: #C2540A; color: #FAF7F2; font-family: 'Instrument Sans', sans-serif; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 18px; text-decoration: none; transition: top 0.2s; }
+    .ed-skip { position: fixed; top: -100px; left: 16px; z-index: 9999; background: #0E0E0E; color: #F7F7F5; font-family: 'Instrument Sans', sans-serif; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 18px; text-decoration: none; transition: top 0.2s; }
     .ed-skip:focus { top: 16px; }
 
     .ed-hamburger { display: none; }
@@ -102,7 +102,7 @@
       .ed-hamburger { display: flex !important; }
     }
 
-    .ed-hamburger span { display: block; width: 24px; height: 2px; background: #1A150E; transition: transform 0.3s ease, opacity 0.25s ease; }
+    .ed-hamburger span { display: block; width: 24px; height: 2px; background: #0E0E0E; transition: transform 0.3s ease, opacity 0.25s ease; }
     .ed-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .ed-hamburger.open span:nth-child(2) { opacity: 0; }
     .ed-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -111,63 +111,63 @@
     .ed-reveal.ed-in { opacity: 1; transform: none; transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1), transform 0.85s cubic-bezier(0.16,1,0.3,1); }
 
     /* nav link hover */
-    .ed-navlink:hover { color:#1A150E !important; }
-    .ed-navcta:hover { color:#8F3D06 !important; }
+    .ed-navlink:hover { color:#0E0E0E !important; }
+    .ed-navcta:hover { color:#D96D00 !important; }
 
     /* ARTICLE TYPOGRAPHY */
     main.ed-article { max-width: 700px; margin: 0 auto; padding: clamp(120px,16vw,160px) clamp(20px,5.5vw,56px) clamp(80px,10vw,140px); }
-    .ed-kicker { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:#C2540A; margin:0 0 18px; }
-    .ed-h1 { font-family:'Newsreader',serif; font-size:clamp(34px,6.5vw,56px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 22px; color:#1A150E; }
-    .ed-meta { font-size:13px; color:#9A917F; letter-spacing:0.04em; display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding-bottom:40px; border-bottom:1px solid #E3DCD1; margin-bottom:44px; }
-    .ed-meta a { color:#9A917F; text-decoration:none; border-bottom:1px solid #E3DCD1; transition:color .2s ease,border-color .2s ease; }
-    .ed-meta a:hover { color:#C2540A; border-color:#C2540A; }
+    .ed-kicker { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:#0E0E0E; margin:0 0 18px; }
+    .ed-h1 { font-family:'Instrument Sans',sans-serif; font-size:clamp(34px,6.5vw,56px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 22px; color:#0E0E0E; }
+    .ed-meta { font-size:13px; color:#969692; letter-spacing:0.04em; display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding-bottom:40px; border-bottom:1px solid #E4E4E1; margin-bottom:44px; }
+    .ed-meta a { color:#969692; text-decoration:none; border-bottom:1px solid #E4E4E1; transition:color .2s ease,border-color .2s ease; }
+    .ed-meta a:hover { color:#0E0E0E; border-color:#0E0E0E; }
     .ed-sep { opacity:0.5; }
 
-    .ed-body p { font-size:17px; color:#3D372F; line-height:1.85; margin:0 0 26px; }
-    .ed-body h2 { font-family:'Newsreader',serif; font-size:clamp(24px,3.5vw,30px); font-weight:500; letter-spacing:-0.01em; color:#1A150E; margin:56px 0 20px; }
-    .ed-body h2 .ed-num { font-family:'Instrument Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.18em; color:#C2540A; display:block; margin-bottom:10px; }
-    .ed-body a { color:#1A150E; text-decoration:none; border-bottom:1px solid #C2540A; transition: color .2s ease, border-color .2s ease; }
-    .ed-body a:hover { color:#C2540A; }
+    .ed-body p { font-size:17px; color:#2E2E2C; line-height:1.85; margin:0 0 26px; }
+    .ed-body h2 { font-family:'Instrument Sans',sans-serif; font-size:clamp(24px,3.5vw,30px); font-weight:500; letter-spacing:-0.01em; color:#0E0E0E; margin:56px 0 20px; }
+    .ed-body h2 .ed-num { font-family:'Instrument Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.18em; color:#0E0E0E; display:block; margin-bottom:10px; }
+    .ed-body a { color:#0E0E0E; text-decoration:none; border-bottom:1px solid #0E0E0E; transition: color .2s ease, border-color .2s ease; }
+    .ed-body a:hover { color:#0E0E0E; }
 
-    .ed-blockquote { border-left:2px solid #C2540A; padding:4px 28px; margin:40px 0; }
-    .ed-blockquote p { font-family:'Newsreader',serif; font-style:italic; font-size:19px; color:#1A150E; line-height:1.6; margin:0; }
-    .ed-blockquote cite { display:block; margin-top:10px; font-family:'Instrument Sans',sans-serif; font-style:normal; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#9A917F; }
+    .ed-blockquote { border-left:2px solid #0E0E0E; padding:4px 28px; margin:40px 0; }
+    .ed-blockquote p { font-family:'Instrument Sans',sans-serif; font-style:italic; font-size:19px; color:#0E0E0E; line-height:1.6; margin:0; }
+    .ed-blockquote cite { display:block; margin-top:10px; font-family:'Instrument Sans',sans-serif; font-style:normal; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#969692; }
 
-    .ed-callout { background:#191510; color:#FAF7F2; padding:clamp(28px,4vw,40px) clamp(24px,4vw,40px); margin:40px 0; }
-    .ed-callout p { font-family:'Newsreader',serif; font-size:clamp(20px,3vw,26px); font-weight:500; color:#FAF7F2; line-height:1.4; margin:0; }
+    .ed-callout { background:#0A0A0A; color:#F7F7F5; padding:clamp(28px,4vw,40px) clamp(24px,4vw,40px); margin:40px 0; }
+    .ed-callout p { font-family:'Instrument Sans',sans-serif; font-size:clamp(20px,3vw,26px); font-weight:500; color:#F7F7F5; line-height:1.4; margin:0; }
     .ed-callout p + p { margin-top:6px; }
-    .ed-callout .ed-callout-accent { color:#D87A3A; }
+    .ed-callout .ed-callout-accent { color:#EDEDEB; }
 
-    .ed-note { font-size:13px; letter-spacing:0.04em; color:#9A917F; margin:-8px 0 26px; font-style:italic; }
+    .ed-note { font-size:13px; letter-spacing:0.04em; color:#969692; margin:-8px 0 26px; font-style:italic; }
 
-    .ed-list { list-style:none; padding:0; margin:0 0 26px; border-top:1px solid #E3DCD1; }
-    .ed-list li { font-size:17px; color:#3D372F; line-height:1.85; padding:18px 0 18px 28px; border-bottom:1px solid #E3DCD1; position:relative; }
-    .ed-list li::before { content:'—'; position:absolute; left:0; top:18px; color:#C2540A; font-size:13px; font-family:'Instrument Sans',sans-serif; }
+    .ed-list { list-style:none; padding:0; margin:0 0 26px; border-top:1px solid #E4E4E1; }
+    .ed-list li { font-size:17px; color:#2E2E2C; line-height:1.85; padding:18px 0 18px 28px; border-bottom:1px solid #E4E4E1; position:relative; }
+    .ed-list li::before { content:'—'; position:absolute; left:0; top:18px; color:#0E0E0E; font-size:13px; font-family:'Instrument Sans',sans-serif; }
 
-    sup { font-size:0.65em; color:#C2540A; }
-    sup a { color:#C2540A; text-decoration:none; }
-    sup a:hover { color:#8F3D06; }
+    sup { font-size:0.65em; color:#0E0E0E; }
+    sup a { color:#0E0E0E; text-decoration:none; }
+    sup a:hover { color:#D96D00; }
 
-    .ed-sources { margin-top:64px; padding-top:32px; border-top:1px solid #E3DCD1; }
-    .ed-sources h3 { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:#C2540A; margin:0 0 24px; }
+    .ed-sources { margin-top:64px; padding-top:32px; border-top:1px solid #E4E4E1; }
+    .ed-sources h3 { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:#0E0E0E; margin:0 0 24px; }
     .ed-sources ol { list-style:none; counter-reset: src; padding:0; margin:0; }
-    .ed-sources ol li { counter-increment: src; font-size:13px; color:#9A917F; line-height:1.7; padding:10px 0 10px 30px; position:relative; border-bottom:1px solid #E3DCD1; }
-    .ed-sources ol li::before { content: counter(src); position:absolute; left:0; top:10px; font-size:11px; font-weight:600; color:#C2540A; }
-    .ed-sources ol li a { color:#9A917F; text-decoration:underline; text-decoration-color:#E3DCD1; word-break:break-all; }
-    .ed-sources ol li a:hover { color:#C2540A; text-decoration-color:#C2540A; }
+    .ed-sources ol li { counter-increment: src; font-size:13px; color:#969692; line-height:1.7; padding:10px 0 10px 30px; position:relative; border-bottom:1px solid #E4E4E1; }
+    .ed-sources ol li::before { content: counter(src); position:absolute; left:0; top:10px; font-size:11px; font-weight:600; color:#0E0E0E; }
+    .ed-sources ol li a { color:#969692; text-decoration:underline; text-decoration-color:#E4E4E1; word-break:break-all; }
+    .ed-sources ol li a:hover { color:#0E0E0E; text-decoration-color:#0E0E0E; }
 
-    .ed-byline { margin-top:64px; padding:32px clamp(24px,4vw,36px); border:1px solid #E3DCD1; display:flex; align-items:center; gap:20px; }
+    .ed-byline { margin-top:64px; padding:32px clamp(24px,4vw,36px); border:1px solid #E4E4E1; display:flex; align-items:center; gap:20px; }
     .ed-byline img { width:64px; height:64px; border-radius:50%; object-fit:cover; flex-shrink:0; }
-    .ed-byline-name { font-family:'Newsreader',serif; font-size:18px; font-weight:500; color:#1A150E; margin:0 0 4px; }
-    .ed-byline-desc { font-size:14px; color:#57514A; line-height:1.6; margin:0 0 8px; }
-    .ed-byline-link { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#C2540A; text-decoration:none; transition:color .2s ease; }
-    .ed-byline-link:hover { color:#8F3D06; }
+    .ed-byline-name { font-family:'Instrument Sans',sans-serif; font-size:18px; font-weight:500; color:#0E0E0E; margin:0 0 4px; }
+    .ed-byline-desc { font-size:14px; color:#4C4C49; line-height:1.6; margin:0 0 8px; }
+    .ed-byline-link { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#0E0E0E; text-decoration:none; transition:color .2s ease; }
+    .ed-byline-link:hover { color:#D96D00; }
 
-    .ed-article-footer { margin-top:56px; padding-top:32px; border-top:1px solid #E3DCD1; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-    .ed-footer-link { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#6B6357; text-decoration:none; transition:color .2s ease; }
-    .ed-footer-link:hover { color:#1A150E; }
-    .ed-footer-cta { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#C2540A; text-decoration:none; transition:color .2s ease; }
-    .ed-footer-cta:hover { color:#8F3D06; }
+    .ed-article-footer { margin-top:56px; padding-top:32px; border-top:1px solid #E4E4E1; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .ed-footer-link { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#666663; text-decoration:none; transition:color .2s ease; }
+    .ed-footer-link:hover { color:#0E0E0E; }
+    .ed-footer-cta { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#0E0E0E; text-decoration:none; transition:color .2s ease; }
+    .ed-footer-cta:hover { color:#D96D00; }
 
     @media (max-width: 520px) {
       .ed-article-footer { flex-direction:column; align-items:flex-start; gap:14px; }
@@ -179,21 +179,78 @@
       .ed-reveal, .ed-reveal.ed-in { opacity: 1 !important; transform: none !important; transition: none !important; }
       * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
+  
+    /* ==================================================================
+       IDENTITY LAYER — "Homage / Nike-first", article surface.
+       Same tokens as the homepage: white #F7F7F5 · ink #0E0E0E ·
+       black #0A0A0A · touch orange #D96D00 (interaction only).
+       ================================================================== */
+
+    .ed-h1 {
+      font-family: 'Jost', 'Instrument Sans', sans-serif !important;
+      font-weight: 900 !important;
+      text-transform: uppercase;
+      line-height: 0.98 !important;
+      letter-spacing: -0.015em !important;
+      font-size: clamp(36px, 7vw, 62px) !important;
+    }
+    .ed-body h2 {
+      font-family: 'Jost', 'Instrument Sans', sans-serif !important;
+      font-weight: 800 !important;
+      text-transform: uppercase;
+      letter-spacing: 0 !important;
+      line-height: 1.05;
+    }
+    /* No emphasis device, no italics — the line is the statement. */
+    [style*="font-style:italic"] { font-style: normal !important; color: inherit !important; }
+    .ed-blockquote p, .ed-note { font-style: normal !important; }
+    .ed-blockquote { border-left-width: 4px !important; }
+    .ed-blockquote p { font-weight: 500; }
+    .ed-callout p { font-weight: 600; }
+
+    /* Label layer: geometric caps, tracked wide. */
+    .ed-kicker, .ed-meta, .ed-num, .ed-blockquote cite, .ed-sources h3,
+    .ed-byline-link, .ed-footer-link, .ed-footer-cta, .ed-navlink,
+    .ed-navcta, .ed-skip, [style*="text-transform:uppercase"] {
+      font-family: 'Jost', sans-serif !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.15em !important;
+    }
+
+    /* Wordmark and mobile menu join the poster voice. */
+    nav a[style*="font-size:19px"] {
+      font-family: 'Jost', sans-serif !important;
+      font-weight: 700 !important;
+      text-transform: uppercase;
+      letter-spacing: 0.04em !important;
+    }
+    .ed-mobile-menu a[style*="font-size:30px"] {
+      font-family: 'Jost', sans-serif !important;
+      font-weight: 800 !important;
+      text-transform: uppercase;
+    }
+
+    /* Monochrome portrait. Delete for colour. */
+    .ed-byline img { filter: grayscale(1) contrast(1.06); }
+
+    /* Colour on touch. */
+    ::selection { background: #D96D00; color: #F7F7F5; }
+    :focus-visible { outline: 2px solid #D96D00 !important; outline-offset: 3px; }
   </style>
 </head>
 <body>
   <a href="#main" class="ed-skip">Skip to content</a>
   <div id="main">
   <!-- NAV -->
-  <nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:clamp(14px,3vw,20px) clamp(20px,5.5vw,56px); background:rgba(250,247,242,0.97); border-bottom:1px solid #E7E0D4;">
-    <a href="/" style="font-family:'Newsreader',serif; font-size:19px; font-weight:600; letter-spacing:-0.01em; color:#1A150E; text-decoration:none; white-space:nowrap;">Imo Babics</a>
+  <nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:clamp(14px,3vw,20px) clamp(20px,5.5vw,56px); background:rgba(247,247,245,0.97); border-bottom:1px solid #E4E4E1;">
+    <a href="/" style="font-family:'Instrument Sans',sans-serif; font-size:19px; font-weight:600; letter-spacing:-0.01em; color:#0E0E0E; text-decoration:none; white-space:nowrap;">Imo Babics</a>
     <div class="ed-nav-links" style="display:flex; gap:36px; align-items:center;">
-      <a class="ed-navlink" href="/#about" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#6B6357; text-decoration:none; transition:color .2s ease;">About</a>
-      <a class="ed-navlink" href="/#track-record" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#6B6357; text-decoration:none; transition:color .2s ease;">Track Record</a>
-      <a class="ed-navlink" href="/#work-with-me" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#6B6357; text-decoration:none; transition:color .2s ease;">Work With Me</a>
-      <a class="ed-navlink" href="/#writing" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#6B6357; text-decoration:none; transition:color .2s ease;">Writing</a>
-      <a class="ed-navlink" href="/#contact" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#6B6357; text-decoration:none; transition:color .2s ease;">Contact</a>
-      <a class="ed-navcta" href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#C2540A; text-decoration:none; transition:color .2s ease;">LinkedIn →</a>
+      <a class="ed-navlink" href="/#about" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#666663; text-decoration:none; transition:color .2s ease;">About</a>
+      <a class="ed-navlink" href="/#track-record" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#666663; text-decoration:none; transition:color .2s ease;">Track Record</a>
+      <a class="ed-navlink" href="/#work-with-me" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#666663; text-decoration:none; transition:color .2s ease;">Work With Me</a>
+      <a class="ed-navlink" href="/#writing" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#666663; text-decoration:none; transition:color .2s ease;">Writing</a>
+      <a class="ed-navlink" href="/#contact" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#666663; text-decoration:none; transition:color .2s ease;">Contact</a>
+      <a class="ed-navcta" href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#0E0E0E; text-decoration:none; transition:color .2s ease;">LinkedIn →</a>
     </div>
     <button onclick="edToggleMenu()" aria-label="Toggle menu" class="ed-hamburger" id="ed-ham" style="flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:10px; margin:-10px; width:44px; height:44px; align-items:center; justify-content:center;">
       <span></span><span></span><span></span>
@@ -201,20 +258,20 @@
   </nav>
 
   <!-- MOBILE MENU -->
-  <div class="ed-mobile-menu" id="ed-mobile-menu" style="position:fixed; inset:0; z-index:90; background:#FAF7F2; flex-direction:column; align-items:center; justify-content:center; gap:30px;">
-    <a href="/#about" onclick="edCloseMenu()" style="font-family:'Newsreader',serif; font-size:30px; font-weight:500; color:#1A150E; text-decoration:none;">About</a>
-    <a href="/#track-record" onclick="edCloseMenu()" style="font-family:'Newsreader',serif; font-size:30px; font-weight:500; color:#1A150E; text-decoration:none;">Track Record</a>
-    <a href="/#work-with-me" onclick="edCloseMenu()" style="font-family:'Newsreader',serif; font-size:30px; font-weight:500; color:#1A150E; text-decoration:none;">Work With Me</a>
-    <a href="/#writing" onclick="edCloseMenu()" style="font-family:'Newsreader',serif; font-size:30px; font-weight:500; color:#1A150E; text-decoration:none;">Writing</a>
-    <a href="/#contact" onclick="edCloseMenu()" style="font-family:'Newsreader',serif; font-size:30px; font-weight:500; color:#1A150E; text-decoration:none;">Contact</a>
-    <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" onclick="edCloseMenu()" style="font-size:12px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#C2540A; text-decoration:none;">LinkedIn →</a>
+  <div class="ed-mobile-menu" id="ed-mobile-menu" style="position:fixed; inset:0; z-index:90; background:#F7F7F5; flex-direction:column; align-items:center; justify-content:center; gap:30px;">
+    <a href="/#about" onclick="edCloseMenu()" style="font-family:'Instrument Sans',sans-serif; font-size:30px; font-weight:500; color:#0E0E0E; text-decoration:none;">About</a>
+    <a href="/#track-record" onclick="edCloseMenu()" style="font-family:'Instrument Sans',sans-serif; font-size:30px; font-weight:500; color:#0E0E0E; text-decoration:none;">Track Record</a>
+    <a href="/#work-with-me" onclick="edCloseMenu()" style="font-family:'Instrument Sans',sans-serif; font-size:30px; font-weight:500; color:#0E0E0E; text-decoration:none;">Work With Me</a>
+    <a href="/#writing" onclick="edCloseMenu()" style="font-family:'Instrument Sans',sans-serif; font-size:30px; font-weight:500; color:#0E0E0E; text-decoration:none;">Writing</a>
+    <a href="/#contact" onclick="edCloseMenu()" style="font-family:'Instrument Sans',sans-serif; font-size:30px; font-weight:500; color:#0E0E0E; text-decoration:none;">Contact</a>
+    <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" onclick="edCloseMenu()" style="font-size:12px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#0E0E0E; text-decoration:none;">LinkedIn →</a>
   </div>
 
   <main class="ed-article">
     <article>
       <div class="ed-reveal-target">
         <p class="ed-kicker">Article</p>
-        <h1 class="ed-h1">Mercenaries vs. <em style="font-style:italic; color:#C2540A;">Missionaries</em></h1>
+        <h1 class="ed-h1">Mercenaries vs. <em style="font-style:italic; color:#0E0E0E;">Missionaries</em></h1>
         <div class="ed-meta">
           <span>By <a href="/">Imo Babics</a></span>
           <span class="ed-sep">·</span>
