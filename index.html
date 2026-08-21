@@ -411,6 +411,39 @@
       filter: grayscale(1) contrast(1.08) !important;
     }
 
+    /* Colour system. One orange, two jobs:
+       1) Static marks, exactly three kinds — the hero full stop, the
+          print-plate behind the portrait, and the index numbers.
+          Same logic as the campaign banner's period and print-shadow.
+       2) Orange marks what moves — arrow links at rest, all hovers,
+          selection, focus. If it's orange, you can touch it. */
+
+    /* The full stop. */
+    #top h1::after { content: "."; color: #D96D00; }
+
+    /* The print-plate: portrait sits on an offset block of solid ink-
+       orange, the banner's misregistered-print shadow translated to a
+       rectangle. */
+    .ed-hero-photo-wrap img { box-shadow: -14px 14px 0 #D96D00; }
+
+    /* Index numbers: beliefs 01-04 and services 01-03. */
+    span[style*="flex-shrink:0"][style*="font-size:15px"],
+    span[style*="font-size:17px"][style*="font-style:italic"] {
+      color: #D96D00 !important;
+    }
+
+    /* Live links wear the colour at rest; hover answers with an
+       underline since the colour is already spent. */
+    .eh6, .eh9, .eh10, .eh11, .eh12 { color: #D96D00 !important; }
+    .eh6:hover, .eh9:hover, .eh10:hover, .eh11:hover, .eh12:hover {
+      color: #D96D00 !important;
+      text-decoration: underline !important;
+      text-underline-offset: 4px;
+    }
+
+    /* Testimonial rules take the accent. */
+    [style*="border-left:2px solid"] { border-left-color: #D96D00 !important; }
+
     /* Colour on touch. */
     .eh7:hover  { background: #D96D00 !important; }
     .eh23:hover { background: #D96D00 !important; color: #F7F7F5 !important; }
