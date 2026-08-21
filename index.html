@@ -406,14 +406,13 @@
     [style*="border-left:2px solid"] { border-left-width: 4px !important; }
 
     /* Photography stays monochrome. Delete this block for colour. */
-    .ed-hero-photo-wrap img,
     #work-with-me img[src="/photo2.jpg"] {
       filter: grayscale(1) contrast(1.08) !important;
     }
 
     /* Colour system. One orange, two jobs:
        1) Static marks, exactly three kinds — the hero full stop, the
-          print-plate behind the portrait, and the index numbers.
+          print-shadow silhouette behind the portrait, and the index numbers.
           Same logic as the campaign banner's period and print-shadow.
        2) Orange marks what moves — arrow links at rest, all hovers,
           selection, focus. If it's orange, you can touch it. */
@@ -421,10 +420,9 @@
     /* The full stop. */
     #top h1::after { content: "."; color: #D96D00; }
 
-    /* The print-plate: portrait sits on an offset block of solid ink-
-       orange, the banner's misregistered-print shadow translated to a
-       rectangle. */
-    .ed-hero-photo-wrap img { box-shadow: -14px 14px 0 #D96D00; }
+    /* The poster portrait: cutout with the orange print-shadow, baked
+       into /photo-hero.png — the LinkedIn banner treatment, one to one.
+       No CSS treatment needed; the asset carries the identity. */
 
     /* Index numbers: beliefs 01-04 and services 01-03. */
     span[style*="flex-shrink:0"][style*="font-size:15px"],
@@ -519,7 +517,7 @@
         </div>
       </div>
       <div class="ed-hero-photo-wrap">
-        <img src="/photo.png" width="900" height="1200" fetchpriority="high" alt="Imo Babics, Chief Growth Officer and CMO, Fintech Europe" style="width:100%; aspect-ratio:3/4; max-height:68vh; object-fit:cover; object-position:center top; display:block;">
+        <img src="/photo-hero.png" width="900" height="1241" fetchpriority="high" alt="Imo Babics, Chief Growth Officer and CMO, Fintech Europe" style="width:100%; height:auto; max-height:68vh; object-fit:contain; object-position:center bottom; display:block;">
       </div>
     </div>
 
