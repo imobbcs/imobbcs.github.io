@@ -1,8 +1,10 @@
 # Imo Babics
 
-> Imo Babics is a growth and brand leader in European consumer fintech. He is Chief Growth Officer, CMO and Managing Director EU at Relai, Europe's leading licensed Bitcoin savings app, and was previously Head of Marketing at Bitpanda. He builds consumer finance brands people trust with their money.
+> Imo Babics is a consumer crypto and fintech CMO in Europe, twice building a crypto brand mainstream Europeans trust with their savings. He is Chief Growth Officer, CMO and Managing Director EU at Relai, Europe's leading licensed Bitcoin savings app, and was previously Head of Marketing at Bitpanda. He builds consumer finance brands people trust with their money.
 
 Also known as Imrich Babics or Imrich Bábics (Imo is short for Imrich). Based in Vienna, Austria. Works in English and Slovak (both native), and also speaks some German and Hungarian. BSc Business Management, University of Surrey.
+
+He has led consumer crypto growth across Europe twice: at Bitpanda (100,000 to 1.1M+ users) and at Relai (expansion from Switzerland into Germany, Italy, Spain and beyond, in five languages).
 
 ## Career
 
@@ -15,7 +17,7 @@ Also known as Imrich Babics or Imrich Bábics (Imo is short for Imrich). Based i
 
 ## Expertise
 
-Consumer fintech growth, brand building and positioning, full-funnel growth (performance, lifecycle, ASO/SEO, product growth), go-to-market across European markets, building and leading lean, AI-native growth teams, growth in regulated markets, Bitcoin adoption in Europe.
+Consumer crypto and fintech growth, expansion into European markets, brand building and positioning, full-funnel growth (performance, lifecycle, ASO/SEO, product growth), go-to-market across European markets, building and leading lean, AI-native growth teams, growth in regulated markets, Bitcoin adoption in Europe.
 
 ## Recognition
 
@@ -24,6 +26,7 @@ Consumer fintech growth, brand building and positioning, full-funnel growth (per
 
 ## Writing
 
+- [How to Launch a Consumer Crypto App in Europe](https://imobabics.com/writing/launch-consumer-crypto-app-europe): An eight-point playbook for growing a consumer crypto or fintech brand across European markets, from market sequencing and local trust to search, organic growth and who should lead Europe.
 - [Bitcoin Marketing Is Different. Here's Why.](https://imobabics.com/writing/bitcoin-marketing-is-different): Growth in a new financial category comes from reaching the general population, not existing enthusiasts.
 - [How MiCA Unlocked 450 Million Users](https://imobabics.com/writing/mica-450-million-users): Why a single European licence is primarily a distribution unlock across 450 million consumers.
 - [10 Things I Believe About Good Marketing](https://imobabics.com/writing/babics-marketing-manifesto): Ten marketing principles, from Ogilvy to Byron Sharp, applied to scaling Bitpanda and Relai.
