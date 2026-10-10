@@ -26,7 +26,7 @@ Consumer crypto and fintech growth, expansion into European markets, brand build
 
 ## Writing
 
-- [How to Launch a Consumer Crypto App in Europe](https://imobabics.com/writing/launch-consumer-crypto-app-europe): An eight-point playbook for growing a consumer crypto or fintech brand across European markets, from market sequencing and local trust to search, organic growth and who should lead Europe.
+- [How to Launch a Consumer Crypto App in Europe](https://imobabics.com/writing/launch-consumer-crypto-app-europe): A field guide to growing a consumer crypto or fintech brand across European markets: a market scorecard with country data, localising payments, IBANs and support, search-led and organic growth, a 180-day launch plan and a pre-launch checklist.
 - [Bitcoin Marketing Is Different. Here's Why.](https://imobabics.com/writing/bitcoin-marketing-is-different): Growth in a new financial category comes from reaching the general population, not existing enthusiasts.
 - [How MiCA Unlocked 450 Million Users](https://imobabics.com/writing/mica-450-million-users): Why a single European licence is primarily a distribution unlock across 450 million consumers.
 - [10 Things I Believe About Good Marketing](https://imobabics.com/writing/babics-marketing-manifesto): Ten marketing principles, from Ogilvy to Byron Sharp, applied to scaling Bitpanda and Relai.
