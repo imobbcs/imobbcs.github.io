@@ -257,12 +257,51 @@
     .ed-hub-title { display:block; font-size:clamp(20px,2.6vw,24px); font-weight:500; line-height:1.3; margin:0 0 8px; transition:color .2s ease; }
     .ed-hub-desc { display:block; font-size:16px; line-height:1.65; color:#4C4C49; }
     .ed-hub-list a:hover .ed-hub-title { color:#D96D00; }
-    .nf-ticker { display:inline-flex; gap:10px; align-items:baseline; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; letter-spacing:0.04em; color:#0E0E0E; border:1px solid #E4E4E1; padding:6px 12px; margin:0 0 26px; }
-    .nf-ticker span { color:#6E6E6A; }
-    .nf-ticker .nf-down { color:#0E0E0E; }
-    .nf-copy { font-size:17px; line-height:1.8; color:#2E2E2C; margin:0 0 18px; }
-    .nf-copy:last-of-type { margin-bottom:40px; }
-    .nf-sign { font-family:'Jost',sans-serif; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:#6E6E6A; margin:36px 0 0; }
+    main.nf { padding: clamp(96px,12vw,128px) clamp(20px,5.5vw,56px) clamp(56px,8vw,96px); max-width: 1320px; margin: 0 auto; }
+    .nf-bar { display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; letter-spacing:0.04em; color:#6E6E6A; padding:0 0 14px; border-bottom:1px solid #E4E4E1; }
+    .nf-pair { color:#0E0E0E; font-weight:600; }
+    .nf-err { font-family:'Jost',sans-serif; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#0E0E0E; }
+    .nf-quote b { font-weight:600; color:#0E0E0E; font-variant-numeric:tabular-nums; }
+    .nf-chg { color:#0E0E0E; margin-left:6px; font-variant-numeric:tabular-nums; }
+    .nf-chg.up { color:#D96D00; }
+    .nf-chart { position:relative; height:clamp(220px,40vh,420px); margin:0 0 18px; cursor:crosshair; touch-action:pan-y; }
+    .nf-ghost { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:'Jost',sans-serif; font-weight:900; font-size:clamp(150px,30vw,440px); letter-spacing:-0.04em; line-height:1; color:#ECECE8; user-select:none; pointer-events:none; }
+    .nf-chart svg { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+    .nf-grid line { stroke:#E4E4E1; stroke-width:1; vector-effect:non-scaling-stroke; }
+    .nf-grid .nf-zero { stroke:#C9C9C5; stroke-dasharray:4 4; }
+    .nf-line, .nf-moon { fill:none; stroke:#0E0E0E; stroke-width:2.5; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+    .nf-moon { stroke:#D96D00; }
+    .nf-area { fill:#0E0E0E; opacity:0.035; }
+    .nf-x { stroke:#0E0E0E; stroke-width:1; stroke-dasharray:3 3; vector-effect:non-scaling-stroke; opacity:0; transition:opacity .2s ease; }
+    .nf-chart.hover .nf-x { opacity:0.5; }
+    .nf-dot { position:absolute; width:12px; height:12px; margin:-6px 0 0 -6px; border-radius:50%; background:#D96D00; pointer-events:none; }
+    .nf-dot::after { content:''; position:absolute; inset:-8px; border-radius:50%; border:1px solid #D96D00; opacity:0; }
+    .nf-chart.ready .nf-dot::after { animation: nfPulse 2.4s ease-out infinite; }
+    @keyframes nfPulse { 0% { transform:scale(0.4); opacity:0.7; } 100% { transform:scale(1.6); opacity:0; } }
+    .nf-tip { position:absolute; transform:translate(-50%, calc(-100% - 18px)); white-space:nowrap; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px; background:#0E0E0E; color:#F7F7F5; padding:6px 10px; pointer-events:none; opacity:0; transition:opacity .15s ease; }
+    .nf-chart.hover .nf-tip { opacity:1; }
+    .nf-body { display:grid; grid-template-columns:1.2fr 1fr; gap:clamp(40px,7vw,120px); align-items:start; }
+    .nf-h1 { font-family:'Jost',sans-serif !important; font-weight:900 !important; text-transform:uppercase; font-size:clamp(40px,5vw,68px) !important; line-height:0.95 !important; letter-spacing:-0.015em !important; margin:0 0 28px; color:#0E0E0E; }
+    .nf-copy p { font-size:18px; line-height:1.7; color:#2E2E2C; margin:0 0 14px; max-width:46ch; }
+    .nf-hodl { position:relative; overflow:hidden; display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0 34px; margin:0; flex-shrink:0; min-width:280px; background:#0E0E0E; color:#F7F7F5; border:0; cursor:pointer; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; touch-action:none; font-family:'Jost',sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; font-weight:500; }
+    .nf-hodl-fill { position:absolute; inset:0; background:#D96D00; transform:scaleX(0); transform-origin:left center; }
+    .nf-hodl-label { position:relative; }
+    .nf-hodl.done { background:#D96D00; }
+    .nf-ctl { display:flex; align-items:center; gap:24px; flex-wrap:wrap; margin:0 0 clamp(56px,8vw,96px); }
+    .nf-hint { font-size:14px; line-height:1.6; color:#6E6E6A; margin:0; max-width:44ch; }
+    .nf-links { border-top:2px solid #0E0E0E; }
+    .nf-links-label { font-family:'Jost',sans-serif; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#0E0E0E; margin:14px 0 4px; }
+    .nf-links a { display:block; padding:16px 0; border-bottom:1px solid #E4E4E1; color:#0E0E0E; text-decoration:none; font-size:clamp(19px,2vw,22px); font-weight:500; transition:color .2s ease; }
+    .nf-links a span { display:block; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#6E6E6A; font-weight:500; margin:0 0 4px; }
+    .nf-links a:hover { color:#D96D00; }
+    .nf-sign { font-family:'Jost',sans-serif; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:#6E6E6A; margin:clamp(48px,7vw,80px) 0 0; }
+    @media (max-width: 860px) {
+      .nf-body { grid-template-columns:1fr; }
+      .nf-hodl { width:100%; }
+      .nf-ctl { gap:12px; }
+      .nf-err { display:none; }
+    }
+    @media (prefers-reduced-motion: reduce) { .nf-chart.ready .nf-dot::after { animation:none; } }
   </style>
 </head>
 <body>
@@ -292,23 +331,159 @@
     <a href="https://www.linkedin.com/in/imobabics/" target="_blank" rel="noopener" onclick="edCloseMenu()" style="font-size:12px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:#0E0E0E; text-decoration:none;">LinkedIn →</a>
   </div>
 
-  <main class="ed-article">
-    <div class="ed-reveal-target">
-      <p class="ed-kicker">Error 404 · Page not found</p>
-      <p class="nf-ticker" aria-label="This page's price: zero sats, down 100% in 24 hours"><span>PAGE/SATS</span> 0 <span class="nf-down">▼ 100% (24h)</span></p>
-      <h1 class="ed-h1">Not your keys.<br>Not your page.</h1>
-      <p class="ed-hub-intro" style="border-bottom:0; padding-bottom:0; margin-bottom:18px;">This page has been declared dead.</p>
-      <p class="nf-copy">Bitcoin gets declared dead every cycle and keeps coming back. This page... won't.</p>
-      <p class="nf-copy">Maybe the link is old. Maybe there's a typo. Either way, don't panic sell. Here's where to go instead 👇</p>
-    </div>
-    <ul class="ed-hub-list">
-      <li><a href="/"><span class="ed-hub-meta">Back to safety</span><span class="ed-hub-title">Home: Imo Babics, crypto &amp; fintech CMO</span></a></li>
-      <li><a href="/writing/"><span class="ed-hub-meta">Buy the dip</span><span class="ed-hub-title">Read something instead</span></a></li>
-      <li><a href="/writing/what-makes-a-great-crypto-cmo"><span class="ed-hub-meta">Latest</span><span class="ed-hub-title">What Makes a Great Crypto CMO</span></a></li>
-      <li><a href="/#contact"><span class="ed-hub-meta">Talk to a human</span><span class="ed-hub-title">Get in touch</span></a></li>
-    </ul>
+  <main class="nf" id="nf">
+    <section class="nf-hero" aria-label="This page's price chart">
+      <div class="nf-bar">
+        <span class="nf-pair">PAGE/SATS</span>
+        <span class="nf-err">Error 404 · Page not found</span>
+        <span class="nf-quote"><b id="nf-price">0</b> sats <span id="nf-chg" class="nf-chg">▼ 100.00%</span></span>
+      </div>
+      <div class="nf-chart" id="nf-chart">
+        <div class="nf-ghost" aria-hidden="true">404</div>
+        <svg viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <clipPath id="nf-clip-a"><rect id="nf-reveal" x="0" y="0" width="0" height="400"/></clipPath>
+            <clipPath id="nf-clip-b"><rect id="nf-reveal-moon" x="860" y="0" width="0" height="400"/></clipPath>
+          </defs>
+          <g class="nf-grid">
+            <line x1="0" y1="80" x2="1000" y2="80"/><line x1="0" y1="160" x2="1000" y2="160"/>
+            <line x1="0" y1="240" x2="1000" y2="240"/><line x1="0" y1="320" x2="1000" y2="320"/>
+            <line x1="0" y1="380" x2="1000" y2="380" class="nf-zero"/>
+          </g>
+          <g clip-path="url(#nf-clip-a)">
+            <path id="nf-area" class="nf-area"/>
+            <path id="nf-line" class="nf-line"/>
+          </g>
+          <g clip-path="url(#nf-clip-b)">
+            <path id="nf-moon" class="nf-moon"/>
+          </g>
+          <line id="nf-x" class="nf-x" x1="0" y1="0" x2="0" y2="400"/>
+        </svg>
+        <span class="nf-dot" id="nf-dot"></span>
+        <span class="nf-tip" id="nf-tip"></span>
+      </div>
+      <div class="nf-ctl">
+        <button class="nf-hodl" id="nf-hodl" type="button" aria-describedby="nf-hodl-hint">
+          <span class="nf-hodl-fill" id="nf-hodl-fill"></span>
+          <span class="nf-hodl-label" id="nf-hodl-label">Press and hold to HODL</span>
+        </button>
+        <p class="nf-hint" id="nf-hodl-hint">Hold and the chart recovers. Make it to the moon and you're home. Let go early... paper hands.</p>
+      </div>
+    </section>
+
+    <section class="nf-body">
+      <div class="nf-copy">
+        <h1 class="nf-h1">Not your keys.<br>Not your page.</h1>
+        <p>This page has been declared dead. Bitcoin gets declared dead every cycle and keeps coming back. This page... won't.</p>
+        <p>Unless you HODL ☝️</p>
+      </div>
+      <nav class="nf-links" aria-label="Where to go instead">
+        <p class="nf-links-label">Or skip the trade</p>
+        <a href="/"><span>Back to safety</span>Home</a>
+        <a href="/writing/"><span>Buy the dip</span>Read something instead</a>
+        <a href="/writing/what-makes-a-great-crypto-cmo"><span>Latest</span>What Makes a Great Crypto CMO</a>
+        <a href="/#contact"><span>Talk to a human</span>Get in touch</a>
+      </nav>
+    </section>
+
     <p class="nf-sign">Keep calm, stack sats 😎</p>
   </main>
+
+  <script>
+  (function () {
+    var W = 1000, BASE = 380, TOP = 20, END = 860, PEAK_X = 0;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Seeded so the chart is the same for everyone
+    var s = 404; function rnd() { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }
+    var N = 58, pts = [];
+    for (var i = 0; i < N; i++) {
+      var x = i * (END / (N - 1)), v;
+      if (i <= 44) v = 26 + (i / 44) * 62 + (rnd() - 0.5) * 12;
+      else if (i <= 51) v = 88 - (i - 44) * 2.6 + (rnd() - 0.5) * 6;
+      else v = 70 * Math.pow(1 - (i - 51) / (N - 1 - 51), 1.6);
+      if (i === N - 1) v = 0;
+      pts.push({ x: x, v: Math.max(0, v) });
+    }
+    var peak = 0; pts.forEach(function (p) { if (p.v > peak) { peak = p.v; PEAK_X = p.x; } });
+    var moon = [{ x: END, v: 0 }];
+    for (var j = 1; j <= 9; j++) moon.push({ x: END + j * (140 / 9), v: (j / 9) * 128 + (j < 9 ? (rnd() - 0.5) * 16 : 0) });
+    function y(v) { return BASE - v / 130 * (BASE - TOP); }
+    function d(arr) { return arr.map(function (p, k) { return (k ? 'L' : 'M') + p.x.toFixed(1) + ' ' + y(p.v).toFixed(1); }).join(' '); }
+    var $ = function (id) { return document.getElementById(id); };
+    $('nf-line').setAttribute('d', d(pts));
+    $('nf-area').setAttribute('d', d(pts) + ' L ' + END + ' ' + BASE + ' L 0 ' + BASE + ' Z');
+    $('nf-moon').setAttribute('d', d(moon));
+
+    function at(arr, x) {
+      if (x <= arr[0].x) return arr[0].v;
+      for (var k = 1; k < arr.length; k++) if (x <= arr[k].x) {
+        var a = arr[k - 1], b = arr[k], t = (x - a.x) / (b.x - a.x); return a.v + (b.v - a.v) * t;
+      }
+      return arr[arr.length - 1].v;
+    }
+    var price = $('nf-price'), chg = $('nf-chg'), dot = $('nf-dot'), tip = $('nf-tip'), cross = $('nf-x'), chart = $('nf-chart');
+    function sats(v) { return Math.round(v * 1404); }
+    function show(x, v, label) {
+      dot.style.left = (x / W * 100) + '%'; dot.style.top = (y(v) / 400 * 100) + '%';
+      price.textContent = sats(v).toLocaleString('en-GB');
+      var pct = (v - peak) / peak * 100;
+      chg.textContent = (pct >= 0 ? '▲ ' : '▼ ') + Math.abs(pct).toFixed(2) + '%';
+      chg.classList.toggle('up', pct >= 0);
+      if (label !== undefined) tip.textContent = label;
+    }
+
+    // 1. Draw: rally, then the crash
+    var reveal = $('nf-reveal'), revealMoon = $('nf-reveal-moon');
+    var drawn = reduce;
+    function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+    if (reduce) { reveal.setAttribute('width', END + 2); show(END, 0); }
+    else {
+      var t0 = null, DUR = 2400;
+      requestAnimationFrame(function step(ts) {
+        if (!t0) t0 = ts; var t = Math.min(1, (ts - t0) / DUR), x = ease(t) * END;
+        reveal.setAttribute('width', x + 2); show(x, at(pts, x));
+        if (t < 1) requestAnimationFrame(step); else { drawn = true; chart.classList.add('ready'); }
+      });
+    }
+
+    // 2. Crosshair on hover
+    var hp = 0; // HODL progress 0..1
+    chart.addEventListener('pointermove', function (e) {
+      if (!drawn || holding || hp > 0) return;
+      var r = chart.getBoundingClientRect(), x = Math.max(0, Math.min(END, (e.clientX - r.left) / r.width * W));
+      var v = at(pts, x), blk = 840000 + Math.round(x / END * 404);
+      cross.setAttribute('x1', x); cross.setAttribute('x2', x);
+      chart.classList.add('hover');
+      tip.style.left = (x / W * 100) + '%'; tip.style.top = (y(v) / 400 * 100) + '%';
+      show(x, v, 'Block ' + blk.toLocaleString('en-GB') + ' · ' + sats(v).toLocaleString('en-GB') + ' sats');
+    });
+    chart.addEventListener('pointerleave', function () { chart.classList.remove('hover'); if (hp === 0) show(END, 0); });
+
+    // 3. Press and hold to HODL
+    var btn = $('nf-hodl'), fill = $('nf-hodl-fill'), lbl = $('nf-hodl-label'), holding = false, done = false, last = null, running = false;
+    var HOLD = 1600, FALL = 700;
+    function loop(ts) {
+      if (last === null) last = ts; var dt = ts - last; last = ts;
+      hp = holding ? Math.min(1, hp + dt / HOLD) : Math.max(0, hp - dt / FALL);
+      fill.style.transform = 'scaleX(' + hp + ')';
+      revealMoon.setAttribute('width', hp * 142);
+      var x = END + hp * 140; show(x, at(moon, x));
+      chart.classList.toggle('mooning', hp > 0);
+      if (hp >= 1 && !done) {
+        done = true; lbl.textContent = 'To the moon. Taking you home…'; btn.classList.add('done');
+        running = false; setTimeout(function () { window.location.href = '/'; }, 900); return;
+      }
+      if (holding || hp > 0) requestAnimationFrame(loop); else { running = false; last = null; show(END, 0); }
+    }
+    function start(e) { if (done || !drawn) return; if (e) e.preventDefault(); if (!holding) { holding = true; lbl.textContent = 'HODL…'; if (!running) { running = true; last = null; requestAnimationFrame(loop); } } }
+    function stop() { if (!holding || done) return; holding = false; lbl.textContent = 'Paper hands. Try again'; }
+    btn.addEventListener('pointerdown', start);
+    ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (ev) { btn.addEventListener(ev, stop); });
+    btn.addEventListener('keydown', function (e) { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) start(e); });
+    btn.addEventListener('keyup', function (e) { if (e.key === ' ' || e.key === 'Enter') stop(); });
+    btn.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  })();
+  </script>
 
   </div>
   <script>
