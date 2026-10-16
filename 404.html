@@ -292,11 +292,12 @@
 
     .nf-dock { display:grid; grid-template-columns:auto 1fr; align-items:center; gap:32px; padding-top:20px; border-top:1px solid #E4E4E1; margin-top:14px; }
     .nf-ctl { display:flex; align-items:center; gap:22px; }
-    .nf-hodl { position:relative; overflow:hidden; display:inline-flex; align-items:center; justify-content:center; min-height:56px; min-width:270px; padding:0 30px; margin:0; flex-shrink:0; background:#0E0E0E; color:#F7F7F5; border:0; cursor:pointer; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; touch-action:none; font-family:'Jost',sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; font-weight:500; }
-    .nf-hodl-fill { position:absolute; inset:0; background:#D96D00; transform:scaleX(0); transform-origin:left center; }
+    .nf-hodl { position:relative; overflow:hidden; display:inline-flex; align-items:center; justify-content:center; min-height:56px; min-width:270px; padding:0 30px; margin:0; flex-shrink:0; background:#D96D00; color:#0E0E0E; border:0; cursor:pointer; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; touch-action:none; font-family:'Jost',sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; font-weight:500; }
+    .nf-hodl-fill { position:absolute; inset:0; background:rgba(14,14,14,0.22); transform:scaleX(0); transform-origin:left center; }
     .nf-hodl-label { position:relative; }
-    .nf-hodl.done { background:#D96D00; }
-    .nf-hint { font-size:14px; line-height:1.55; color:#6E6E6A; margin:0; max-width:34ch; }
+    .nf-hodl.done .nf-hodl-fill { background:rgba(14,14,14,0.3); }
+    .nf-hodl:hover { background:#E57A0F; }
+    .nf-hodl-label { font-weight:600; }
     .nf-links { display:flex; justify-content:flex-end; gap:clamp(20px,3vw,40px); }
     .nf-links a { display:block; color:#0E0E0E; text-decoration:none; font-size:16px; font-weight:500; line-height:1.3; padding:6px 0; border-bottom:1px solid transparent; transition:color .2s ease, border-color .2s ease; }
     .nf-links a span { display:block; font-family:'Jost',sans-serif; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#6E6E6A; font-weight:500; margin:0 0 4px; }
@@ -393,11 +394,10 @@
 
     <div class="nf-dock">
       <div class="nf-ctl">
-        <button class="nf-hodl" id="nf-hodl" type="button" aria-describedby="nf-hodl-hint">
+        <button class="nf-hodl" id="nf-hodl" type="button" aria-label="Press and hold to HODL and go home">
           <span class="nf-hodl-fill" id="nf-hodl-fill"></span>
           <span class="nf-hodl-label" id="nf-hodl-label">Press and hold to HODL</span>
         </button>
-        <p class="nf-hint" id="nf-hodl-hint">Hold to recover the chart. Reach the moon and you're home. Let go early... paper hands.</p>
       </div>
       <nav class="nf-links" aria-label="Where to go instead">
         <a href="/"><span>Back to safety</span>Home</a>
