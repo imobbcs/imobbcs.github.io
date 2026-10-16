@@ -19,7 +19,9 @@ writing/                Essays (5 articles, same identity system)
 photo-hero.webp         Hero cutout with orange print-shadow (baked into asset)
 photo.png               Square B/W portrait (OG image only, not referenced by <img>)
 photo-avatar.webp       256px byline avatar for articles
-photo2.jpg              Stage banner, 1800x900, B/W via CSS filter
+photo2.jpg              Stage banner, 1800x900, B/W via CSS filter (also the keynote card thumbnail)
+og/                     1200x630 social share cards (home + one per article)
+img/                    Optimised small assets (logos, Bitcoin icon)
 icon-192.png            Manifest icons + apple-touch-icon.png
 icon-512.png
 manifest.json
