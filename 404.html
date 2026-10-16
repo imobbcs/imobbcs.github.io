@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#F7F7F5" />
-  <title>Page not found · Imo Babics</title>
+  <title>404 · Not your keys, not your page · Imo Babics</title>
   <meta name="description" content="This page doesn&#x27;t exist. Head to the homepage or the writing archive." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F7F7F5'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial,sans-serif' font-size='12' font-weight='900' fill='%230E0E0E'>I<tspan fill='%23D96D00'>B</tspan></text></svg>" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -257,6 +257,12 @@
     .ed-hub-title { display:block; font-size:clamp(20px,2.6vw,24px); font-weight:500; line-height:1.3; margin:0 0 8px; transition:color .2s ease; }
     .ed-hub-desc { display:block; font-size:16px; line-height:1.65; color:#4C4C49; }
     .ed-hub-list a:hover .ed-hub-title { color:#D96D00; }
+    .nf-ticker { display:inline-flex; gap:10px; align-items:baseline; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; letter-spacing:0.04em; color:#0E0E0E; border:1px solid #E4E4E1; padding:6px 12px; margin:0 0 26px; }
+    .nf-ticker span { color:#6E6E6A; }
+    .nf-ticker .nf-down { color:#0E0E0E; }
+    .nf-copy { font-size:17px; line-height:1.8; color:#2E2E2C; margin:0 0 18px; }
+    .nf-copy:last-of-type { margin-bottom:40px; }
+    .nf-sign { font-family:'Jost',sans-serif; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:#6E6E6A; margin:36px 0 0; }
   </style>
 </head>
 <body>
@@ -288,16 +294,20 @@
 
   <main class="ed-article">
     <div class="ed-reveal-target">
-      <p class="ed-kicker">404</p>
-      <h1 class="ed-h1">This page doesn't exist</h1>
-      <p class="ed-hub-intro" style="border-bottom:0; padding-bottom:0;">The link may be old, or there's a typo in the address. Here's where to go instead.</p>
+      <p class="ed-kicker">Error 404 · Page not found</p>
+      <p class="nf-ticker" aria-label="This page's price: zero sats, down 100% in 24 hours"><span>PAGE/SATS</span> 0 <span class="nf-down">▼ 100% (24h)</span></p>
+      <h1 class="ed-h1">Not your keys.<br>Not your page.</h1>
+      <p class="ed-hub-intro" style="border-bottom:0; padding-bottom:0; margin-bottom:18px;">This page has been declared dead.</p>
+      <p class="nf-copy">Bitcoin gets declared dead every cycle and keeps coming back. This page... won't.</p>
+      <p class="nf-copy">Maybe the link is old. Maybe there's a typo. Either way, don't panic sell. Here's where to go instead 👇</p>
     </div>
     <ul class="ed-hub-list">
-      <li><a href="/"><span class="ed-hub-meta">Home</span><span class="ed-hub-title">Imo Babics, crypto &amp; fintech CMO</span></a></li>
-      <li><a href="/writing/"><span class="ed-hub-meta">Writing</span><span class="ed-hub-title">Articles, field guides and talks</span></a></li>
+      <li><a href="/"><span class="ed-hub-meta">Back to safety</span><span class="ed-hub-title">Home: Imo Babics, crypto &amp; fintech CMO</span></a></li>
+      <li><a href="/writing/"><span class="ed-hub-meta">Buy the dip</span><span class="ed-hub-title">Read something instead</span></a></li>
       <li><a href="/writing/what-makes-a-great-crypto-cmo"><span class="ed-hub-meta">Latest</span><span class="ed-hub-title">What Makes a Great Crypto CMO</span></a></li>
-      <li><a href="/#contact"><span class="ed-hub-meta">Contact</span><span class="ed-hub-title">Get in touch</span></a></li>
+      <li><a href="/#contact"><span class="ed-hub-meta">Talk to a human</span><span class="ed-hub-title">Get in touch</span></a></li>
     </ul>
+    <p class="nf-sign">Keep calm, stack sats 😎</p>
   </main>
 
   </div>
