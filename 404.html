@@ -257,15 +257,22 @@
     .ed-hub-title { display:block; font-size:clamp(20px,2.6vw,24px); font-weight:500; line-height:1.3; margin:0 0 8px; transition:color .2s ease; }
     .ed-hub-desc { display:block; font-size:16px; line-height:1.65; color:#4C4C49; }
     .ed-hub-list a:hover .ed-hub-title { color:#D96D00; }
-    main.nf { padding: clamp(96px,12vw,128px) clamp(20px,5.5vw,56px) clamp(56px,8vw,96px); max-width: 1320px; margin: 0 auto; }
-    .nf-bar { display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; letter-spacing:0.04em; color:#6E6E6A; padding:0 0 14px; border-bottom:1px solid #E4E4E1; }
+    main.nf { overflow:hidden; box-sizing:border-box; max-width:1360px; margin:0 auto; height:100svh; min-height:660px; display:grid; grid-template-rows:auto 1fr auto; padding:clamp(88px,10vh,104px) clamp(20px,5.5vw,56px) clamp(20px,3vh,32px); }
+    .nf-bar { display:flex; justify-content:space-between; align-items:baseline; gap:16px; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; letter-spacing:0.04em; color:#6E6E6A; padding:0 0 12px; border-bottom:1px solid #E4E4E1; }
     .nf-pair { color:#0E0E0E; font-weight:600; }
     .nf-err { font-family:'Jost',sans-serif; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#0E0E0E; }
+    .nf-quote { white-space:nowrap; }
     .nf-quote b { font-weight:600; color:#0E0E0E; font-variant-numeric:tabular-nums; }
     .nf-chg { color:#0E0E0E; margin-left:6px; font-variant-numeric:tabular-nums; }
     .nf-chg.up { color:#D96D00; }
-    .nf-chart { position:relative; height:clamp(220px,40vh,420px); margin:0 0 18px; cursor:crosshair; touch-action:pan-y; }
-    .nf-ghost { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:'Jost',sans-serif; font-weight:900; font-size:clamp(150px,30vw,440px); letter-spacing:-0.04em; line-height:1; color:#ECECE8; user-select:none; pointer-events:none; }
+
+    .nf-stage { position:relative; min-height:0; display:flex; }
+    .nf-head { position:absolute; z-index:2; top:clamp(24px,5vh,56px); left:0; max-width:min(66%,920px); pointer-events:none; }
+    .nf-h1 { font-family:'Jost',sans-serif !important; font-weight:900 !important; text-transform:uppercase; font-size:clamp(40px,4.9vw,80px) !important; line-height:0.92 !important; letter-spacing:-0.02em !important; margin:0; color:#0E0E0E; }
+    .nf-sub { font-size:17px; line-height:1.6; color:#2E2E2C; margin:20px 0 0; max-width:38ch; }
+
+    .nf-chart { position:relative; flex:1; min-height:300px; cursor:crosshair; touch-action:pan-y; }
+    .nf-ghost { position:absolute; right:-0.04em; bottom:-0.12em; font-family:'Jost',sans-serif; font-weight:900; font-size:clamp(180px,30vw,460px); letter-spacing:-0.05em; line-height:1; color:#EEEEEA; user-select:none; pointer-events:none; }
     .nf-chart svg { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
     .nf-grid line { stroke:#E4E4E1; stroke-width:1; vector-effect:non-scaling-stroke; }
     .nf-grid .nf-zero { stroke:#C9C9C5; stroke-dasharray:4 4; }
@@ -274,32 +281,46 @@
     .nf-area { fill:#0E0E0E; opacity:0.035; }
     .nf-x { stroke:#0E0E0E; stroke-width:1; stroke-dasharray:3 3; vector-effect:non-scaling-stroke; opacity:0; transition:opacity .2s ease; }
     .nf-chart.hover .nf-x { opacity:0.5; }
-    .nf-dot { position:absolute; width:12px; height:12px; margin:-6px 0 0 -6px; border-radius:50%; background:#D96D00; pointer-events:none; }
+    .nf-dot { position:absolute; z-index:3; width:12px; height:12px; margin:-6px 0 0 -6px; border-radius:50%; background:#D96D00; pointer-events:none; }
     .nf-dot::after { content:''; position:absolute; inset:-8px; border-radius:50%; border:1px solid #D96D00; opacity:0; }
-    .nf-chart.ready .nf-dot::after { animation: nfPulse 2.4s ease-out infinite; }
+    .nf-chart.ready .nf-dot::after { animation:nfPulse 2.4s ease-out infinite; }
     @keyframes nfPulse { 0% { transform:scale(0.4); opacity:0.7; } 100% { transform:scale(1.6); opacity:0; } }
-    .nf-tip { position:absolute; transform:translate(-50%, calc(-100% - 18px)); white-space:nowrap; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px; background:#0E0E0E; color:#F7F7F5; padding:6px 10px; pointer-events:none; opacity:0; transition:opacity .15s ease; }
+    .nf-tip { position:absolute; z-index:4; transform:translate(-50%, calc(-100% - 18px)); white-space:nowrap; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px; background:#0E0E0E; color:#F7F7F5; padding:6px 10px; pointer-events:none; opacity:0; transition:opacity .15s ease; }
     .nf-chart.hover .nf-tip { opacity:1; }
-    .nf-body { display:grid; grid-template-columns:1.2fr 1fr; gap:clamp(40px,7vw,120px); align-items:start; }
-    .nf-h1 { font-family:'Jost',sans-serif !important; font-weight:900 !important; text-transform:uppercase; font-size:clamp(40px,5vw,68px) !important; line-height:0.95 !important; letter-spacing:-0.015em !important; margin:0 0 28px; color:#0E0E0E; }
-    .nf-copy p { font-size:18px; line-height:1.7; color:#2E2E2C; margin:0 0 14px; max-width:46ch; }
-    .nf-hodl { position:relative; overflow:hidden; display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0 34px; margin:0; flex-shrink:0; min-width:280px; background:#0E0E0E; color:#F7F7F5; border:0; cursor:pointer; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; touch-action:none; font-family:'Jost',sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; font-weight:500; }
+    .nf-moonlabel { position:absolute; right:0; top:0; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:11px; letter-spacing:0.06em; color:#9A9A96; padding:4px 0; border-top:1px dashed #C9C9C5; transition:color .3s ease; }
+    .nf-chart.mooning .nf-moonlabel { color:#D96D00; }
+
+    .nf-dock { display:grid; grid-template-columns:auto 1fr; align-items:center; gap:32px; padding-top:20px; border-top:1px solid #E4E4E1; margin-top:14px; }
+    .nf-ctl { display:flex; align-items:center; gap:22px; }
+    .nf-hodl { position:relative; overflow:hidden; display:inline-flex; align-items:center; justify-content:center; min-height:56px; min-width:270px; padding:0 30px; margin:0; flex-shrink:0; background:#0E0E0E; color:#F7F7F5; border:0; cursor:pointer; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; touch-action:none; font-family:'Jost',sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; font-weight:500; }
     .nf-hodl-fill { position:absolute; inset:0; background:#D96D00; transform:scaleX(0); transform-origin:left center; }
     .nf-hodl-label { position:relative; }
     .nf-hodl.done { background:#D96D00; }
-    .nf-ctl { display:flex; align-items:center; gap:24px; flex-wrap:wrap; margin:0 0 clamp(56px,8vw,96px); }
-    .nf-hint { font-size:14px; line-height:1.6; color:#6E6E6A; margin:0; max-width:44ch; }
-    .nf-links { border-top:2px solid #0E0E0E; }
-    .nf-links-label { font-family:'Jost',sans-serif; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#0E0E0E; margin:14px 0 4px; }
-    .nf-links a { display:block; padding:16px 0; border-bottom:1px solid #E4E4E1; color:#0E0E0E; text-decoration:none; font-size:clamp(19px,2vw,22px); font-weight:500; transition:color .2s ease; }
-    .nf-links a span { display:block; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#6E6E6A; font-weight:500; margin:0 0 4px; }
-    .nf-links a:hover { color:#D96D00; }
-    .nf-sign { font-family:'Jost',sans-serif; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:#6E6E6A; margin:clamp(48px,7vw,80px) 0 0; }
-    @media (max-width: 860px) {
-      .nf-body { grid-template-columns:1fr; }
-      .nf-hodl { width:100%; }
-      .nf-ctl { gap:12px; }
+    .nf-hint { font-size:14px; line-height:1.55; color:#6E6E6A; margin:0; max-width:34ch; }
+    .nf-links { display:flex; justify-content:flex-end; gap:clamp(20px,3vw,40px); }
+    .nf-links a { display:block; color:#0E0E0E; text-decoration:none; font-size:16px; font-weight:500; line-height:1.3; padding:6px 0; border-bottom:1px solid transparent; transition:color .2s ease, border-color .2s ease; }
+    .nf-links a span { display:block; font-family:'Jost',sans-serif; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#6E6E6A; font-weight:500; margin:0 0 4px; }
+    .nf-links a:hover { color:#D96D00; border-color:#D96D00; }
+
+    @media (max-width: 1100px) {
+      .nf-dock { grid-template-columns:1fr; gap:18px; }
+      .nf-links { justify-content:flex-start; }
+    }
+    @media (max-width: 760px) {
+      main.nf { display:block; height:auto; min-height:0; padding:84px 20px 40px; }
       .nf-err { display:none; }
+      .nf-stage { display:block; }
+      .nf-head { position:static; max-width:none; margin:22px 0 10px; pointer-events:auto; }
+      .nf-h1 { font-size:clamp(38px,11vw,52px) !important; }
+      .nf-sub { font-size:16px; margin-top:14px; }
+      .nf-chart { height:clamp(210px,32svh,300px); min-height:0; }
+      .nf-ghost { font-size:clamp(120px,40vw,200px); }
+      .nf-dock { border-top:0; padding-top:6px; margin-top:8px; }
+      .nf-ctl { flex-direction:column; align-items:stretch; gap:10px; }
+      .nf-hodl { width:100%; min-width:0; }
+      .nf-links { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px; }
+      .nf-links a { border:1px solid #E4E4E1; padding:12px 14px; min-height:64px; }
+      .nf-links a:hover { border-color:#D96D00; }
     }
     @media (prefers-reduced-motion: reduce) { .nf-chart.ready .nf-dot::after { animation:none; } }
   </style>
@@ -332,11 +353,16 @@
   </div>
 
   <main class="nf" id="nf">
-    <section class="nf-hero" aria-label="This page's price chart">
-      <div class="nf-bar">
-        <span class="nf-pair">PAGE/SATS</span>
-        <span class="nf-err">Error 404 · Page not found</span>
-        <span class="nf-quote"><b id="nf-price">0</b> sats <span id="nf-chg" class="nf-chg">▼ 100.00%</span></span>
+    <div class="nf-bar">
+      <span class="nf-pair">PAGE/SATS</span>
+      <span class="nf-err">Error 404 · Page not found</span>
+      <span class="nf-quote"><b id="nf-price">0</b> sats <span id="nf-chg" class="nf-chg">▼ 100.00%</span></span>
+    </div>
+
+    <div class="nf-stage">
+      <div class="nf-head">
+        <h1 class="nf-h1">Not your keys.<br>Not your page.</h1>
+        <p class="nf-sub">This page has been declared dead. Unlike Bitcoin, it isn't coming back... unless you HODL.</p>
       </div>
       <div class="nf-chart" id="nf-chart">
         <div class="nf-ghost" aria-hidden="true">404</div>
@@ -361,32 +387,25 @@
         </svg>
         <span class="nf-dot" id="nf-dot"></span>
         <span class="nf-tip" id="nf-tip"></span>
+        <span class="nf-moonlabel" aria-hidden="true">Moon ↗</span>
       </div>
+    </div>
+
+    <div class="nf-dock">
       <div class="nf-ctl">
         <button class="nf-hodl" id="nf-hodl" type="button" aria-describedby="nf-hodl-hint">
           <span class="nf-hodl-fill" id="nf-hodl-fill"></span>
           <span class="nf-hodl-label" id="nf-hodl-label">Press and hold to HODL</span>
         </button>
-        <p class="nf-hint" id="nf-hodl-hint">Hold and the chart recovers. Make it to the moon and you're home. Let go early... paper hands.</p>
-      </div>
-    </section>
-
-    <section class="nf-body">
-      <div class="nf-copy">
-        <h1 class="nf-h1">Not your keys.<br>Not your page.</h1>
-        <p>This page has been declared dead. Bitcoin gets declared dead every cycle and keeps coming back. This page... won't.</p>
-        <p>Unless you HODL ☝️</p>
+        <p class="nf-hint" id="nf-hodl-hint">Hold to recover the chart. Reach the moon and you're home. Let go early... paper hands.</p>
       </div>
       <nav class="nf-links" aria-label="Where to go instead">
-        <p class="nf-links-label">Or skip the trade</p>
         <a href="/"><span>Back to safety</span>Home</a>
-        <a href="/writing/"><span>Buy the dip</span>Read something instead</a>
-        <a href="/writing/what-makes-a-great-crypto-cmo"><span>Latest</span>What Makes a Great Crypto CMO</a>
-        <a href="/#contact"><span>Talk to a human</span>Get in touch</a>
+        <a href="/writing/"><span>Buy the dip</span>Writing</a>
+        <a href="/writing/what-makes-a-great-crypto-cmo"><span>Latest</span>Crypto CMO guide</a>
+        <a href="/#contact"><span>Talk to a human</span>Contact</a>
       </nav>
-    </section>
-
-    <p class="nf-sign">Keep calm, stack sats 😎</p>
+    </div>
   </main>
 
   <script>
@@ -402,7 +421,7 @@
       else if (i <= 51) v = 88 - (i - 44) * 2.6 + (rnd() - 0.5) * 6;
       else v = 70 * Math.pow(1 - (i - 51) / (N - 1 - 51), 1.6);
       if (i === N - 1) v = 0;
-      pts.push({ x: x, v: Math.max(0, v) });
+      pts.push({ x: x, v: Math.max(0, v) * 0.72 });
     }
     var peak = 0; pts.forEach(function (p) { if (p.v > peak) { peak = p.v; PEAK_X = p.x; } });
     var moon = [{ x: END, v: 0 }];
